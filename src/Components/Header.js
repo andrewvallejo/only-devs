@@ -8,9 +8,11 @@ const Header = () => {
                 <h1>OnlyDevs</h1>
             </header>
             <div className='navBtns'>
-                <NavLink to='/all-questions' className='ViewAll'>
-                    <button>View All Questions</button>
-                </NavLink> 
+                <Route exact path = '/' render={() => 
+                    <NavLink to='/all-questions' className='ViewAll'>
+                        <button>View All Questions</button>
+                    </NavLink> 
+                } />
             </div>
         </nav>
     )
