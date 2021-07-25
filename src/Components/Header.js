@@ -16,8 +16,8 @@ const Header = () => {
                 <Route exact path = '/all-questions' render={() => 
                     <NavLink to='/' className='randomQuestion'>
                         <button>Answer a Question</button>
-                    </NavLink>}
-                />
+                    </NavLink>
+                } />
             </div>
         </nav>
     )
