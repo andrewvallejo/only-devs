@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Header from './Header';
+import Question from './Question'
 
 class App extends Component {
   constructor() {
@@ -10,9 +11,14 @@ class App extends Component {
 
   render() {
     return (
-      <section>
+      <main>
         <Header />
-      </section>
+        <section>
+        <Route exact path = '/' render={() => 
+          <Question />
+          }/>
+        </section>
+      </main>
     )
   }
 }
