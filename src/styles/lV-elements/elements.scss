@@ -1,0 +1,47 @@
+html {
+  background: $color-primary;
+}
+
+body {
+  color: $color-light;
+}
+
+header {
+  @include flex(column, space);
+}
+
+main {
+  @include mediaQueries(grid);}
+
+h1 {
+  @include heading;
+}
+
+h2 {
+  @include subheading;
+}
+
+h3 {
+  @include paragraph;
+}
+
+p {
+  @include paragraph;
+}
+
+button {
+  @include flex(column, center);
+  @include button;
+  @include opacity($color-secondary, -0.7);
+  transition: 100ms;
+  border: $color-secondary 1.5px solid;
+  border-radius: 3px;
+  padding: 0.1rem 0.5rem;
+  color: $color-light;
+  &:hover {
+    @include opacity($color-secondary, -0.5);
+    transition: 100ms;
+    text-shadow: 0 0 1.5px $color-light;
+    border: $color-light 1.5px solid;
+  }
+}
