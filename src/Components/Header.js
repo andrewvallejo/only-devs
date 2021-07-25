@@ -9,10 +9,15 @@ const Header = () => {
             </header>
             <div className='navBtns'>
                 <Route exact path = '/' render={() => 
-                    <NavLink to='/all-questions' className='ViewAll'>
+                    <NavLink to='/all-questions' className='viewAll'>
                         <button>View All Questions</button>
                     </NavLink> 
                 } />
+                <Route exact path = '/all-questions' render={() => 
+                    <NavLink to='/' className='randomQuestion'>
+                        <button>Answer a Question</button>
+                    </NavLink>}
+                />
             </div>
         </nav>
     )
