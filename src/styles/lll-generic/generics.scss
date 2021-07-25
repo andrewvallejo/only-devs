@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+Link {
+  text-decoration: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: $font-family-defaults;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  text-transform: none;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-size: $font-size-defaults;
+  font-weight: $font-weight-defaults;
+  font-style: $font-style-defaults;
+}
