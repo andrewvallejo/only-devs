@@ -1,10 +1,9 @@
 import React from 'react';
-import { NavLink, Route } from 'react-router-dom';
+// import { NavLink, Route } from 'react-router-dom';
 
 const Question = () => {
 
-    //const randomQuestion = calculate random question
-
+    //const randomQuestion = calculate random question here
     return (
         <article className= 'questionBox'>
             <div>
