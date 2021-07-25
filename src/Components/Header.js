@@ -8,11 +8,12 @@ const Header = () => {
                 <h1>OnlyDevs</h1>
             </header>
             <div className='navBtns'>
-                <NavLink to="/all-questions" className='ViewAll'>
+                <NavLink to='/all-questions' className='ViewAll'>
                     <button>View All Questions</button>
                 </NavLink> 
-                <button className='</button>
             </div>
         </nav>
     )
 }
+
+export default Header;
