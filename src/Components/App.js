@@ -9,7 +9,9 @@ class App extends Component {
   }
   render() {
     return (
-      <h1>onlyDevs</h1>
+      <nav>
+        <Header />
+      </nav>
     )
   }
 }
