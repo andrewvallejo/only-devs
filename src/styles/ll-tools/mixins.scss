@@ -3,11 +3,7 @@
   ========================================================================== */
 
 /* === Flexbox === */
-@mixin flex(
-  $direction,
-  $alignment,
-  $wrap: nowrap
-) {
+@mixin flex($direction,$alignment,$wrap: nowrap) {
   display: flex;
   flex-direction: $direction;
   flex-wrap: $wrap;
@@ -36,14 +32,13 @@
   } @else if $viewport==tablet {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem 2rem;
-  } @else {
+  } @else if $viewport==desktop{
     grid-template-columns: repeat(3, 1fr);
     gap: 4rem 4rem;
   }
 }
 
 /* === Fonts === */
-
 @mixin heading {
   @include scaling($font-size-heading, font);
 }
@@ -65,18 +60,27 @@
   @media only screen and (min-width: 375px) {
     @content;
     transition: 100ms;
+    @if $property==grid{
+      @include grid(mobile) 
+    }
   }
 }
 @mixin tablet($property) { 
   @media only screen and (min-width: 768px) {
     @content;
     transition: 100ms;
+    @if $property==grid{
+      @include grid(tablet) 
+    }
   }
 }
 @mixin desktop($property) {
   @media only screen and (min-width: 1100px) {
     @content;
     transition: 100ms;
+    @if $property==grid{
+      @include grid(desktop) 
+    }
   }
 }
 
