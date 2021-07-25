@@ -10,9 +10,9 @@ class App extends Component {
 
   render() {
     return (
-      <nav>
+      <section>
         <Header />
-      </nav>
+      </section>
     )
   }
 }
