@@ -1,0 +1,98 @@
+/* ==========================================================================
+  Tools - Mixins
+  ========================================================================== */
+
+/* === Flexbox === */
+@mixin flex(
+  $direction,
+  $alignment,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  @if $alignment==center {
+    align-items: center;
+    justify-content: center;
+  } @else if $alignment==space {
+    align-items: center;
+    justify-content: space-around;
+  } @else if $alignment==start {
+    align-items: center;
+    justify-content: flex-start;
+  } @else if $alignment==end {
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+/* === Grid === */
+@mixin grid($viewport) {
+  display: grid;
+  justify-items: center;
+  @if $viewport==mobile {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem 1rem;
+  } @else if $viewport==tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 2rem;
+  } @else {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem 4rem;
+  }
+}
+
+/* === Fonts === */
+
+@mixin heading {
+  @include scaling($font-size-heading, font);
+}
+
+@mixin subheading {
+  @include scaling($font-size-subheading, font);
+}
+
+@mixin paragraph {
+  @include scaling($font-size-paragraph, font);
+}
+
+@mixin button {
+  @include scaling($font-size-button, font);
+}
+
+/* === Media Queries === */
+@mixin mobile($property) {
+  @media only screen and (min-width: 375px) {
+    @content;
+    transition: 100ms;
+  }
+}
+@mixin tablet($property) { 
+  @media only screen and (min-width: 768px) {
+    @content;
+    transition: 100ms;
+  }
+}
+@mixin desktop($property) {
+  @media only screen and (min-width: 1100px) {
+    @content;
+    transition: 100ms;
+  }
+}
+
+/* === Helpers === */
+@mixin mediaQueries($property) {
+  @include mobile($property);
+  @include tablet($property);
+  @include desktop($property);
+}
+
+@mixin opacity($color, $value) {
+  background: adjust-color($color, $alpha: $value);
+}
+
+@mixin scaling($value, $property) {
+  @if $property==font {
+  font-size: clamp($value);
+  }
+}
