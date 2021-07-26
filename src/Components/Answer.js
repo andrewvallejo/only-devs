@@ -16,8 +16,17 @@ class Answer extends Component {
     }
 
     submitAnswer = (event) => {
-        
+        event.preventDefault();
+        let newAnswer = {
+            id: this.props.id,
+            timeStamp: Date.now(),
+            ...this.state
+        }
+        //will need to create a function in App to add answer and POST with (newAnswer) being passed back
+        this.clearInput()
     }
+
+    
 
 
 
