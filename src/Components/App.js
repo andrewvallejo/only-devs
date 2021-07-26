@@ -19,10 +19,12 @@ class App extends Component {
         <Route exact path = '/' render={() => 
           <Question />
         }/>
-        <Routh exact path = '/all-questions' render={() => 
+        <Route exact path = '/all-questions' render={() => 
           <QuestionBoard /> 
         } />
-
+        <Route exact path = '/question-details' render={() => 
+          <QuestionDetails />
+        } />
         </Switch>
         </section>
       </main>
