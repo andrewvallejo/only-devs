@@ -1,25 +1,23 @@
 import React from 'react';
 import Answer from './Answer';
-// import { NavLink, Route } from 'react-router-dom';
 
-const Question = ({questions}) => {
-
+const Question = ({ questions }) => {
+    
+    console.log(questions)
     const randomQuestionObj = questions[Math.floor(Math.random() * questions.length)];
     console.log(randomQuestionObj)
     const { id, question, answers } = randomQuestionObj
-    // const randomQuestion = calculate random question here
+    console.log(id)
     return (
         <article className= 'questionBox'>
             <div>
                 <h2>{question}</h2>
             </div>
-            <form className= 'answerInput'>
                 <Answer 
                 question={question}
                 id={id}
                 answers={answers}
                 /> 
-            </form>
         </article>
     )
 }
