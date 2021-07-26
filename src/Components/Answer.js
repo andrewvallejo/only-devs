@@ -56,3 +56,5 @@ class Answer extends Component {
         )
     }
 }
+
+export default Answer;
