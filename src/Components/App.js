@@ -12,9 +12,9 @@ class App extends Component {
 
   render() {
     return (
-      <main>
+      <>
         <Header />
-        <section>
+        <main>
         <Switch>
         <Route exact path = '/' render={() => 
           <Question />
@@ -26,8 +26,8 @@ class App extends Component {
           <QuestionDetails />
         } />
         </Switch>
-        </section>
-      </main>
+        </main>
+      </>
     )
   }
 }
