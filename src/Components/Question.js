@@ -1,4 +1,5 @@
 import React from 'react';
+import Answer from './Answer';
 // import { NavLink, Route } from 'react-router-dom';
 
 const Question = ({questions}) => {
