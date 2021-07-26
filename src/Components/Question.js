@@ -1,9 +1,11 @@
 import React from 'react';
 // import { NavLink, Route } from 'react-router-dom';
 
-const Question = () => {
+const Question = ({questions}) => {
 
-    //const randomQuestion = calculate random question here
+    const allQuestions = questions.map(questionObj => questionObj.question)
+    console.log(allQuestions);
+    // const randomQuestion = calculate random question here
     return (
         <article className= 'questionBox'>
             <div>
