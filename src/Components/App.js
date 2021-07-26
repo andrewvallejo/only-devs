@@ -18,8 +18,10 @@ class App extends Component {
         <Switch>
         <Route exact path = '/' render={() => 
           <Question />
-          }/>
-        <QuestionBoard /> this will be in place of lines 18-20 and will hold all of our view options based on the route path
+        }/>
+        <Routh exact path = '/all-questions' render={() => 
+          <QuestionBoard /> 
+        } />
 
         </Switch>
         </section>
