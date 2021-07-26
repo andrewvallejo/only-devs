@@ -26,8 +26,9 @@ class Answer extends Component {
         this.clearInput()
     }
 
-    
-
+    clearInput = () => {
+        this.setState({answer: ''})
+    }
 
 
     render() {
