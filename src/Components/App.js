@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import Question from './Question';
 import QuestionBoard from './QuestionBoard';
-import { fetchQuestions } from '../Utlities/apiCalls';
+import { fetchQuestions } from '../Utilities/apiCalls';
 
 class App extends Component {
   constructor() {
@@ -36,11 +36,11 @@ class App extends Component {
             questions={this.state.questions}
           /> 
         } />
-        <Route exact path = '/question-details' render={() => 
+        {/* <Route exact path = '/question-details' render={() => 
           <QuestionDetails 
             questions={this.state.questions}
           />
-        } />
+        } /> */}
         </Switch>
         </main>
       </>
