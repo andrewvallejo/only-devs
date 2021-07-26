@@ -17,7 +17,7 @@ class App extends Component {
   componentDidMount = () => {
     fetchQuestions()
       .then(data => this.setState({ questions: data.questions }))
-      .catch(error => this.setState({error: 'Oops server is down! Please Refresh the page'}))
+      .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
   }
 
   render() {
@@ -27,13 +27,19 @@ class App extends Component {
         <main>
         <Switch>
         <Route exact path = '/' render={() => 
-          <Question />
+          <Question 
+          questions={this.state.questions}
+          />
         }/>
         <Route exact path = '/all-questions' render={() => 
-          <QuestionBoard /> 
+          <QuestionBoard 
+            questions={this.state.questions}
+          /> 
         } />
         <Route exact path = '/question-details' render={() => 
-          <QuestionDetails />
+          <QuestionDetails 
+            questions={this.state.questions}
+          />
         } />
         </Switch>
         </main>
