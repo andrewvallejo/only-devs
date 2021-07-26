@@ -2,19 +2,20 @@ import React from 'react';
 
 const QuestionBoard = () => {
     
-//----------FOR ALL CARDS VIEW------------
-
-    //const questionCards = map through all questions 
-    //and return (
-        //<Card 
-        //  id, key, question, answers.length
-        // />
-    // )
+//     const questionCards = map through all questions 
+//     and return (
+//         <Card 
+//         //  id, key, question, answers.length
+//         />
+//     )
     
 //     return (
 //         <section className='cardsContainer'>{questionCards}</section>
 //     )
 // }
+
+export default QuestionBoard;
+
 
 //-----------FOR QUESTION DETAILS VIEW -------------
 
@@ -37,6 +38,3 @@ const QuestionBoard = () => {
 
 //if we're going to have this QuestionBoard render multiple "pages", we will need to conditionally render by Route path
 //within this component 
-
-
-export default QuestionBoard;
