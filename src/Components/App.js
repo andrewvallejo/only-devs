@@ -15,10 +15,13 @@ class App extends Component {
       <main>
         <Header />
         <section>
+        <Switch>
         <Route exact path = '/' render={() => 
           <Question />
           }/>
-        {/* <QuestionBoard /> this will be in place of lines 18-20 and will hold all of our view options based on the route path */}
+        <QuestionBoard /> this will be in place of lines 18-20 and will hold all of our view options based on the route path
+
+        </Switch>
         </section>
       </main>
     )
