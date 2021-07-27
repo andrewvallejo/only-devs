@@ -1,20 +1,26 @@
-// import React from 'react';
+import React from 'react';
 
-// const QuestionBoard = () => {
+const QuestionBoard = ({questions}) => {
     
-// //     const questionCards = map through all questions 
-// //     and return (
-// //         <Card 
-// //         //  id, key, question, answers.length
-// //         />
-// //     )
-    
-// //     return (
-// //         <section className='cardsContainer'>{questionCards}</section>
-// //     )
-// // }
+    console.log(questions)
 
-// export default QuestionBoard;
+    const questionCards = questions.map(question => {
+        return (
+            <Card 
+                id={question.id}
+                key={question.id}
+                question={question.question}
+                answers={question.answers}
+            />
+        )
+    })
+    
+    return (
+        <section className='cardsContainer'>{questionCards}</section>
+    )
+}
+
+export default QuestionBoard;
 
 
 //-----------FOR QUESTION DETAILS VIEW -------------
