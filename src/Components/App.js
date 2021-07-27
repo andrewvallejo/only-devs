@@ -33,9 +33,11 @@ class App extends Component {
             <Route exact path = '/all-questions' render={() => 
               <QuestionBoard questions={this.state.questions} /> 
             } />
-            {/* <Route exact path = '/question-details' render={() => 
+            {/* For QuestionDetails, it would be the individual question and all of its answers right?
+            <Route exact path = '/all-questions/:id' render={() => 
               <QuestionDetails questions={this.state.questions}/>
-            } /> */}
+            } />
+             */}
           </Switch>
         </main>
       </>
