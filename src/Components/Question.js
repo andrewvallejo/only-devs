@@ -2,8 +2,8 @@ import React from 'react';
 import Answer from './Answer';
 
 const Question = ({ questions }) => {
-    const randomQuestionObj = questions[Math.floor(Math.random() * questions.length)];
-    const { id, question, answers } = randomQuestionObj
+    const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+    const { id, question, answers } = randomQuestion
     return (
         <article className= 'questionBox'>
             <div>
