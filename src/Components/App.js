@@ -32,6 +32,9 @@ class App extends Component {
           questions={this.state.questions}
           />
         }/>
+        {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
+        {!this.state.questions.length && !this.state.error && <h3 >Loading...</h3>}
+        
         <Route exact path = '/all-questions' render={() => 
           <QuestionBoard 
             questions={this.state.questions}
