@@ -12,5 +12,6 @@ const Card = ({ }) => {
             </article>
         </NavLink>
     )
-
 }
+
+export default Card;
