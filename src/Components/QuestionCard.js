@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Card = ({ question, id, answers }) => {
+const QuestionCard = ({ question, id, answers }) => {
 
     return (
         <NavLink to={`/question-details-${id}`}>
@@ -14,4 +14,4 @@ const Card = ({ question, id, answers }) => {
     )
 }
 
-export default Card;
+export default QuestionCard;

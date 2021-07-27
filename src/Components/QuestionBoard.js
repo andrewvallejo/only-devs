@@ -1,23 +1,26 @@
 import React from 'react';
-import Card from 'react';
+import QuestionCard from 'react';
 
 const QuestionBoard = ({questions}) => {
     
-    console.log(questions)
+    console.log('QUESTIONS',questions)
 
-    const questionCards = questions.map(question => {
+    const questionCards = questions.map(questionObj => {
         return (
-            <Card 
-                id={question.id}
-                key={question.id}
-                question={question.question}
-                answers={question.answers}
+            <QuestionCard 
+                id={questionObj.id}
+                key={questionObj.id}
+                question={questionObj.question}
+                answers={questionObj.answers}
             />
         )
-    })
+    });
     
+    console.log("WHAT??", questionCards.props)
+   
     return (
-        <section className='cardsContainer'>{questionCards}</section>
+
+        <section className='cardsContainer'>{questionCards.props}</section>
     )
 }
 
