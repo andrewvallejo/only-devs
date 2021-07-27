@@ -19,31 +19,24 @@ class App extends Component {
       .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
   }
 
-  render() {
-
+  render() {  
     return (
       <>
         <Header />
         <main>
-        {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
-        {!this.state.questions.length && !this.state.error && <h3 >Loading...</h3>}
-        <Switch>
-        <Route exact path = '/' render={() => 
-          <QuestionBoard 
-          questions={this.state.questions}
-          />
-        }/>
-        <Route exact path = '/all-questions' render={() => 
-          <QuestionBoard 
-            questions={this.state.questions}
-          /> 
-        } />
-        {/* <Route exact path = '/question-details' render={() => 
-          <QuestionDetails 
-            questions={this.state.questions}
-          />
-        } /> */}
-        </Switch>
+          <Switch>
+            {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
+            {!this.state.questions.length && !this.state.error && <h3>Loading...</h3>}
+            <Route exact path = '/' render={() => 
+              <QuestionBoard questions={this.state.questions} />
+            } />
+            <Route exact path = '/all-questions' render={() => 
+              <QuestionBoard questions={this.state.questions} /> 
+            } />
+            {/* <Route exact path = '/question-details' render={() => 
+              <QuestionDetails questions={this.state.questions}/>
+            } /> */}
+          </Switch>
         </main>
       </>
     )
