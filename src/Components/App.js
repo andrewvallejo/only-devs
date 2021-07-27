@@ -29,7 +29,7 @@ class App extends Component {
         {!this.state.questions.length && !this.state.error && <h3 >Loading...</h3>}
         <Switch>
         <Route exact path = '/' render={() => 
-          <Question 
+          <QuestionBoard 
           questions={this.state.questions}
           />
         }/>
