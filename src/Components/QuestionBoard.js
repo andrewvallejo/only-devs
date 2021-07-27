@@ -2,9 +2,6 @@ import React from 'react';
 import QuestionCard from './QuestionCard';
 
 const QuestionBoard = ({questions}) => {
-    
-    console.log('QUESTIONS',questions)
-
     const questionCards = questions.map(questionObj => {
         return (
             <QuestionCard 
@@ -16,10 +13,7 @@ const QuestionBoard = ({questions}) => {
         )
     });
     
-    console.log("WHAT??", questionCards.props)
-   
     return (
-
         <section className='cardsContainer'>{questionCards.props}</section>
     )
 }
