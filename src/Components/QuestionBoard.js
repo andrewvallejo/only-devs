@@ -1,5 +1,5 @@
 import React from 'react';
-import QuestionCard from 'react';
+import QuestionCard from './QuestionCard';
 
 const QuestionBoard = ({questions}) => {
     
