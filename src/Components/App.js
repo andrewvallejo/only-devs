@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import QuestionBoard from './QuestionBoard';
+import Question from './Question'
 import { fetchQuestions } from '../Utilities/apiCalls';
 
 class App extends Component {
@@ -28,7 +29,7 @@ class App extends Component {
             {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
             {!this.state.questions.length && !this.state.error && <h3>Loading...</h3>}
             <Route exact path = '/' render={() => 
-              <QuestionBoard questions={this.state.questions} />
+              <Question questions={this.state.questions} />
             } />
             <Route exact path = '/all-questions' render={() => 
               <QuestionBoard questions={this.state.questions} /> 
