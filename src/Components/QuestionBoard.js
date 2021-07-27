@@ -1,8 +1,9 @@
 import React from 'react';
-import QuestionCard from './QuestionCard';
+import QuestionCard from './Card';
 
 const QuestionBoard = ({questions}) => {
-    const questionCards = questions.map(question => {
+
+    const questionCard = questions.map(question => {
         return (
             <QuestionCard 
                 id={question.id}
@@ -14,7 +15,7 @@ const QuestionBoard = ({questions}) => {
     });
     
     return (
-        <section className='cardsContainer'>{questionCards.props}</section>
+        <section className='cardsContainer'>{questionCard}</section>
     )
 }
 
