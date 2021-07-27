@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const QuestionCard = ({ question, id, answers }) => {
-
     return (
         <NavLink to={`/question-details-${id}`}>
             <article className='questionCard' id={id}>
