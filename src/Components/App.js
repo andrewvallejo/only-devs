@@ -47,7 +47,6 @@ class App extends Component {
                 id={questionID}
                 questions={this.state.questions}/>
             }} />
-            
           </Switch>
         </main>
       </>
