@@ -10,6 +10,13 @@ describe ('Prompt Question Page', () => {
         cy.visit('http://localhost:3000/')
     })
     
+    it('should be able to visit the app and display the site', () => {
+        cy.contains('OnlyDevs')
+        cy.contains('View All Questions')
+        cy.get('.question-form')
+        cy.contains('Submit Answer')
+    })
+
 
 
 
