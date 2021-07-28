@@ -5,10 +5,8 @@ const Question = ({ questions }) => {
     const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
     const { id, question, answers } = randomQuestion
     return (
-        <article className= 'questionBox'>
-            <div>
-                <h2>{question}</h2>
-            </div>
+        <article className='question-form'>
+                <h2 class="question">{id}.{question}</h2>
                 <Answer 
                 question={question}
                 id={id}
