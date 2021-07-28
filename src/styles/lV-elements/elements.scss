@@ -4,14 +4,45 @@ html {
 
 body {
   color: $color-light;
+  
 }
 
 header {
-  @include flex(column, space);
+  @include flex(row, between);
+  height: 20vh;
 }
 
 main {
-  @include mediaQueries(grid);}
+  @include flex(column, center);
+  padding: 0 1rem;
+  height: 80vh;
+}
+
+article {
+  @include opacity($color-secondary, -0.7);
+  @include flex(column, around);
+  text-align: center;
+  padding: 1rem 5rem;
+}
+
+form {
+  @include flex(column, space);
+}
+
+button {
+  @include flex(column, center);
+  transition: 1s;
+  border: $color-secondary 1.5px solid;
+  border-radius: 3px;
+  padding: 0.1rem 0.5rem;
+  color: $color-light;
+  &:hover {
+    @include opacity($color-secondary, -0.5);
+    transition: 100ms;
+    text-shadow: 0 0 1.5px $color-light;
+    border: $color-light 1.5px solid;
+  }
+}
 
 h1 {
   @include heading;
@@ -29,19 +60,3 @@ p {
   @include paragraph;
 }
 
-button {
-  @include flex(column, center);
-  @include button;
-  @include opacity($color-secondary, -0.7);
-  transition: 100ms;
-  border: $color-secondary 1.5px solid;
-  border-radius: 3px;
-  padding: 0.1rem 0.5rem;
-  color: $color-light;
-  &:hover {
-    @include opacity($color-secondary, -0.5);
-    transition: 100ms;
-    text-shadow: 0 0 1.5px $color-light;
-    border: $color-light 1.5px solid;
-  }
-}
