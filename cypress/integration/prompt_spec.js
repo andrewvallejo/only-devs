@@ -17,6 +17,13 @@ describe ('Prompt Question Page', () => {
         cy.contains('Submit Answer')
     })
 
+    it('should be able to navigate to all questions view', () => {
+        cy.get('.view-all-btn')
+        .click()
+        .url().should('include', '/all-questions')
+        cy.contains('Describe event bubbling.')
+    })
+
 
 
 
