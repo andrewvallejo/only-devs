@@ -23,7 +23,7 @@ class App extends Component {
   //fetchAnswers based on the id of the Card that is clicked  
   //
 
-  //submitAnswer() will be triggered when submit button is clicked... we need to take that question's id
+  //postAnswer() will be triggered when submit button is clicke... we need to take that question's id
   //and make a POST 
 
   render() {  
