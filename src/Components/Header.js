@@ -3,17 +3,17 @@ import { Route, NavLink } from 'react-router-dom'
 
 const Header = () => {
     return (
-            <header class="main-header">
-                <h1>OnlyDevs</h1>
-                <nav>
+            <header className="main-header">
+                <h1 className="main-title">OnlyDevs</h1>
+                <nav className="main-nav">
                 <Route exact path = '/' render={() => 
-                    <NavLink to='/all-questions' className='viewAll'>
-                        <button>View All Questions</button>
+                    <NavLink to='/all-questions'>
+                        <button className='view-all-btn'>View All Questions</button>
                     </NavLink> 
                 } />
                 <Route exact path = '/all-questions' render={() => 
-                    <NavLink to='/' className='randomQuestion'>
-                        <button>Answer a Question</button>
+                    <NavLink to='/'>
+                        <button className='random-btn'>Answer a Question</button>
                     </NavLink>
                 } />
              </nav>
