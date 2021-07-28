@@ -24,6 +24,9 @@ const QuestionDetails = ({id, questions, answers}) => {
     
     return (
         <section className='details-container'>
+            <NavLink to= '/all-questions'>
+                <button className='return-to-all'>X</button>
+            </NavLink>
             <div>
                 <h3>{displayedQuestion.question}</h3>
             </div>
