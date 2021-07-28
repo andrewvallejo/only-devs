@@ -1,0 +1,9 @@
+.main-header {
+  position: relative;
+  background: $color-secondary;
+  padding-bottom: .3rem;
+  width: 100%;
+  .view-all-btn, .random-btn {
+    @include button;
+  }
+}

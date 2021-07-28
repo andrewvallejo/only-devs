@@ -1,0 +1,15 @@
+.question-form {
+  min-width: 3rem;
+  border: pink 1px solid;
+}
+
+.question {
+  margin: 1rem;
+}
+
+.submitAnswer {
+  @include button;
+  padding: .5rem;
+  margin-top: 1rem;
+  margin-left: auto;
+}
