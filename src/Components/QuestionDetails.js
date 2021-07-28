@@ -6,8 +6,8 @@ const QuestionDetails = ({id, questions, answers}) => {
 
     const displayedQuestion = questions.find(question => question.id === id)
     
-    //we need to somehow pass in props JUST the answers for that question id... map through them to create a separate
-    //div for each one. then we can insert them in our return in line 25 (not the correct layout, but just giving you the general idea)
+    //we need to somehow pass in JUST the answers for that question id into props ... map through them to create a separate
+    //div for each one. then we can insert them in our return in line 25 (probably not the correct layout, but just giving you the general idea)
     const allAnswers = answers.map(answer => {
         return (
             <article className='answer'>
@@ -20,8 +20,6 @@ const QuestionDetails = ({id, questions, answers}) => {
         )     
     })
 
-    //this will be the actual larger details "box" being displayed... with inserted answers based on question.id
-    
     return (
         <section className='details-container'>
             <NavLink to= '/all-questions'>
