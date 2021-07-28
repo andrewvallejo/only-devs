@@ -24,6 +24,13 @@ describe ('Prompt Question Page', () => {
         cy.contains('Describe event bubbling.')
     })
 
+    it('Should be able to be able to navigate back and forward in browser', () => {
+        cy.visit('http://localhost:3000/all-questions')
+          .go('back')
+          .url().should('eq','http://localhost:3000/')
+          .go('forward')
+          .url().should('eq','http://localhost:3000/all-questions')
+      })
 
 
 
