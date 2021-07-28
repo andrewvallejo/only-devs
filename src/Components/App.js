@@ -20,6 +20,12 @@ class App extends Component {
       .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
   }
 
+  //fetchAnswers based on the id of the Card that is clicked  
+  //
+
+  //submitAnswer() will be triggered when submit button is clicked... we need to take that question's id
+  //and make a POST 
+
   render() {  
     return (
       <>
@@ -34,11 +40,14 @@ class App extends Component {
             <Route exact path = '/all-questions' render={() => 
               <QuestionBoard questions={this.state.questions} /> 
             } />
-            {/* For QuestionDetails, it would be the individual question and all of its answers right?
-            <Route exact path = '/all-questions/:id' render={() => 
-              <QuestionDetails questions={this.state.questions}/>
-            } />
-             */}
+            <Route exact path = '/all-questions/:id' render={({ match }) => {
+              const questionID = parseInt(match.params.id);
+              return <QuestionDetails 
+                key={questionID}
+                id={questionID}
+                questions={this.state.questions}/>
+            }} />
+            
           </Switch>
         </main>
       </>
