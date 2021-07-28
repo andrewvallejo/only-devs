@@ -1,11 +1,11 @@
 import React from 'react';
-import QuestionCard from './Card';
+import Card from './Card';
 
 const QuestionBoard = ({questions}) => {
 
     const questionCard = questions.map(question => {
         return (
-            <QuestionCard 
+            <Card 
                 id={question.id}
                 key={question.id}
                 question={question.question}
