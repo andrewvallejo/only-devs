@@ -6,7 +6,7 @@ const Question = ({ questions }) => {
     const { id, question, answers } = randomQuestion
     return (
         <article className='question-form'>
-                <h2 class="question">{id}.{question}</h2>
+                <h2 class="question">{question}</h2>
                 <Answer 
                 question={question}
                 id={id}
