@@ -15,7 +15,7 @@ const QuestionBoard = ({questions}) => {
     });
     
     return (
-        <section className='cardsContainer'>{questionCard}</section>
+        <section className='cards-container'>{questionCard}</section>
     )
 }
 
