@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import QuestionBoard from './QuestionBoard';
-import Question from './Question'
+import Question from './Question';
+import QuestionDetails from './QuestionDetails';
 import { fetchQuestions } from '../Utilities/apiCalls';
 
 class App extends Component {
