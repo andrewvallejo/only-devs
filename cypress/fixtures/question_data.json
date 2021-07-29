@@ -1,0 +1,45 @@
+{ 
+    "questions": [
+    {
+      "id": 1,
+      "question": "Explain what ARIA and screenreaders are, and how to make a website accessible."
+    }, 
+    {
+      "id": 2,
+      "question": "What is the virtual DOM in React?"
+      
+    }, 
+    {
+      "id": 3,
+      "question": "How are props different from state in React?"
+    }, 
+    {
+      "id": 4,
+      "question": "Explain 'hoisting'."
+    }, 
+    {
+      "id": 5,
+      "question": "Describe event bubbling."
+    }, 
+    {
+      "id": 6,
+      "question": "What are the differences between variables created using let, var or const?"
+    }, 
+    {
+      "id": 7,
+      "question": "What is the definition of a higher-order function?"
+    }, 
+    {
+      "id": 8,
+      "question": "Explain how prototypal inheritance works."
+    }, 
+    {
+      "id": 9,
+      "question": "What's the difference between a variable that is: null, undefined or undeclared?"
+    }, 
+    {
+      "id": 10,
+      "question": "What is a promise? Where and how would you use promise?"
+    }
+  ]
+}
