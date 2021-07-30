@@ -5,6 +5,7 @@ import { Question} from './Question';
 import { QuestionBoard } from './QuestionBoard';
 import { QuestionDetails } from './QuestionDetails';
 import { fetchQuestions } from '../Utilities/apiCalls';
+import { postAnswer } from '../Utilities/apiCalls';
 
 export default class App extends Component {
   constructor() {
@@ -29,6 +30,10 @@ export default class App extends Component {
   //postAnswer() will be triggered when submit button is clicke... we need to take that question's id
   //and make a POST 
 
+  postAnswer(newAnswer) {
+    postAnswer
+  }
+
   render() {  
     return (
       <>
@@ -38,7 +43,7 @@ export default class App extends Component {
             {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
             {!this.state.questions.length && !this.state.error && <h3>Loading...</h3>}
             <Route exact path = '/' render={() => 
-              <Question questions={this.state.questions} add={this.addAnswer} />
+              <Question questions={this.state.questions} add={this.postAnswer} />
             } />
             <Route exact path = '/all-questions' render={() => 
               <QuestionBoard 
