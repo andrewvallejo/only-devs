@@ -18,7 +18,7 @@ export const fetchAnswers = (id) => {
 })
 }
 
-export const postAnswer = (data) => {
+export const uploadAnswer = (data) => {
   return fetch('https://onlydevs-api.herokuapp.com/questions/answer' , 
   {
     method: 'POST',
