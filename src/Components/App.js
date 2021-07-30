@@ -21,7 +21,7 @@ export default class App extends Component {
       .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
   }
 
-  getAnswers(id)
+  // getAnswers(id)
 
   //fetchAnswers based on the id of the Card that is clicked  
   //
