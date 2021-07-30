@@ -2,7 +2,7 @@ import React from 'react';
 import Answer from './Answer';
 
 const Question = ({ questions }) => {
-
+    
     let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
     const { id, question, answers } = randomQuestion
 
