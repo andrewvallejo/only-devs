@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -9,7 +10,6 @@ export const Question = ({ questions, add }) => {
         console.log(randomQuestion)
         return randomQuestion
     }
-
     const submitAnswer = (event) => {
         event.preventDefault()
         const newAnswer = {
@@ -18,8 +18,6 @@ export const Question = ({ questions, add }) => {
         add(newAnswer);
         setAnswer('') 
        }
-
-
 
     return (
         <form className='question-form answerInput'>
@@ -41,5 +39,3 @@ export const Question = ({ questions, add }) => {
         </form>
     )
 }
-
-export default Question
