@@ -38,7 +38,7 @@ export default class App extends Component {
             {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
             {!this.state.questions.length && !this.state.error && <h3>Loading...</h3>}
             <Route exact path = '/' render={() => 
-              <Question questions={this.state.questions} />
+              <Question questions={this.state.questions} add={this.addAnswer} />
             } />
             <Route exact path = '/all-questions' render={() => 
               <QuestionBoard 
