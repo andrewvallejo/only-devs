@@ -1,31 +1,42 @@
-import React, { useEffect, useState } from 'react';
+import { render } from '@testing-library/react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { fetchAnswers } from '../Utilities/apiCalls';
 
 
-export const QuestionDetails = ({id, questions, answers}) => {
-    const displayedQuestion = questions.find(question => question.id === id)
-    console.log(id)
-    console.log(displayedQuestion)
-    
-    const [answers, setAnswers] = useState([])
-    const [error, setError] = useState('')
-
-    const getAnswers = async (id) => {
-        setError('')
-        try {
-          const response = await fetchAnswers(id)
-          const answers = await response.json()
-          setAnswers(answers)
-        } catch(error) {
-          setError(error.message)
+class QuestionDetails extends Component {
+    constructor (props) {
+        super(props) 
+        this.state = {
+            answers: [],
+            error: ''
         }
-      }
+    }
+
+    displayQuestion() {
+        const displayedQuestion = this.props.questions.find(question => question.id === this.props.id)
+        console.log(displayedQuestion)
+        return displayedQuestion.question
+    }
     
-      useEffect((id) => {
-        getAnswers(id)
-        console.log('ANSWERS', answers)
-      }, [])
+    // const [answers, setAnswers] = useState([])
+    // const [error, setError] = useState('')
+
+    // const getAnswers = async (id) => {
+    //     setError('')
+    //     try {
+    //       const response = await fetchAnswers(id)
+    //       const answers = await response.json()
+    //       setAnswers(answers)
+    //     } catch(error) {
+    //       setError(error.message)
+    //     }
+    //   }
+    
+    //   useEffect((id) => {
+    //     getAnswers(id)
+    //     console.log('ANSWERS', answers)
+    //   }, [])
 
     //   const fetchAnswers = (id) => {
     //     return fetch(`https://onlydevs-api.herokuapp.com/questions/${id}`)
@@ -38,30 +49,45 @@ export const QuestionDetails = ({id, questions, answers}) => {
     //   })
     //   }
 
-    //   fetchAnswers(id)
+     componentDidMount = () => {
+             fetchAnswers(this.props.id)
+             .then(data => this.setState({answers: data}))
+             .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
+         }
 
-    const allAnswers = answers.map(answer => {
+     
+
+    displayAllAnswers = () => {
+        const allAnswers = this.state.answers.map(answer => {
+            return (
+                <article className='answer' key={answer.id} id={answer.id}>
+                    <div className='time-rating'>
+                        <p>{answer.answer_time}</p>
+                        <button className='rating'>{answer.rating} likes</button>
+                    </div>
+                    <p>{answer.answer}</p>
+                </article>
+            )     
+        })
+        return allAnswers
+
+    }
+    render() {
+        console.log(this.state.answers)
         return (
-            <article className='answer'>
-                <div className='time-rating'>
-                    <p>{answer.time_stamp}</p>
-                    <button className='rating'>{answer.rating} likes</button>
+            <section className='details-container'>
+                <NavLink to= '/all-questions'>
+                    <button className='return-to-all'>X</button>
+                </NavLink>
+                <div>
+                    <h3>{this.displayQuestion()}</h3>
                 </div>
-                <p>{answer.answer}</p>
-            </article>
-        )     
-    })
-
-    return (
-        <section className='details-container'>
-            <NavLink to= '/all-questions'>
-                <button className='return-to-all'>X</button>
-            </NavLink>
-            <div>
-                <h3>{displayedQuestion.question}</h3>
-            </div>
-            <section className='all-answers'>{allAnswers}</section>
-        </section>
-    )
+                <section className='all-answers'>{this.displayAllAnswers()}</section>
+            </section>
+        )
+    }
 }
 
+
+
+export default QuestionDetails;
