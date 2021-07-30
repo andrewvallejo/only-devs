@@ -29,10 +29,10 @@ export class QuestionDetails extends Component {
             <section className='details-container'>
                 <header className ="question-header">
                     <NavLink to= '/all-questions'>
-                        <button className='return-to-all-btn'>X</button>
+                        <button className='return-btn'>X</button>
                     </NavLink>
+                <h2 classList="question">{this.displayQuestion()}</h2>
                 </header>
-                <h3>{this.displayQuestion()}</h3>
                 <div className="answers-container">
                      <Answers answers={this.state.answers}/>
                 </div>
