@@ -5,6 +5,8 @@ import { fetchAnswers } from '../Utilities/apiCalls';
 
 export const QuestionDetails = ({id, questions, answers}) => {
     const displayedQuestion = questions.find(question => question.id === id)
+    console.log(id)
+    console.log(displayedQuestion)
     
     const [answers, setAnswers] = useState([])
     const [error, setError] = useState('')
@@ -20,12 +22,24 @@ export const QuestionDetails = ({id, questions, answers}) => {
         }
       }
     
-      useEffect(() => {
-        getAnswers()
+      useEffect((id) => {
+        getAnswers(id)
+        console.log('ANSWERS', answers)
       }, [])
-    
-    //we need to somehow pass in JUST the answers for that question id into props ... map through them to create a separate
-    //div for each one. then we can insert them in our return in line 25 (probably not the correct layout, but just giving you the general idea)
+
+    //   const fetchAnswers = (id) => {
+    //     return fetch(`https://onlydevs-api.herokuapp.com/questions/${id}`)
+    //     .then(response => {
+    //       if(!response.ok) {
+    //           throw Error('Error fetching answer')
+    //       } 
+    //       console.log('inside of fetch answers', response.json())
+    //       return response.json()
+    //   })
+    //   }
+
+    //   fetchAnswers(id)
+
     const allAnswers = answers.map(answer => {
         return (
             <article className='answer'>
