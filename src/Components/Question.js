@@ -2,20 +2,31 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export const Question = ({ questions, add }) => {
-    const [id, question] = questions
+    const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+    const {id, question} = randomQuestion   
     const [answer, setAnswer] = useState('')
+    const shuffleQuestion = (randomQuestion) => {
+        console.log(randomQuestion)
+        return randomQuestion
+    }
+
     const submitAnswer = (event) => {
         event.preventDefault()
         const newAnswer = {
-            id: Date.now(),   
             answer    
         }
         add(newAnswer);
         setAnswer('') 
        }
 
+
+
     return (
-        <form className='question-form'>
+        <form className='question-form answerInput'>
+            <header className="question-header">
+                <h2>{question}</h2>
+                <button className='shuffle-btn' onClick={(event) => shuffleQuestion(event)}>Shuffle Icon Goes Here</button>
+            </header>
             <input 
                 id={question.id}
                 type='text'
@@ -30,3 +41,5 @@ export const Question = ({ questions, add }) => {
         </form>
     )
 }
+
+export default Question
