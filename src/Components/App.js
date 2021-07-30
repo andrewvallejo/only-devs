@@ -21,6 +21,7 @@ export default class App extends Component {
       .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
   }
 
+  getAnswers(id)
 
   //fetchAnswers based on the id of the Card that is clicked  
   //
@@ -40,7 +41,9 @@ export default class App extends Component {
               <Question questions={this.state.questions} />
             } />
             <Route exact path = '/all-questions' render={() => 
-              <QuestionBoard questions={this.state.questions} /> 
+              <QuestionBoard 
+                questions={this.state.questions}
+              /> 
             } />
             <Route exact path = '/all-questions/:id' render={({ match }) => {
               const questionID = parseInt(match.params.id);
