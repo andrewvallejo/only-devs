@@ -8,6 +8,14 @@ export const fetchQuestions = () => {
   })
 }
 
-// export const fetchAnswers = (id) => {
-  
-// }
+export const fetchAnswers = (id) => {
+  return fetch(`https://onlydevs-api.herokuapp.com/questions/${id}`)
+  .then(response => {
+    if(!response.ok) {
+        throw Error('Error fetching answers')
+    } 
+    return response.json()
+})
+}
+
+
