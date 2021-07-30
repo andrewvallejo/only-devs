@@ -3,13 +3,14 @@ import Card from './Card';
 
 const QuestionBoard = ({questions}) => {
 
+    console.log(questions)
     const questionCard = questions.map(question => {
         return (
             <Card 
                 id={question.id}
                 key={question.id}
                 question={question.question}
-                answers={question.answers}
+                // answers={question.answers}
             />
         )
     });
