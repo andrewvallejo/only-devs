@@ -1,10 +1,12 @@
 .question-card {
+    @include opacity($color-secondary, -0.7);
     height: 300px;
     width: 300px;
     padding: 1rem;
     border-radius: 1.5rem;
     border: 1px solid grey;
-
+    text-align: center;
+    padding: 1rem 5rem;
         &:hover {
             transform: scale(1.02);
             box-shadow: 0px 10px 13px 4px #888;
