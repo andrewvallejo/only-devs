@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { fetchAnswers } from '../Utilities/apiCalls';
 
 
-class QuestionDetails extends Component {
+export class QuestionDetails extends Component {
     constructor (props) {
         super(props) 
         this.state = {
@@ -90,4 +90,3 @@ class QuestionDetails extends Component {
 
 
 
-export default QuestionDetails;
