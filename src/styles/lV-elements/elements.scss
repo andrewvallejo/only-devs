@@ -18,10 +18,8 @@ main {
 }
 
 article {
-  @include opacity($color-secondary, -0.7);
   @include flex(column, around);
-  text-align: center;
-  padding: 1rem 5rem;
+
 }
 
 form {
