@@ -5,10 +5,8 @@ import React from 'react';
         const allAnswers = answers.map(answer => {
             return (
                 <article className='answer' key={answer.id} id={answer.id}>
-                    <div className='time-rating'>
-                        <p>{answer.answer_time}</p>
-                        <button className='rating'>{answer.rating} likes</button>
-                    </div>
+                    <p>{answer.answer_time}</p>
+                    <button className='rating'>{answer.rating} likes</button>
                     <p>{answer.answer}</p>
                 </article>
             )     
