@@ -23,6 +23,12 @@ export default class App extends Component {
       .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
   }
 
+  randomizeQuestion = () => {
+  const randomQuestion = this.state.questions[Math.floor(Math.random() * this.state.questions.length)];
+  // const {id, question} = randomQuestion  
+  this.setState({randomQuestion}); 
+  }
+
   // getAnswers(id)
 
   //fetchAnswers based on the id of the Card that is clicked  
@@ -46,8 +52,11 @@ export default class App extends Component {
           <Switch>
             {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
             {!this.state.questions.length && !this.state.error && <h3>Loading...</h3>}
-            <Route exact path = '/' render={() => 
-              <Question questions={this.state.questions} postAnswer={this.postAnswer} />
+            < Route exact path = '/' render={() => 
+              <Question 
+              randomQuestion={this.state.randomQuestion} 
+              postAnswer={this.postAnswer} 
+              />
             } />
             <Route exact path = '/all-questions' render={() => 
               <QuestionBoard 
