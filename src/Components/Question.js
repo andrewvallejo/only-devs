@@ -4,6 +4,14 @@ import { NavLink } from 'react-router-dom';
 export const Question = ({ id, question }) => {
     const [answer, setAnswer] = useState('')
 
+    const submitAnswer = (event) => {
+        event.preventDefault()
+        const newAnswer = {
+            id: Date.now(),
+                
+        }
+    }
+
     return (
         <form className='question-form'>
             <input 
