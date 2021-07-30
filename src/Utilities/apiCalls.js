@@ -1,9 +1,13 @@
 export const fetchQuestions = () => {
-    return fetch('http://localhost:3001/api/questions')
+    return fetch('https://onlydevs-api.herokuapp.com/questions')
     .then(response => {
       if (!response.ok) {
         throw Error()
       }
       return response.json()
     })
+}
+
+export const fetchAnswers = () => {
+  
 }
