@@ -15,7 +15,6 @@ export class QuestionDetails extends Component {
 
     displayQuestion() {
         const displayedQuestion = this.props.questions.find(question => question.id === this.props.id)
-        console.log(displayedQuestion)
         return displayedQuestion.question
     }
 
@@ -40,7 +39,6 @@ export class QuestionDetails extends Component {
         return allAnswers
     }
     render() {
-        console.log(this.state.answers)
         return (
             <section className='details-container'>
                 <NavLink to= '/all-questions'>
