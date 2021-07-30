@@ -18,4 +18,20 @@ export const fetchAnswers = (id) => {
 })
 }
 
+export const postAnswer = (data) => {
+  return fetch('https://onlydevs-api.herokuapp.com/questions/answer' , 
+  {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if(!response.ok) {
+        throw Error('Error posting answer')
+    } 
+    return response.json()
+  })
+  .catch(err => console.error(err));
+}
+
 

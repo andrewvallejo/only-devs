@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-export const Question = ({ questions, add }) => {
+export const Question = ({ questions, postAnswer }) => {
     const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
     const {id, question} = randomQuestion   
     const [answer, setAnswer] = useState('')
@@ -13,9 +13,10 @@ export const Question = ({ questions, add }) => {
     const submitAnswer = (event) => {
         event.preventDefault()
         const newAnswer = {
-            answer    
+            answer,
+                id
         }
-        add(newAnswer);
+        postAnswer(newAnswer);
         setAnswer('') 
        }
 
