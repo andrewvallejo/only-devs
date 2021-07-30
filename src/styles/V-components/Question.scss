@@ -18,3 +18,18 @@
   display: flex;
   place-self: flex-end;
 }
+
+.answerInput {
+  width: 100%;
+  > [type='text'] {
+    width: 100%;
+    min-height: 5rem;
+    height: 10rem;
+    background: beige;
+    text-align: center;
+  }
+}
+
+.question-header {
+  @include flex(row, center)
+}
