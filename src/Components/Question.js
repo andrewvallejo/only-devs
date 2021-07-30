@@ -34,7 +34,7 @@ export const Question = ({ questions, postAnswer }) => {
                 value={answer}
                 onChange={event => setAnswer(event.target.value)}
             />
-            <NavLink to={`/questions/${id}}`}>
+            <NavLink to={`/question-details/${id}`}>
                 <button onClick={event => submitAnswer(event)}>SUBMIT</button>
             </NavLink>
         </form>

@@ -32,8 +32,10 @@ export default class App extends Component {
   //and make a POST 
 
   postAnswer(newAnswer) {
-    uploadAnswer(newAnswer).
-
+    uploadAnswer(newAnswer)
+    .then(response => {
+      console.log(response)
+    });
   }
 
   render() {  
@@ -45,7 +47,7 @@ export default class App extends Component {
             {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
             {!this.state.questions.length && !this.state.error && <h3>Loading...</h3>}
             <Route exact path = '/' render={() => 
-              <Question questions={this.state.questions} add={this.postAnswer} />
+              <Question questions={this.state.questions} postAnswer={this.postAnswer} />
             } />
             <Route exact path = '/all-questions' render={() => 
               <QuestionBoard 
