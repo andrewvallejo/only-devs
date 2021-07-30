@@ -1,11 +1,5 @@
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    gap: 5px;
+    @include mediaQueries(grid);
     overflow-y: scroll;
-    width: 100vw;
-    place-items: center;
-    margin: 2.5em;
-    padding: 1rem;
+    gap: 1rem;
 }
