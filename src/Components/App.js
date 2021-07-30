@@ -18,8 +18,12 @@ export default class App extends Component {
   }
 
   componentDidMount = () => {
+
     fetchQuestions()
-      .then(data => this.setState({ questions: data }))
+      .then(data => {
+        this.setState({ questions: data })
+        this.randomizeQuestion();
+        })
       .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
   }
 
