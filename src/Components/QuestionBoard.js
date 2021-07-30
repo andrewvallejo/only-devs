@@ -1,7 +1,7 @@
 import React from 'react';
-import Card from './Card';
+import { Card } from './Card';
 
-const QuestionBoard = ({questions}) => {
+export const QuestionBoard = ({questions}) => {
 
     const questionCard = questions.map(question => {
         return (
@@ -19,5 +19,4 @@ const QuestionBoard = ({questions}) => {
     )
 }
 
-export default QuestionBoard;
 

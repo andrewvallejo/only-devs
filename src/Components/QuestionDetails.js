@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-const QuestionDetails = ({id, questions, answers}) => {
+export const QuestionDetails = ({id, questions, answers}) => {
 
     const displayedQuestion = questions.find(question => question.id === id)
     
@@ -31,12 +31,5 @@ const QuestionDetails = ({id, questions, answers}) => {
             <section className='all-answers'>{allAnswers}</section>
         </section>
     )
-
-
-
-
-
-
 }
 
-export default QuestionDetails;

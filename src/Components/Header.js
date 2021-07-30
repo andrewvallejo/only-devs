@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, NavLink } from 'react-router-dom'
 
-const Header = () => {
+export const Header = () => {
     return (
             <header className="main-header">
                 <h1 className="main-title">OnlyDevs</h1>
@@ -22,4 +22,3 @@ const Header = () => {
     )
 }
 
-export default Header;
