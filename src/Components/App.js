@@ -17,9 +17,10 @@ export default class App extends Component {
 
   componentDidMount = () => {
     fetchQuestions()
-      .then(data => this.setState({ questions: data.questions }))
+      .then(data => this.setState({ questions: data }))
       .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
   }
+
 
   //fetchAnswers based on the id of the Card that is clicked  
   //
