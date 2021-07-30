@@ -3,6 +3,7 @@
   background: $color-secondary;
   padding-bottom: .3rem;
   width: 100%;
+  height: 20vh;
   .view-all-btn, .random-btn {
     @include button;
   }
