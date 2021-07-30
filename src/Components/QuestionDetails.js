@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { Answers } from './Answers';
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { fetchAnswers } from '../Utilities/apiCalls';
@@ -13,7 +13,7 @@ export class QuestionDetails extends Component {
         }
     }
 
-    displayQuestion() {
+    displayQuestion = () => {
         const displayedQuestion = this.props.questions.find(question => question.id === this.props.id)
         return displayedQuestion.question
     }
@@ -24,30 +24,16 @@ export class QuestionDetails extends Component {
              .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
          }
 
-    displayAllAnswers = () => {
-        const allAnswers = this.state.answers.map(answer => {
-            return (
-                <article className='answer' key={answer.id} id={answer.id}>
-                    <div className='time-rating'>
-                        <p>{answer.answer_time}</p>
-                        <button className='rating'>{answer.rating} likes</button>
-                    </div>
-                    <p>{answer.answer}</p>
-                </article>
-            )     
-        })
-        return allAnswers
-    }
     render() {
         return (
             <section className='details-container'>
+                <header>
                 <NavLink to= '/all-questions'>
-                    <button className='return-to-all'>X</button>
+                    <button className='return-to-all-btn'>X</button>
                 </NavLink>
-                <div>
-                    <h3>{this.displayQuestion()}</h3>
-                </div>
-                <section className='all-answers'>{this.displayAllAnswers()}</section>
+                <h3>{this.displayQuestion()}</h3>
+                </header>
+                <Answers answers={this.state.answers}/>
             </section>
         )
     }
