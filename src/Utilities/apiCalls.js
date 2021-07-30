@@ -19,18 +19,13 @@ export const fetchAnswers = (id) => {
 }
 
 export const uploadAnswer = (data) => {
-  return fetch('https://onlydevs-api.herokuapp.com/questions/answer' , 
-  {
+  console.log("THIS IS JSONIFIED DATA", JSON.stringify(data));
+  return fetch('https://onlydevs-api.herokuapp.com/questions/answer', {
     method: 'POST',
-    headers: {'Content-Type': 'application/json'},
+    headers: {'content-type': 'application/json'},
     body: JSON.stringify(data)
   })
-  .then(response => {
-    if(!response.ok) {
-        throw Error('Error posting answer')
-    } 
-    return response.json()
-  })
+  .then(response => response.json())
   .catch(err => console.error(err));
 }
 

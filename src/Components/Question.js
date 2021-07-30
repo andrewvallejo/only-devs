@@ -12,9 +12,10 @@ export const Question = ({ randomQuestion, postAnswer }) => {
     const submitAnswer = (event) => {
         event.preventDefault()
         const newAnswer = {
-            answer,
-                id: randomQuestion.id
+                question_id: randomQuestion.id,
+            answer: answer
         }
+        console.log(newAnswer, "THIS IS THE NEW ANSWER");
         postAnswer(newAnswer);
         setAnswer('') 
        }
@@ -33,9 +34,12 @@ export const Question = ({ randomQuestion, postAnswer }) => {
                 value={answer}
                 onChange={event => setAnswer(event.target.value)}
             />
-            <NavLink to={`/question-details/${randomQuestion.id}`}>
-                <button onClick={event => submitAnswer(event)}>SUBMIT</button>
-            </NavLink>
+                <NavLink to={`/question-details/:${randomQuestion.id}`}>
+                <button onClick={(event) => submitAnswer(event)}> SUBMIT </button>
+                </NavLink>
         </form>
     )
 }
+
+{/* <NavLink to={`/question-details/:${randomQuestion.id}`}> */}
+// 
