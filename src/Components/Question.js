@@ -13,7 +13,7 @@ export const Question = ({ randomQuestion, postAnswer }) => {
         event.preventDefault()
         const newAnswer = {
             answer,
-                id
+                id: randomQuestion.id
         }
         postAnswer(newAnswer);
         setAnswer('') 
@@ -23,7 +23,7 @@ export const Question = ({ randomQuestion, postAnswer }) => {
         <form className='question-form answerInput'>
             <header className="question-header">
                 <h2>{randomQuestion.question}</h2>
-                <button className='shuffle-btn' onClick={(event) => shuffleQuestion(event)}>Shuffle Icon Goes Here</button>
+                <button className='shuffle-btn'> Shuffle Icon Goes Here</button>
             </header>
             <input 
                 id={randomQuestion.id}
