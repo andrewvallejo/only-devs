@@ -5,12 +5,13 @@ import { Question} from './Question';
 import { QuestionBoard } from './QuestionBoard';
 import { QuestionDetails } from './QuestionDetails';
 import { fetchQuestions } from '../Utilities/apiCalls';
-import { postAnswer } from '../Utilities/apiCalls';
+import { uploadAnswer } from '../Utilities/apiCalls';
 
 export default class App extends Component {
   constructor() {
     super()
     this.state = {
+      randomQuestion: {},
       questions: [],
       error: ''
     }
@@ -31,7 +32,8 @@ export default class App extends Component {
   //and make a POST 
 
   postAnswer(newAnswer) {
-    postAnswer
+    uploadAnswer(newAnswer).
+
   }
 
   render() {  
