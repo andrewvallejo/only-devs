@@ -1,13 +1,10 @@
 
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Question = ({ randomQuestion, postAnswer }) => {
     const [answer, setAnswer] = useState('')
-    // const shuffleQuestion = (randomQuestion) => {
-    //     console.log(randomQuestion)
-    //     return randomQuestion
-    // }
+
 
     const submitAnswer = (event) => {
         event.preventDefault()
@@ -19,6 +16,8 @@ export const Question = ({ randomQuestion, postAnswer }) => {
         postAnswer(newAnswer);
         setAnswer('') 
        }
+
+    const route = `/question-details/${randomQuestion.id}`;
 
     return (
         <form className='question-form answerInput'>
@@ -34,12 +33,10 @@ export const Question = ({ randomQuestion, postAnswer }) => {
                 value={answer}
                 onChange={event => setAnswer(event.target.value)}
             />
-                <NavLink to={`/question-details/:${randomQuestion.id}`}>
                 <button onClick={(event) => submitAnswer(event)}> SUBMIT </button>
-                </NavLink>
+                <Link to={route}>
+                    <button> GO TO ANSWERS </button>
+                 </Link>
         </form>
     )
 }
-
-{/* <NavLink to={`/question-details/:${randomQuestion.id}`}> */}
-// 
