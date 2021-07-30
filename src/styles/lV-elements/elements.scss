@@ -20,7 +20,7 @@ main {
 article {
   @include flex(column, around);
   @include opacity($color-secondary, -0.7);
-
+  border-radius: 10px;
 }
 
 form {
