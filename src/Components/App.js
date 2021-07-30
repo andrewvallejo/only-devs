@@ -18,7 +18,6 @@ export default class App extends Component {
   }
 
   componentDidMount = () => {
-
     fetchQuestions()
       .then(data => {
         this.setState({ questions: data })
@@ -28,8 +27,7 @@ export default class App extends Component {
   }
 
   randomizeQuestion = () => {
-  const randomQuestion = this.state.questions[Math.floor(Math.random() * this.state.questions.length)];
-  // const {id, question} = randomQuestion  
+  const randomQuestion = this.state.questions[Math.floor(Math.random() * this.state.questions.length)];  
   this.setState({randomQuestion}); 
   }
 
