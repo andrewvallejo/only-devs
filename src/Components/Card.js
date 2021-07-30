@@ -7,7 +7,7 @@ export const Card = ({ question, id }) => {
             <article className='question-card' id={id}>
                 <h3>{question}</h3>
                 {/* <p>{answers.length} of Answers</p> */}
-                <button>View Details</button>
+                <button class="view-details-btn">View Details</button>
             </article>
         </NavLink>
     )
