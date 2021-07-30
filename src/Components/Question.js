@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 export const Question = ({ randomQuestion, postAnswer }) => {
     const [answer, setAnswer] = useState('')
 
-
     const submitAnswer = (event) => {
         event.preventDefault()
         const newAnswer = {
@@ -33,10 +32,10 @@ export const Question = ({ randomQuestion, postAnswer }) => {
                 value={answer}
                 onChange={event => setAnswer(event.target.value)}
             />
-                <button onClick={(event) => submitAnswer(event)}> SUBMIT </button>
-                <Link to={route}>
-                    <button> GO TO ANSWERS </button>
-                 </Link>
+            <button onClick={(event) => submitAnswer(event)}> SUBMIT </button>
+            <Link to={route}>
+                <button> GO TO ANSWERS </button>
+            </Link>
         </form>
     )
 }
