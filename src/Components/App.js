@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Header from './Header';
-import QuestionBoard from './QuestionBoard';
-import Question from './Question';
-import QuestionDetails from './QuestionDetails';
+import { Header } from './Header';
+import { Question} from './Question';
+import { QuestionBoard } from './QuestionBoard';
+import { QuestionDetails } from './QuestionDetails';
 import { fetchQuestions } from '../Utilities/apiCalls';
 
-class App extends Component {
+export default class App extends Component {
   constructor() {
     super()
     this.state = {
@@ -54,5 +54,3 @@ class App extends Component {
     )
   }
 }
-
-export default App;
