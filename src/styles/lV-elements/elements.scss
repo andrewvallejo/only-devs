@@ -9,7 +9,6 @@ body {
 
 header {
   @include flex(row, between);
-  height: 20vh;
 }
 
 main {
