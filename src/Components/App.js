@@ -45,7 +45,7 @@ class App extends Component {
                 questions={this.state.questions}
               /> 
             } />
-            <Route exact path = '/all-questions/:id' render={({ match }) => {
+            <Route exact path = '/question-details/:id' render={({ match }) => {
               const questionID = parseInt(match.params.id);
               return <QuestionDetails 
                 key={questionID}
