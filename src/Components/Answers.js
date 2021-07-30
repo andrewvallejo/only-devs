@@ -1,8 +1,7 @@
 import React from 'react';
-
   
  export const Answers = ({answers}) => {
-        const allAnswers = answers.map(answer => {
+        return answers.map(answer => {
             return (
                 <article className='answer' key={answer.id} id={answer.id}>
                     <p>{answer.answer_time}</p>
@@ -11,6 +10,5 @@ import React from 'react';
                 </article>
             )     
         })
-        return allAnswers
     }
 
