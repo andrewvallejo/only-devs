@@ -27,13 +27,15 @@ export class QuestionDetails extends Component {
     render() {
         return (
             <section className='details-container'>
-                <header>
-                <NavLink to= '/all-questions'>
-                    <button className='return-to-all-btn'>X</button>
-                </NavLink>
-                <h3>{this.displayQuestion()}</h3>
+                <header className ="question-header">
+                    <NavLink to= '/all-questions'>
+                        <button className='return-to-all-btn'>X</button>
+                    </NavLink>
                 </header>
-                <Answers answers={this.state.answers}/>
+                <h3>{this.displayQuestion()}</h3>
+                <div className="answers-container">
+                     <Answers answers={this.state.answers}/>
+                </div>
             </section>
         )
     }
