@@ -5,5 +5,11 @@
     padding: 0 5rem;
     overflow-y: scroll;
     gap: 1rem;
-    
+}
+
+.search-bar {
+    width: 20%;
+    padding: .3rem;
+    margin-top: 1.5rem;
+    place-self: flex-end;
 }
