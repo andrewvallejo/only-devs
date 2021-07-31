@@ -20,9 +20,9 @@ export const Question = ({ randomQuestion, postAnswer }) => {
 
     return (
         <form className='question-form answerInput'>
+                <button className='shuffle-btn'> Shuffle Icon Goes Here</button>
             <header className="question-header">
                 <h2>{randomQuestion.question}</h2>
-                <button className='shuffle-btn'> Shuffle Icon Goes Here</button>
             </header>
             <input 
                 id={randomQuestion.id}
