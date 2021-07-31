@@ -19,7 +19,6 @@ export const QuestionBoard = ({questions}) => {
                 id={question.id}
                 key={question.id}
                 question={question.question}
-                // answers={question.answers}
             />
         )
     });
@@ -29,11 +28,11 @@ export const QuestionBoard = ({questions}) => {
         <section className='cards-container'>
         <input 
             type="text" 
-            placeholder="Search..." 
+            placeholder="Search By Keyword..." 
             onChange={(event) => {
                 setSearchTerm(event.target.value);
                 }} />
-        {questionCard}
+        {questionCard.length ? questionCard : <h2> There are no questions that match your search.</h2>} 
         </section>
     )
 }
