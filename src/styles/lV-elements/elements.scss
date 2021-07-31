@@ -5,6 +5,7 @@ html {
 body {
   color: $color-light;
   
+  
 }
 
 header {
@@ -17,9 +18,9 @@ main {
   height: 80vh;
 }
 
+
 article {
   @include flex(column, around);
-  @include opacity($color-secondary, -0.7);
   border-radius: 10px;
 }
 
@@ -29,14 +30,14 @@ form {
 
 button {
   @include flex(column, center);
-  transition: 1s;
+  transition: 500ms;
   border: $color-secondary 1.5px solid;
   border-radius: 3px;
   padding: 0.1rem 0.5rem;
   color: $color-light;
   &:hover {
     @include opacity($color-secondary, -0.5);
-    transition: 100ms;
+    transition: 500ms;
     text-shadow: 0 0 1.5px $color-light;
     border: $color-light 1.5px solid;
   }
@@ -58,3 +59,6 @@ p {
   @include paragraph;
 }
 
+a {
+  color: $color-light;
+}
