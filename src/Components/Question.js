@@ -26,7 +26,7 @@ export const Question = ({ randomQuestion, postAnswer }) => {
         <form className='question-form answerInput'>
                 <button className='shuffle-btn'>
                 <FontAwesomeIcon className='shuffle-icon' icon={faRandom} /> 
-                Shuffle Icon Goes Here</button>
+                </button>
             <header className="question-header">
                 <h2>{randomQuestion.question}</h2>
             </header>
