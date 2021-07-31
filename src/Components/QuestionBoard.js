@@ -1,22 +1,39 @@
 import React from 'react';
 import { Card } from './Card';
+import {useState} from 'react';
 
 export const QuestionBoard = ({questions}) => {
+    const [searchTerm, setSearchTerm] = useState('');
+
 
     console.log(questions)
-    const questionCard = questions.map(question => {
+    const questionCard = questions.filter((question) => {
+        if(searchTerm == "") {
+            return question;
+        } else if (question.question.toLowerCase().includes(searchTerm.toLowerCase())) {
+            return question;
+        }
+    }).map(question => {
         return (
             <Card 
                 id={question.id}
                 key={question.id}
                 question={question.question}
-                // answers={question.answers}
             />
         )
     });
     
     return (
-        <section className='cards-container'>{questionCard}</section>
+
+        <section className='cards-container'>
+        <input 
+            type="text" 
+            placeholder="Search By Keyword..." 
+            onChange={(event) => {
+                setSearchTerm(event.target.value);
+                }} />
+        {questionCard.length ? questionCard : <h2> There are no questions that match your search.</h2>} 
+        </section>
     )
 }
 

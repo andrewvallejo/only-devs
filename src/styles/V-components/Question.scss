@@ -1,6 +1,5 @@
 .question-form {
   min-width: 3rem;
-  border: pink 1px solid;
 }
 
 .question {
@@ -14,13 +13,8 @@
   margin-left: auto;
 }
 
-.shuffle {
-  display: flex;
-  place-self: flex-end;
-}
-
 .answerInput {
-  width: 100%;
+  width: 80%;
   > [type='text'] {
     width: 100%;
     min-height: 5rem;
@@ -32,4 +26,23 @@
 
 .question-header {
   @include flex(row, center)
+}
+
+.shuffle-btn {
+  width: 60px;
+  height: 35px;
+  display: flex;
+  place-self: flex-end;
+
+  .shuffle-icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
+.submit-btn {
+  width: 70px;
+  height: 30px;
+  place-self: flex-end;
+  margin: 10px 0px 10px 0px;
 }

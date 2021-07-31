@@ -4,13 +4,13 @@
   padding: 0;
 }
 
-a {
+a, nav_link, Link {
   text-decoration: none;
+  &:focus, &:hover, &:visited, &:link, &:active {
+    text-decoration: none;
+  }
 }
 
-Link {
-  text-decoration: none;
-}
 
 body {
   width: 100vw;

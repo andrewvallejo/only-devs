@@ -1,6 +1,10 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRandom } from '@fortawesome/free-solid-svg-icons'
+
+
 
 export const Question = ({ randomQuestion, postAnswer }) => {
     const [answer, setAnswer] = useState('')
@@ -20,9 +24,11 @@ export const Question = ({ randomQuestion, postAnswer }) => {
 
     return (
         <form className='question-form answerInput'>
+                <button className='shuffle-btn'>
+                <FontAwesomeIcon className='shuffle-icon' icon={faRandom} /> 
+                </button>
             <header className="question-header">
                 <h2>{randomQuestion.question}</h2>
-                <button className='shuffle-btn'> Shuffle Icon Goes Here</button>
             </header>
             <input 
                 id={randomQuestion.id}
@@ -32,9 +38,9 @@ export const Question = ({ randomQuestion, postAnswer }) => {
                 value={answer}
                 onChange={event => setAnswer(event.target.value)}
             />
-            <button onClick={(event) => submitAnswer(event)}> SUBMIT </button>
+            <button className='submit-btn' onClick={(event) => submitAnswer(event)}> SUBMIT </button>
             <Link to={route}>
-                <button> GO TO ANSWERS </button>
+            <button className='go-to-answers'> GO TO ANSWERS </button>
             </Link>
         </form>
     )

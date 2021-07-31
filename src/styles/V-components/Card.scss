@@ -1,27 +1,24 @@
 .question-card {
-    height: 300px;
-    width: 300px;
-    padding: 1rem;
-    border-radius: 1.5rem;
-    border: 1px solid grey;
-
-        &:hover {
-            transform: scale(1.02);
-            box-shadow: 0px 10px 13px 4px #888;
-            border: none;
-        }
+    height: 20rem;
+    width: 20rem;
+    @include opacity($color-secondary, -0.5);
+    box-shadow: 3px 3px 10px  $color-secondary;
+    border-radius: 10px;
+    padding: .5rem;
+    text-align: center;
+    margin: 1rem;
+    transition: 300ms;
+    &:hover {
+        transition: 300ms;
+        transform: scale(1.02);
+        box-shadow: 3px 3px 10px  $color-secondary;
+    }
 }
 
 
-h3 {
-    color: black;
-}
 
-p {
-    color: black;
-}
 
-button {
-    width: 130px;
-    height: 30px;
+
+.view-details-btn {
+   padding: .3rem 1rem;
 }
