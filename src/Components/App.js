@@ -5,11 +5,13 @@ import { Question} from './Question';
 import { QuestionBoard } from './QuestionBoard';
 import { QuestionDetails } from './QuestionDetails';
 import { fetchQuestions } from '../Utilities/apiCalls';
+import { uploadAnswer } from '../Utilities/apiCalls';
 
 export default class App extends Component {
   constructor() {
     super()
     this.state = {
+      randomQuestion: {},
       questions: [],
       error: ''
     }
@@ -17,8 +19,16 @@ export default class App extends Component {
 
   componentDidMount = () => {
     fetchQuestions()
-      .then(data => this.setState({ questions: data }))
+      .then(data => {
+        this.setState({ questions: data })
+        this.randomizeQuestion();
+        })
       .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
+  }
+
+  randomizeQuestion = () => {
+  const randomQuestion = this.state.questions[Math.floor(Math.random() * this.state.questions.length)];  
+  this.setState({randomQuestion}); 
   }
 
   // getAnswers(id)
@@ -29,6 +39,13 @@ export default class App extends Component {
   //postAnswer() will be triggered when submit button is clicke... we need to take that question's id
   //and make a POST 
 
+  postAnswer(newAnswer) {
+    uploadAnswer(newAnswer)
+    .then(response => {
+      console.log(response)
+    });
+  }
+
   render() {  
     return (
       <>
@@ -37,8 +54,11 @@ export default class App extends Component {
           <Switch>
             {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
             {!this.state.questions.length && !this.state.error && <h3>Loading...</h3>}
-            <Route exact path = '/' render={() => 
-              <Question questions={this.state.questions} add={this.addAnswer} />
+            < Route exact path = '/' render={() => 
+              <Question 
+              randomQuestion={this.state.randomQuestion} 
+              postAnswer={this.postAnswer} 
+              />
             } />
             <Route exact path = '/all-questions' render={() => 
               <QuestionBoard 

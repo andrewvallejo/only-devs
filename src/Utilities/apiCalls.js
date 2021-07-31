@@ -18,4 +18,15 @@ export const fetchAnswers = (id) => {
 })
 }
 
+export const uploadAnswer = (data) => {
+  console.log("THIS IS JSONIFIED DATA", JSON.stringify(data));
+  return fetch('https://onlydevs-api.herokuapp.com/questions/answer', {
+    method: 'POST',
+    headers: {'content-type': 'application/json'},
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .catch(err => console.error(err));
+}
+
 

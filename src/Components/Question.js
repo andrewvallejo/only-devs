@@ -1,41 +1,41 @@
 
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export const Question = ({ questions, add }) => {
-    const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-    const {id, question} = randomQuestion   
+export const Question = ({ randomQuestion, postAnswer }) => {
     const [answer, setAnswer] = useState('')
-    const shuffleQuestion = (randomQuestion) => {
-        console.log(randomQuestion)
-        return randomQuestion
-    }
+
     const submitAnswer = (event) => {
         event.preventDefault()
         const newAnswer = {
-            answer    
+                question_id: randomQuestion.id,
+            answer: answer
         }
-        add(newAnswer);
+        console.log(newAnswer, "THIS IS THE NEW ANSWER");
+        postAnswer(newAnswer);
         setAnswer('') 
        }
+
+    const route = `/question-details/${randomQuestion.id}`;
 
     return (
         <form className='question-form answerInput'>
             <header className="question-header">
-                <h2>{question}</h2>
-                <button className='shuffle-btn' onClick={(event) => shuffleQuestion(event)}>Shuffle Icon Goes Here</button>
+                <h2>{randomQuestion.question}</h2>
+                <button className='shuffle-btn'> Shuffle Icon Goes Here</button>
             </header>
             <input 
-                id={question.id}
+                id={randomQuestion.id}
                 type='text'
                 name='answer'
                 placeholder='Write your answer here.'
                 value={answer}
                 onChange={event => setAnswer(event.target.value)}
             />
-            <NavLink to={`/questions/${id}}`}>
-                <button onClick={event => submitAnswer(event)}>SUBMIT</button>
-            </NavLink>
+            <button onClick={(event) => submitAnswer(event)}> SUBMIT </button>
+            <Link to={route}>
+                <button> GO TO ANSWERS </button>
+            </Link>
         </form>
     )
 }
