@@ -1,14 +1,22 @@
 .details-container {
   @include opacity($color-secondary, -0.7);
-  padding: 2rem;
-  height: 100%;
   overflow: hidden;
+  height: 100%;
   .question-header {
-    @include flex(row, around);
-    padding-bottom: 1rem;
+    @include flex(row, between);
+    border: 1px pink solid;
+    padding: 1rem;
+    .question {
+      @include subheading;
+    }
   }
   .answers-container {
     overflow-y: scroll;
     height: 100%;
+  }
+  .return-btn {
+    @include subheading;
+    padding: .5rem .5rem;
+    // width: 2rem;
   }
 }
