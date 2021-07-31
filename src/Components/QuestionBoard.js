@@ -24,16 +24,17 @@ export const QuestionBoard = ({questions}) => {
     });
     
     return (
-
-        <section className='cards-container'>
-        <input 
+        <>
+        <input className='search-bar'
             type="text" 
             placeholder="Search By Keyword..." 
             onChange={(event) => {
                 setSearchTerm(event.target.value);
                 }} />
+        <section className='cards-container'>
         {questionCard.length ? questionCard : <h2> There are no questions that match your search.</h2>} 
         </section>
+        </>
     )
 }
 
