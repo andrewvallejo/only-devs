@@ -1,5 +1,10 @@
 .question-form {
   min-width: 3rem;
+
+   a {
+     place-self: flex-end;
+    // margin-bottom: 1rem;
+   }
 }
 
 .question {
