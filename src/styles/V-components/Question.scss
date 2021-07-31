@@ -13,11 +13,6 @@
   margin-left: auto;
 }
 
-.shuffle {
-  display: flex;
-  place-self: flex-end;
-}
-
 .answerInput {
   width: 100%;
   > [type='text'] {
@@ -31,4 +26,11 @@
 
 .question-header {
   @include flex(row, center)
+}
+
+.shuffle-btn {
+  width: 100px;
+  height: 35px;
+  display: flex;
+  place-self: flex-end;
 }
