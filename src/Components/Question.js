@@ -34,7 +34,7 @@ export const Question = ({ randomQuestion, postAnswer }) => {
             />
             <button className='submit-btn' onClick={(event) => submitAnswer(event)}> SUBMIT </button>
             <Link to={route}>
-                <button> GO TO ANSWERS </button>
+            <button className='go-to-answers'> GO TO ANSWERS </button>
             </Link>
         </form>
     )
