@@ -29,10 +29,15 @@
 }
 
 .shuffle-btn {
-  width: 100px;
+  width: 60px;
   height: 35px;
   display: flex;
   place-self: flex-end;
+
+  .shuffle-icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
 }
 
 .submit-btn {
