@@ -40,7 +40,7 @@
     gap: 2rem 2rem;
   } @else if $viewport==desktop{
     grid-template-columns: repeat(3, 1fr);
-    gap: 4rem 4rem;
+    gap: 1rem 4rem;
   }
 }
 
@@ -104,5 +104,5 @@
 @mixin scaling($value, $property) {
   @if $property==font {
   font-size: clamp($value);
-  }
+  } 
 }
