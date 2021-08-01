@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from './Card';
 import {useState} from 'react';
+import PropTypes from 'prop-types';
 
 export const QuestionBoard = ({questions}) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -36,5 +37,10 @@ export const QuestionBoard = ({questions}) => {
         </>
     )
 }
+
+QuestionBoard.propTypes = {
+    questions: PropTypes.array,
+    searchTerm: PropTypes.string,
+  }
 
 
