@@ -30,7 +30,7 @@ export class QuestionDetails extends Component {
         return (
             <section className='details-container'>
                 <header className ="question-header">
-                    <NavLink to= '/all-questions'>
+                    <NavLink to= '/'>
                         <button className='return-btn'>
                         <FontAwesomeIcon className='arrow-icon' icon={faAngleDoubleLeft} /> 
                         </button>
