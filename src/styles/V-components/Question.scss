@@ -1,5 +1,6 @@
 .question-form {
   min-width: 3rem;
+  width: 70%;
 
    a {
      place-self: flex-end;
@@ -18,15 +19,11 @@
   margin-left: auto;
 }
 
-.answerInput {
-  width: 80%;
-  > [type='text'] {
-    width: 100%;
+.answer-input {
+    width: 80%;
     min-height: 5rem;
     height: 10rem;
-    background: beige;
     text-align: center;
-  }
 }
 
 .question-header {
