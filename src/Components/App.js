@@ -23,7 +23,7 @@ export default class App extends Component {
         this.setState({ questions: data })
         this.randomizeQuestion();
         })
-      .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
+      .catch(error => this.setState({error: 'Oops server is down! Please try again later.'}))
   }
 
   randomizeQuestion = () => {
