@@ -76,7 +76,7 @@ export default class App extends Component {
                 key={questionID}
                 id={questionID}
                 questions={this.state.questions}
-                vote={this.rateAnswer}
+                rateAnswer={this.rateAnswer}
                 />
             }} />
           </Switch>
