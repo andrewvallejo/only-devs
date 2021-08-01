@@ -13,7 +13,8 @@ export default class App extends Component {
     this.state = {
       randomQuestion: {},
       questions: [],
-      error: ''
+      error: '',
+      postError: '',
     }
   }
 
@@ -21,7 +22,7 @@ export default class App extends Component {
     fetchQuestions()
       .then(data => {
         this.setState({ questions: data })
-        this.randomizeQuestion();
+        this.randomizeQuestion()
         })
       .catch(error => this.setState({error: 'Oops server is down! Please try again later.'}))
   }
@@ -34,8 +35,14 @@ export default class App extends Component {
   postAnswer(newAnswer) {
     uploadAnswer(newAnswer)
     .then(response => {
-      console.log(response)
-    });
+      //currently response is nothing
+      if(!response.ok) {
+        throw Error('Error fetching answers')
+      } 
+      //console.log(response.json(), 'THIS IS THE RESPONSE.JSON')
+      return response.json()
+    })
+    .catch(error => this.setState({postError: 'Oops  our server is down! Your wasn\'t posted. Please try again later.'}));
   }
 
   rateAnswer(answer) {
