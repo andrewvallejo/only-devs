@@ -46,14 +46,22 @@
 }
 
 .submit-btn {
+  opacity: 1;
   width: 70px;
   height: 30px;
   place-self: flex-end;
   margin: 10px 0px 10px 0px;
-  &:disabled {
-    &:hover {
-      cursor: not-allowed;
-      background: red;
-    }
+  transition: 1s;
+  &:hover {
+    background: green;
   }
+  &:disabled {
+    cursor: auto;
+    opacity: 0;
+  }
+}
+
+.gold-btn {
+  background: gold;
+  transform: scale(1.1);
 }
