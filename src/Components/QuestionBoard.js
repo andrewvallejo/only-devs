@@ -8,7 +8,7 @@ export const QuestionBoard = ({questions}) => {
 
     console.log(questions)
     const questionCard = questions.filter((question) => {
-        if(searchTerm == "") {
+        if(searchTerm === "") {
             return question;
         } else if (question.question.toLowerCase().includes(searchTerm.toLowerCase())) {
             return question;
