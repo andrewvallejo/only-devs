@@ -8,6 +8,7 @@ import { faRandom } from '@fortawesome/free-solid-svg-icons'
 
 export const Question = ({ randomQuestion, postAnswer }) => {
     const [answer, setAnswer] = useState('')
+    const [isDisabled, setDisabled] = useState(true);
 
     const submitAnswer = (event) => {
         event.preventDefault()
@@ -15,12 +16,14 @@ export const Question = ({ randomQuestion, postAnswer }) => {
                 question_id: randomQuestion.id,
             answer: answer
         }
-        console.log(newAnswer, "THIS IS THE NEW ANSWER");
+        //console.log(newAnswer, "THIS IS THE NEW ANSWER");
         postAnswer(newAnswer);
-        setAnswer('') 
+        setAnswer('')
+        setDisabled(true); 
        }
 
     const route = `/question-details/${randomQuestion.id}`;
+    //let isEnabled = answer.length;
 
     return (
         <form className='question-form answerInput'>
@@ -36,11 +39,29 @@ export const Question = ({ randomQuestion, postAnswer }) => {
                 name='answer'
                 placeholder='Write your answer here.'
                 value={answer}
-                onChange={event => setAnswer(event.target.value)}
+                onChange={event => {
+                        setAnswer(event.target.value);
+                    if (event.target.value.length){
+                        setDisabled(false);
+                    } 
+                    if (event.target.value.length == 0) {
+                        setDisabled(true);
+                    }
+                }}
             />
-            <button className='submit-btn' onClick={(event) => submitAnswer(event)}> SUBMIT </button>
+
+            <button 
+                className='submit-btn'
+                disabled={isDisabled}
+                onClick={(event) => submitAnswer(event)}>
+                    SUBMIT 
+            </button>
+
             <Link to={route}>
-            <button className='go-to-answers'> GO TO ANSWERS </button>
+                <button 
+                    className='go-to-answers'>
+                    GO TO ANSWERS
+                </button>
             </Link>
         </form>
     )
