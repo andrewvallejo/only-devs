@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRandom } from '@fortawesome/free-solid-svg-icons'
@@ -10,6 +10,8 @@ export const Question = ({ randomQuestion, postAnswer }) => {
     const [answer, setAnswer] = useState('')
     const [isDisabled, setDisabled] = useState(true);
     const [isAnswered, setIsAnswered] = useState(false);
+    const maxLength = 300;
+    const [charsLeft, setCharsLeft] = useState(maxLength);
 
     const submitAnswer = (event) => {
         event.preventDefault()
@@ -24,12 +26,16 @@ export const Question = ({ randomQuestion, postAnswer }) => {
         setIsAnswered(true); 
        }
 
+    useEffect(() => {
+    setCharsLeft(maxLength - answer?.length);
+    }, [answer]);
+
     const route = `/question-details/${randomQuestion.id}`;
     //let isEnabled = answer.length;
 
     return (
         <form className='question-form answerInput'>
-                <button className='shuffle-btn'>
+                <button className='shuffle-btn'> Shuffle Question
                 <FontAwesomeIcon className='shuffle-icon' icon={faRandom} /> 
                 </button>
             <header className="question-header">
@@ -40,7 +46,10 @@ export const Question = ({ randomQuestion, postAnswer }) => {
                 type='text'
                 name='answer'
                 placeholder='Write your answer here.'
+                rows={3}
+                onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
                 value={answer}
+                maxLength= {maxLength}
                 onChange={event => {
                         setAnswer(event.target.value);
                     if (event.target.value.length){
@@ -51,6 +60,9 @@ export const Question = ({ randomQuestion, postAnswer }) => {
                     }
                 }}
             />
+            <div className='char-counter'>
+                {charsLeft}/{maxLength}
+            </div>
 
             <button 
                 className='submit-btn'
