@@ -34,21 +34,23 @@ export const Question = ({ randomQuestion, postAnswer }) => {
     //let isEnabled = answer.length;
 
     return (
-        <form className='question-form answerInput'>
+        <form className='question-form'>
                 <button className='shuffle-btn'> Shuffle Question
                 <FontAwesomeIcon className='shuffle-icon' icon={faRandom} /> 
                 </button>
             <header className="question-header">
                 <h2>{randomQuestion.question}</h2>
             </header>
-            <input 
+            <input
+                className='answer-input' 
                 id={randomQuestion.id}
                 type='text'
                 name='answer'
                 placeholder='Write your answer here.'
-                rows={3}
+                // rows={3}
                 onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
                 value={answer}
+                autoComplete='off'
                 maxLength= {maxLength}
                 onChange={event => {
                         setAnswer(event.target.value);
