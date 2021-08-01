@@ -41,10 +41,9 @@ export const Question = ({ randomQuestion, postAnswer }) => {
             <header className="question-header">
                 <h2>{randomQuestion.question}</h2>
             </header>
-            <input
+            <textarea
                 className='answer-input' 
                 id={randomQuestion.id}
-                type='text'
                 name='answer'
                 placeholder='Write your answer here.'
                 // rows={3}
@@ -61,7 +60,7 @@ export const Question = ({ randomQuestion, postAnswer }) => {
                         setDisabled(true);
                     }
                 }}
-            />
+            ></textarea>
             <div className='char-counter'>
                 {charsLeft}/{maxLength}
             </div>
