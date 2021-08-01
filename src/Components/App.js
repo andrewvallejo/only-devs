@@ -31,14 +31,6 @@ export default class App extends Component {
   this.setState({randomQuestion}); 
   }
 
-  // getAnswers(id)
-
-  //fetchAnswers based on the id of the Card that is clicked  
-  //
-
-  //postAnswer() will be triggered when submit button is clicke... we need to take that question's id
-  //and make a POST 
-
   postAnswer(newAnswer) {
     uploadAnswer(newAnswer)
     .then(response => {
