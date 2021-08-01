@@ -9,6 +9,7 @@ import { faRandom } from '@fortawesome/free-solid-svg-icons'
 export const Question = ({ randomQuestion, postAnswer }) => {
     const [answer, setAnswer] = useState('')
     const [isDisabled, setDisabled] = useState(true);
+    const [isAnswered, setIsAnswered] = useState(false);
 
     const submitAnswer = (event) => {
         event.preventDefault()
@@ -19,7 +20,8 @@ export const Question = ({ randomQuestion, postAnswer }) => {
         //console.log(newAnswer, "THIS IS THE NEW ANSWER");
         postAnswer(newAnswer);
         setAnswer('')
-        setDisabled(true); 
+        setDisabled(true);
+        setIsAnswered(true); 
        }
 
     const route = `/question-details/${randomQuestion.id}`;
@@ -59,7 +61,7 @@ export const Question = ({ randomQuestion, postAnswer }) => {
 
             <Link to={route}>
                 <button 
-                    className='go-to-answers'>
+                    className={isAnswered ? 'go-to-answers gold-btn' : 'go-to-answers'}>
                     GO TO ANSWERS
                 </button>
             </Link>
