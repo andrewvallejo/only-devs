@@ -27,7 +27,7 @@ export const QuestionBoard = ({questions}) => {
         <>
         <input className='search-bar'
             type="text" 
-            placeholder="Search By Keyword..." 
+            placeholder="Search Questions By Keyword..." 
             onChange={(event) => {
                 setSearchTerm(event.target.value);
                 }} />
