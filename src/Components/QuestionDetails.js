@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { fetchAnswers } from '../Utilities/apiCalls';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 
 export class QuestionDetails extends Component {
@@ -46,6 +47,10 @@ export class QuestionDetails extends Component {
     }
 }
 
+QuestionDetails.propTypes = {
+    answers: PropTypes.array,
+    error: PropTypes.string,
+  }
 
 // Hook Version
     
