@@ -4,8 +4,8 @@ import { Route, Switch, NavLink } from 'react-router-dom';
 import { Question} from './Question';
 import { QuestionBoard } from './QuestionBoard';
 import { QuestionDetails } from './QuestionDetails';
-import { fetchQuestions } from '../Utilities/apiCalls';
-import { uploadAnswer } from '../Utilities/apiCalls';
+import { fetchQuestions, uploadAnswer, postAnswerRating } from '../Utilities/apiCalls';
+import PropTypes from 'prop-types';
 
 export default class App extends Component {
   constructor() {
@@ -27,20 +27,19 @@ export default class App extends Component {
   }
 
   randomizeQuestion = () => {
-  const randomQuestion = this.state.questions[Math.floor(Math.random() * this.state.questions.length)];  
-  this.setState({randomQuestion}); 
+    const randomQuestion = this.state.questions[Math.floor(Math.random() * this.state.questions.length)];  
+    this.setState({randomQuestion}); 
   }
-
-  // getAnswers(id)
-
-  //fetchAnswers based on the id of the Card that is clicked  
-  //
-
-  //postAnswer() will be triggered when submit button is clicke... we need to take that question's id
-  //and make a POST 
 
   postAnswer(newAnswer) {
     uploadAnswer(newAnswer)
+    .then(response => {
+      console.log(response)
+    });
+  }
+
+  rateAnswer(answer) {
+    postAnswerRating(answer)
     .then(response => {
       console.log(response)
     });
@@ -63,9 +62,11 @@ export default class App extends Component {
               <Question 
               randomQuestion={this.state.randomQuestion} 
               postAnswer={this.postAnswer} 
+
               />
               <QuestionBoard 
                 questions={this.state.questions}
+                vote={this.rateAnswer}
               /> 
               </>
             } />
@@ -74,11 +75,19 @@ export default class App extends Component {
               return <QuestionDetails 
                 key={questionID}
                 id={questionID}
-                questions={this.state.questions}/>
+                questions={this.state.questions}
+                rateAnswer={this.rateAnswer}
+                />
             }} />
           </Switch>
         </main>
       </>
     )
   }
+}
+
+App.propTypes = {
+  randomQuestion: PropTypes.object,
+  questions: PropTypes.array,
+  error: PropTypes.string
 }

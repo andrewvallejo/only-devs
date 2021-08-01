@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { fetchAnswers } from '../Utilities/apiCalls';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 
 export class QuestionDetails extends Component {
@@ -35,16 +36,21 @@ export class QuestionDetails extends Component {
                         <FontAwesomeIcon className='arrow-icon' icon={faAngleDoubleLeft} /> 
                         </button>
                     </NavLink>
-                <h2 classList="question">{this.displayQuestion()}</h2>
+                <h2 className="question">{this.displayQuestion()}</h2>
                 </header>
                 <div className="answers-container">
-                     <Answers answers={this.state.answers}/>
+                {!this.state.answers.length && <h3 className='no-answers'>This question hasn't been answered yet.</h3>}
+                     <Answers answers={this.state.answers} rateAnswer={this.props.rateAnswer}/>
                 </div>
             </section>
         )
     }
 }
 
+QuestionDetails.propTypes = {
+    answers: PropTypes.array,
+    error: PropTypes.string,
+  }
 
 // Hook Version
     

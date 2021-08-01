@@ -25,8 +25,30 @@ export const uploadAnswer = (data) => {
     headers: {'content-type': 'application/json'},
     body: JSON.stringify(data)
   })
-  .then(response => response.json())
+  .then(response => {
+    if(!response.ok) {
+      throw Error('Error uploading answer')
+  } 
+    return response.json()
+})
   .catch(err => console.error(err));
 }
+
+export const postAnswerRating = (data) => {
+const [questionId, answerId, vote] =  data
+ let answerData = {
+    "question_id": questionId,
+    "answer_id": answerId,
+    "vote": vote,
+}
+  return fetch('https://onlydevs-api.herokuapp.com/questions/answer/vote', {
+    method: 'POST',
+    headers: {'content-type': 'application/json'},
+    body: JSON.stringify(answerData)
+  })
+  .then(response => response.json())
+  .catch(err => console.error(err));
+} 
+
 
 

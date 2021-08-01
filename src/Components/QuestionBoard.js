@@ -1,14 +1,13 @@
 import React from 'react';
 import { Card } from './Card';
 import {useState} from 'react';
+import PropTypes from 'prop-types';
 
 export const QuestionBoard = ({questions}) => {
     const [searchTerm, setSearchTerm] = useState('');
 
-
-    console.log(questions)
     const questionCard = questions.filter((question) => {
-        if(searchTerm == "") {
+        if(searchTerm === "") {
             return question;
         } else if (question.question.toLowerCase().includes(searchTerm.toLowerCase())) {
             return question;
@@ -38,5 +37,10 @@ export const QuestionBoard = ({questions}) => {
         </>
     )
 }
+
+QuestionBoard.propTypes = {
+    questions: PropTypes.array,
+    searchTerm: PropTypes.string,
+  }
 
 

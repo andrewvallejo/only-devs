@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRandom } from '@fortawesome/free-solid-svg-icons'
-
+import PropTypes from 'prop-types';
 
 
 export const Question = ({ randomQuestion, postAnswer }) => {
@@ -19,7 +19,6 @@ export const Question = ({ randomQuestion, postAnswer }) => {
                 question_id: randomQuestion.id,
             answer: answer
         }
-        //console.log(newAnswer, "THIS IS THE NEW ANSWER");
         postAnswer(newAnswer);
         setAnswer('')
         setDisabled(true);
@@ -27,11 +26,10 @@ export const Question = ({ randomQuestion, postAnswer }) => {
        }
 
     useEffect(() => {
-    setCharsLeft(maxLength - answer?.length);
+    setCharsLeft(maxLength - answer.length);
     }, [answer]);
 
     const route = `/question-details/${randomQuestion.id}`;
-    //let isEnabled = answer.length;
 
     return (
         <form className='question-form'>
@@ -56,7 +54,7 @@ export const Question = ({ randomQuestion, postAnswer }) => {
                     if (event.target.value.length){
                         setDisabled(false);
                     } 
-                    if (event.target.value.length == 0) {
+                    if (event.target.value.length === 0) {
                         setDisabled(true);
                     }
                 }}
@@ -81,3 +79,13 @@ export const Question = ({ randomQuestion, postAnswer }) => {
         </form>
     )
 }
+
+Question.propTypes = {
+    answer: PropTypes.string,
+    isDisabled: PropTypes.func,
+    isAnswered: PropTypes.func,
+    charsLeft: PropTypes.func,
+    randomQuestion: PropTypes.object,
+    postAnswer: PropTypes.func
+  };
+
