@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, NavLink } from 'react-router-dom';
+import { Route, Switch, NavLink, Link } from 'react-router-dom';
 // import { Header } from './Header';
 import { Question} from './Question';
 import { QuestionBoard } from './QuestionBoard';
@@ -35,17 +35,10 @@ export default class App extends Component {
   postAnswer(newAnswer) {
     uploadAnswer(newAnswer)
     .then(response => {
-      //currently response is nothing
-      // if(!response) {
-      //   this.setState({postError: 'Oops,  our server is down! Your wasn\'t posted. Please try again later.'})
-      //   throw Error('Error fetching answers');
-      // } 
-      //change 52 onwards
       if(!response) {
         this.setState({error: 'Oops,  our server is down! Your wasn\'t posted. Please try again later.'})
         throw Error('Error fetching answers');
       } 
-      //console.log(response.json(), 'THIS IS THE RESPONSE.JSON')
       return response.json()
     })
     .catch(error => console.error(error));
@@ -62,7 +55,6 @@ export default class App extends Component {
   render() {  
     return (
       <>
-        {/* <Header /> */}
         <NavLink to='/'>
           <img className='logo' src='https://i.imgur.com/imPxyaU.png' alt='only-devs logo' id='onlyDevsLogo'></img>
         </NavLink>
@@ -92,6 +84,12 @@ export default class App extends Component {
                 rateAnswer={this.rateAnswer}
                 />
             }} />
+            <Route>
+              <Link to='/'>
+                <h3>Sorry we can't find that page, click here to go home!</h3>
+              </Link>
+            </Route>
+
           </Switch>
         </main>
       </>
