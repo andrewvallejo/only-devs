@@ -1,11 +1,9 @@
 import React from 'react';
+import { parseDate } from  '../Utilities/util'
   
  export const Answers = ({answers}) => {
-    //  console.log
     return answers.map(answer => {
-        let a = answer.answer_time.split('T');
-        let b = a[0].split('-');
-        let date = b[1] + '-' + b[2] + '-' + b[0];
+        const date = parseDate(answer)
 
         return (
             <article className='answer' key={answer.id} id={answer.id}>
