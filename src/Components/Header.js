@@ -4,7 +4,9 @@ import { Route, NavLink } from 'react-router-dom'
 export const Header = () => {
     return (
             <header className="main-header">
-                <h1 className="main-title">OnlyDevs</h1>
+                <NavLink to='/'>
+                    <h1 className="main-title">OnlyDevs</h1>
+                </NavLink>
                 <nav className="main-nav">
                 <Route exact path = '/' render={() => 
                     <NavLink to='/all-questions'>
