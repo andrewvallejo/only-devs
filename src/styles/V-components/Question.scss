@@ -50,4 +50,10 @@
   height: 30px;
   place-self: flex-end;
   margin: 10px 0px 10px 0px;
+  &:disabled {
+    &:hover {
+      cursor: not-allowed;
+      background: red;
+    }
+  }
 }
