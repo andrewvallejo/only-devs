@@ -1,3 +1,19 @@
+.search-bar {
+    width: 60%;
+    padding: .3rem;
+    margin-top: 1.5rem;
+    place-self: center;
+    top: 10%;
+    right: 1rem;
+    border-radius: 7px;
+    text-align: center;
+}
+
+// .questions-container {
+//     height: 70%;
+//     width: 100vw;
+// }
+
 .cards-container {
     @include mediaQueries(grid);
     background: $color-primary;
@@ -5,15 +21,6 @@
     padding: 0 5rem;
     overflow-y: scroll;
     gap: 1rem;
-}
-
-.search-bar {
-    width: 20%;
-    padding: .3rem;
-    margin-top: 1.5rem;
-    place-self: flex-end;
-    position: absolute;
-    top: 10%;
-    right: 1rem;
-    border-radius: 7px;
+    margin-top: 1rem;
+    min-height: 50%;
 }

@@ -52,7 +52,7 @@ export default class App extends Component {
       <>
         {/* <Header /> */}
         <NavLink to='/'>
-          <h1 className="main-title">{'<OnlyDevs />'}</h1>
+          <img className='logo' src='https://i.imgur.com/imPxyaU.png' alt='only-devs logo' id='onlyDevsLogo'></img>
         </NavLink>
         <main>
           <Switch>

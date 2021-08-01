@@ -1,5 +1,7 @@
 .question-form {
   min-width: 3rem;
+  width: 70%;
+  margin-bottom: 25px;
 
    a {
      place-self: flex-end;
@@ -18,15 +20,11 @@
   margin-left: auto;
 }
 
-.answerInput {
-  width: 80%;
-  > [type='text'] {
+.answer-input {
     width: 100%;
     min-height: 5rem;
     height: 10rem;
-    background: beige;
     text-align: center;
-  }
 }
 
 .question-header {
@@ -34,8 +32,8 @@
 }
 
 .shuffle-btn {
-  width: 60px;
-  height: 35px;
+  width: 75px;
+  height: 59px;
   display: flex;
   place-self: flex-end;
 
@@ -64,4 +62,9 @@
 .gold-btn {
   background: gold;
   transform: scale(1.1);
+}
+
+.char-counter {
+  display: flex;
+  justify-content: flex-end;
 }

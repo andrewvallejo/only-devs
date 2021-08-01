@@ -14,10 +14,9 @@ header {
 
 main {
   @include flex(column, center);
-  padding: 0 1rem;
   height: 80vh;
+  margin: 0 1rem;
 }
-
 
 article {
   @include flex(column, around);
