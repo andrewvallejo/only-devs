@@ -16,9 +16,7 @@ main {
   @include flex(column, center);
   height: 80vh;
   margin: 0 1rem;
-
 }
-
 
 article {
   @include flex(column, around);
