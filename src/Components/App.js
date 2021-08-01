@@ -36,13 +36,19 @@ export default class App extends Component {
     uploadAnswer(newAnswer)
     .then(response => {
       //currently response is nothing
-      if(!response.ok) {
-        throw Error('Error fetching answers')
+      // if(!response) {
+      //   this.setState({postError: 'Oops,  our server is down! Your wasn\'t posted. Please try again later.'})
+      //   throw Error('Error fetching answers');
+      // } 
+      //change 52 onwards
+      if(!response) {
+        this.setState({error: 'Oops,  our server is down! Your wasn\'t posted. Please try again later.'})
+        throw Error('Error fetching answers');
       } 
       //console.log(response.json(), 'THIS IS THE RESPONSE.JSON')
       return response.json()
     })
-    .catch(error => this.setState({postError: 'Oops  our server is down! Your wasn\'t posted. Please try again later.'}));
+    .catch(error => console.error(error));
   }
 
   rateAnswer(answer) {
