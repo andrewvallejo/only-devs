@@ -40,7 +40,7 @@ export class QuestionDetails extends Component {
                 </header>
                 <div className="answers-container">
                 {!this.state.answers.length && <h3 className='no-answers'>This question hasn't been answered yet.</h3>}
-                     <Answers answers={this.state.answers} vote={this.props.vote}/>
+                     <Answers answers={this.state.answers} rateAnswer={this.props.rateAnswer}/>
                 </div>
             </section>
         )
