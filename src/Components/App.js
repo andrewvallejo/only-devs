@@ -37,7 +37,12 @@ export default class App extends Component {
     });
   }
 
-
+  rateAnswer(answer) {
+    postAnswerRating(answer)
+    .then(response => {
+      console.log(response)
+    });
+  }
 
 
   render() {  
