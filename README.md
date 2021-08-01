@@ -2,9 +2,7 @@
 # <p align="center">OnlyDevs</p>
 
 
-![image](https://user-images.githubusercontent.com/17935770/127759977-68759491-f75f-480f-8373-51d227e1549c.png )
-
----
+![OnlyDevs Banner](https://user-images.githubusercontent.com/17935770/127781547-035e3833-99a7-4e6b-9d58-f29b9e03b2e6.png)---
 
 <br>
 <br>
