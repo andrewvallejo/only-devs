@@ -56,9 +56,9 @@ export default class App extends Component {
         <main>
           <Switch>
             {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
-            {!this.state.questions.length && !this.state.error && <h3>Loading...</h3>}
             < Route exact path = '/' render={() => 
               <>
+              {(!this.state.questions.length && !this.state.error) && <h3>Loading...</h3>}
               <Question 
               randomQuestion={this.state.randomQuestion} 
               postAnswer={this.postAnswer} 
