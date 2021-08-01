@@ -1,5 +1,6 @@
 import React from 'react';
-import { parseDate } from  '../Utilities/util'
+import { parseDate } from  '../Utilities/util';
+import PropTypes from 'prop-types';
   
  export const Answers = ({answers, vote}) => {
     return answers.map(singleAnswer => {
@@ -7,7 +8,6 @@ import { parseDate } from  '../Utilities/util'
         const date = parseDate(answer_time)
         const upvote = [question_id, id, 'upvote']
         const downvote = [question_id, id, 'downvote']
-        
 
         return (
             <article className='answer' key={id} id={id}>
@@ -21,3 +21,7 @@ import { parseDate } from  '../Utilities/util'
     })
 }
 
+Answers.propTypes = {
+    answers: PropTypes.array,
+    vote: PropTypes.string
+}
