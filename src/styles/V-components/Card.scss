@@ -1,5 +1,5 @@
 .question-card {
-    height: 20rem;
+    height: 80%;
     width: 20rem;
     @include opacity($color-secondary, -0.5);
     box-shadow: 3px 3px 10px  $color-secondary;
@@ -14,10 +14,6 @@
         box-shadow: 3px 3px 10px  $color-secondary;
     }
 }
-
-
-
-
 
 .view-details-btn {
    padding: .3rem 1rem;
