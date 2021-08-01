@@ -5,6 +5,7 @@ import { Question} from './Question';
 import { QuestionBoard } from './QuestionBoard';
 import { QuestionDetails } from './QuestionDetails';
 import { fetchQuestions, uploadAnswer, postAnswerRating } from '../Utilities/apiCalls';
+import PropTypes from 'prop-types';
 
 export default class App extends Component {
   constructor() {
@@ -83,4 +84,10 @@ export default class App extends Component {
       </>
     )
   }
+}
+
+App.propTypes = {
+  randomQuestion: PropTypes.object,
+  questions: PropTypes.array,
+  error: PropTypes.string
 }
