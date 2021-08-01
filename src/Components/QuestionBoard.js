@@ -25,15 +25,16 @@ export const QuestionBoard = ({questions}) => {
     
     return (
         <>
-        <input className='search-bar'
-            type="text" 
-            placeholder="Search Questions By Keyword..." 
-            onChange={(event) => {
-                setSearchTerm(event.target.value);
-                }} />
-        <section className='cards-container'>
-        {questionCard.length ? questionCard : <h2> There are no questions that match your search.</h2>} 
-        </section>
+            <input className='search-bar'
+                type="text" 
+                placeholder="Search Questions By Keyword..." 
+                onChange={(event) => {
+                    setSearchTerm(event.target.value);
+                }} 
+            />
+            <section className='cards-container'>
+            {questionCard.length ? questionCard : <h2> There are no questions that match your search.</h2>} 
+            </section>
         </>
     )
 }
