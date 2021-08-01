@@ -26,7 +26,7 @@
 
 ## Our Stories
 
-**Rachel Carroll:** [GH](https://www.github.com/andrewvallejo)<img align='right' alt="Rachael's github stats" src="https://github-readme-stats.vercel.app/api?username=rachaelcarroll&hide=stars&show_icons=true&theme=maroongold">
+**Rachel Carroll:** [GH](https://www.github.com/andrewvallejo)<img align='right' alt="Rachael's github stats" src="https://github-readme-stats.vercel.app/api?username=rachaelcarroll&hide=stars&show_icons=true&theme=cobalt">
 &&
 [Linkedin](https://www.linkedin.com/in/rachaelcarroll/)
 ---
@@ -35,7 +35,7 @@
 **Challenges:**  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic vitae fugiat rem cumque quasi obcaecati blanditiis iusto veniam! Quibusdam quis.     <br>
 <br>
 
-<img align='left' alt="Shayans's github stats" src="https://github-readme-stats.vercel.app/api?username=shayan-golafshani&hide=stars&show_icons=true&theme=maroongold"> **Shayan Golafshani:** [Github](https://www.github.com/shayan-golafshani)
+<img align='left' alt="Shayans's github stats" src="https://github-readme-stats.vercel.app/api?username=shayan-golafshani&hide=stars&show_icons=true&theme=ayu-mirage"> **Shayan Golafshani:** [Github](https://www.github.com/shayan-golafshani)
 &&
 [Linkedin](https://www.linkedin.com/in/shayangolafshani/)
 ---
