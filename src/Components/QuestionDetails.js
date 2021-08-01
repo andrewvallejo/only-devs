@@ -35,10 +35,10 @@ export class QuestionDetails extends Component {
                         <FontAwesomeIcon className='arrow-icon' icon={faAngleDoubleLeft} /> 
                         </button>
                     </NavLink>
-                <h2 classList="question">{this.displayQuestion()}</h2>
+                <h2 className="question">{this.displayQuestion()}</h2>
                 </header>
                 <div className="answers-container">
-                     <Answers answers={this.state.answers}/>
+                     <Answers answers={this.state.answers} vote={this.props.vote}/>
                 </div>
             </section>
         )
