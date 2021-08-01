@@ -38,6 +38,7 @@ export class QuestionDetails extends Component {
                 <h2 className="question">{this.displayQuestion()}</h2>
                 </header>
                 <div className="answers-container">
+                {!this.state.answers.length && <h3 className='no-answers'>This question hasn't been answered yet.</h3>}
                      <Answers answers={this.state.answers} vote={this.props.vote}/>
                 </div>
             </section>
