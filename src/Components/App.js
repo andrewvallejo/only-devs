@@ -30,12 +30,7 @@ export default class App extends Component {
     this.setState({randomQuestion}); 
   }
 
-  postAnswer(newAnswer) {
-    uploadAnswer(newAnswer)
-    .then(response => {
-      console.log(response)
-    });
-  }
+
 
 
 
@@ -55,6 +50,7 @@ export default class App extends Component {
               <Question 
               randomQuestion={this.state.randomQuestion} 
               postAnswer={this.postAnswer} 
+
               />
               <QuestionBoard 
                 questions={this.state.questions}
@@ -66,7 +62,9 @@ export default class App extends Component {
               return <QuestionDetails 
                 key={questionID}
                 id={questionID}
-                questions={this.state.questions}/>
+                questions={this.state.questions}
+                vote={this.rateAnswer}
+                />
             }} />
           </Switch>
         </main>
