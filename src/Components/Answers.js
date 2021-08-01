@@ -8,9 +8,9 @@ import { parseDate } from  '../Utilities/util'
         const date = parseDate(answer_time)
         return (
             <article className='answer' key={id} id={id}>
-                <header class='answer-header'>
+                <header className='answer-header'>
                 <p className="time">Submission date: {date}</p>
-                <button className='like-btn' onClick={() => (vote(question_id, id ,'upvote' ))}>{rating} likes</button>
+                <button className='like-btn' onClick={() => (vote(question_id, id ,'upvote'))}>{rating} likes</button>
                 </header>
                 <p className="answer-block">{answer}</p>
             </article>
