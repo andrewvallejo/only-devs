@@ -5,8 +5,6 @@ import {useState} from 'react';
 export const QuestionBoard = ({questions}) => {
     const [searchTerm, setSearchTerm] = useState('');
 
-
-    console.log(questions)
     const questionCard = questions.filter((question) => {
         if(searchTerm === "") {
             return question;
