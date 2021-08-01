@@ -6,7 +6,7 @@ import { faRandom } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types';
 
 
-export const Question = ({ randomQuestion, postAnswer }) => {
+export const Question = ({ randomQuestion, postAnswer, postError }) => {
     const [answer, setAnswer] = useState('')
     const [isDisabled, setDisabled] = useState(true);
     const [isAnswered, setIsAnswered] = useState(false);
@@ -62,6 +62,8 @@ export const Question = ({ randomQuestion, postAnswer }) => {
             <div className='char-counter'>
                 {charsLeft}/{maxLength}
             </div>
+
+            {postError && <h3>{postError}</h3>}
 
             <button 
                 className='submit-btn'
