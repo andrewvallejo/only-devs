@@ -56,7 +56,7 @@ export const Question = ({ randomQuestion, postAnswer }) => {
                     if (event.target.value.length){
                         setDisabled(false);
                     } 
-                    if (event.target.value.length == 0) {
+                    if (event.target.value.length === 0) {
                         setDisabled(true);
                     }
                 }}
