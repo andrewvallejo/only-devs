@@ -30,6 +30,12 @@ export default class App extends Component {
     this.setState({randomQuestion}); 
   }
 
+  postAnswer(newAnswer) {
+    uploadAnswer(newAnswer)
+    .then(response => {
+      console.log(response)
+    });
+  }
 
 
 
@@ -54,6 +60,7 @@ export default class App extends Component {
               />
               <QuestionBoard 
                 questions={this.state.questions}
+                vote={this.rateAnswer}
               /> 
               </>
             } />
