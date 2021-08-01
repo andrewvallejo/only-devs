@@ -26,7 +26,7 @@
 
 ## Our Stories
 
-**Rachel Carroll:** [GH](https://www.github.com/andrewvallejo)<img align='right' alt="Rachael's github stats" src="https://github-readme-stats.vercel.app/api?username=rachaelcarroll&hide=stars&show_icons=true&theme=cobalt">
+**Rachael Carroll:** [GH](https://www.github.com/rachaelcarroll)<img align='right' alt="Rachael's github stats" src="https://github-readme-stats.vercel.app/api?username=rachaelcarroll&hide=stars&show_icons=true&theme=cobalt">
 &&
 [Linkedin](https://www.linkedin.com/in/rachaelcarroll/)
 ---
