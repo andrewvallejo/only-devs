@@ -6,7 +6,6 @@ import { faRandom } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types';
 
 
-
 export const Question = ({ randomQuestion, postAnswer }) => {
     const [answer, setAnswer] = useState('')
     const [isDisabled, setDisabled] = useState(true);
@@ -20,7 +19,6 @@ export const Question = ({ randomQuestion, postAnswer }) => {
                 question_id: randomQuestion.id,
             answer: answer
         }
-        //console.log(newAnswer, "THIS IS THE NEW ANSWER");
         postAnswer(newAnswer);
         setAnswer('')
         setDisabled(true);
@@ -32,7 +30,6 @@ export const Question = ({ randomQuestion, postAnswer }) => {
     }, [answer]);
 
     const route = `/question-details/${randomQuestion.id}`;
-    //let isEnabled = answer.length;
 
     return (
         <form className='question-form'>
@@ -82,7 +79,6 @@ export const Question = ({ randomQuestion, postAnswer }) => {
         </form>
     )
 }
-
 
 Question.propTypes = {
     answer: PropTypes.string,
