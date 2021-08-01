@@ -32,7 +32,7 @@
 ---
 **Learning goals:**  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
 <br>
-**Challenges:**  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic vitae fugiat rem cumque quasi obcaecati blanditiis iusto veniam! Quibusdam quis.     <br>
+**Challenges:**  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic vitae fugiat rem cumque quasi obcaecati blanditiis iusto veniam! Quibusdam quis.     
 <br>
 
 <img align='left' alt="Shayans's github stats" src="https://github-readme-stats.vercel.app/api?username=shayan-golafshani&hide=stars&show_icons=true&theme=ayu-mirage"> **Shayan Golafshani:** [Github](https://www.github.com/shayan-golafshani)
@@ -41,7 +41,7 @@
 ---
 **Learning goals:**  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
 <br>
-**Challenges:**  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic vitae fugiat rem cumque quasi obcaecati blanditiis iusto veniam! Quibusdam quis.     <br>
+**Challenges:**  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic vitae fugiat rem cumque quasi obcaecati blanditiis iusto veniam! Quibusdam quis.     
 <br>
 
 **Andrew Vallejo:** [Github](https://www.github.com/andrewvallejo)<img align='right' alt="Andrews's github stats" src="https://github-readme-stats.vercel.app/api?username=andrewvallejo&hide=stars&show_icons=true&theme=maroongold">
@@ -52,7 +52,6 @@
 **Learning goals:**  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
 <br>
 **Challenges:**  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic vitae fugiat rem cumque quasi obcaecati blanditiis iusto veniam! Quibusdam quis.     <br>
-<br>
 
 
 
