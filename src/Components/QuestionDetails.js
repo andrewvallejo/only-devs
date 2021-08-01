@@ -2,6 +2,8 @@ import { Answers } from './Answers';
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { fetchAnswers } from '../Utilities/apiCalls';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons'
 
 
 export class QuestionDetails extends Component {
@@ -28,8 +30,10 @@ export class QuestionDetails extends Component {
         return (
             <section className='details-container'>
                 <header className ="question-header">
-                    <NavLink to= '/all-questions'>
-                        <button className='return-btn'>&lt;</button>
+                    <NavLink to= '/'>
+                        <button className='return-btn'>
+                        <FontAwesomeIcon className='arrow-icon' icon={faAngleDoubleLeft} /> 
+                        </button>
                     </NavLink>
                 <h2 classList="question">{this.displayQuestion()}</h2>
                 </header>

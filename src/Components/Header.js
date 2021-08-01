@@ -2,10 +2,12 @@ import React from 'react';
 import { Route, NavLink } from 'react-router-dom'
 
 export const Header = () => {
+
+    const header = '{ OnlyDevs }'
     return (
             <header className="main-header">
                 <NavLink to='/'>
-                    <h1 className="main-title">OnlyDevs</h1>
+                    <h1 className="main-title">{header}</h1>
                 </NavLink>
                 <nav className="main-nav">
                 <Route exact path = '/' render={() => 

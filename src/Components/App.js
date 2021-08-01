@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { Header } from './Header';
+import { Route, Switch, NavLink } from 'react-router-dom';
+// import { Header } from './Header';
 import { Question} from './Question';
 import { QuestionBoard } from './QuestionBoard';
 import { QuestionDetails } from './QuestionDetails';
@@ -46,24 +46,28 @@ export default class App extends Component {
     });
   }
 
+
   render() {  
     return (
       <>
-        <Header />
+        {/* <Header /> */}
+        <NavLink to='/'>
+          <h1 className="main-title">{'<OnlyDevs />'}</h1>
+        </NavLink>
         <main>
           <Switch>
             {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
             {!this.state.questions.length && !this.state.error && <h3>Loading...</h3>}
             < Route exact path = '/' render={() => 
+              <>
               <Question 
               randomQuestion={this.state.randomQuestion} 
               postAnswer={this.postAnswer} 
               />
-            } />
-            <Route exact path = '/all-questions' render={() => 
               <QuestionBoard 
                 questions={this.state.questions}
               /> 
+              </>
             } />
             <Route exact path = '/question-details/:id' render={({ match }) => {
               const questionID = parseInt(match.params.id);
