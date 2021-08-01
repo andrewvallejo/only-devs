@@ -4,8 +4,7 @@ import { Route, Switch, NavLink } from 'react-router-dom';
 import { Question} from './Question';
 import { QuestionBoard } from './QuestionBoard';
 import { QuestionDetails } from './QuestionDetails';
-import { fetchQuestions } from '../Utilities/apiCalls';
-import { uploadAnswer } from '../Utilities/apiCalls';
+import { fetchQuestions, uploadAnswer, postAnswerRating } from '../Utilities/apiCalls';
 
 export default class App extends Component {
   constructor() {
@@ -27,8 +26,8 @@ export default class App extends Component {
   }
 
   randomizeQuestion = () => {
-  const randomQuestion = this.state.questions[Math.floor(Math.random() * this.state.questions.length)];  
-  this.setState({randomQuestion}); 
+    const randomQuestion = this.state.questions[Math.floor(Math.random() * this.state.questions.length)];  
+    this.setState({randomQuestion}); 
   }
 
   postAnswer(newAnswer) {
@@ -37,6 +36,7 @@ export default class App extends Component {
       console.log(response)
     });
   }
+
 
 
   render() {  
