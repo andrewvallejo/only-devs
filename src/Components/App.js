@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, NavLink } from 'react-router-dom';
+import { Route, Switch, NavLink, Link } from 'react-router-dom';
 // import { Header } from './Header';
 import { Question} from './Question';
 import { QuestionBoard } from './QuestionBoard';
@@ -13,7 +13,8 @@ export default class App extends Component {
     this.state = {
       randomQuestion: {},
       questions: [],
-      error: ''
+      error: '',
+      postError: '',
     }
   }
 
@@ -21,9 +22,9 @@ export default class App extends Component {
     fetchQuestions()
       .then(data => {
         this.setState({ questions: data })
-        this.randomizeQuestion();
+        this.randomizeQuestion()
         })
-      .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
+      .catch(error => this.setState({error: 'Oops server is down! Please try again later.'}))
   }
 
   randomizeQuestion = () => {
@@ -34,8 +35,13 @@ export default class App extends Component {
   postAnswer(newAnswer) {
     uploadAnswer(newAnswer)
     .then(response => {
-      console.log(response)
-    });
+      if(!response) {
+        this.setState({error: 'Oops,  our server is down! Your wasn\'t posted. Please try again later.'})
+        throw Error('Error fetching answers');
+      } 
+      return response.json()
+    })
+    .catch(error => console.error(error));
   }
 
   rateAnswer(answer) {
@@ -49,14 +55,13 @@ export default class App extends Component {
   render() {  
     return (
       <>
-        {/* <Header /> */}
         <NavLink to='/'>
           <img className='logo' src='https://i.imgur.com/imPxyaU.png' alt='only-devs logo' id='onlyDevsLogo'></img>
         </NavLink>
         <main>
           <Switch>
             {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
-            {!this.state.questions.length && !this.state.error && <h3>Loading...</h3>}
+            {(!this.state.questions.length && !this.state.error) && <h3>Loading...</h3>}
             < Route exact path = '/' render={() => 
               <>
               <Question 
@@ -79,6 +84,12 @@ export default class App extends Component {
                 rateAnswer={this.rateAnswer}
                 />
             }} />
+            <Route>
+              <Link to='/'>
+                <h3>Sorry we can't find that page, click here to go home!</h3>
+              </Link>
+            </Route>
+
           </Switch>
         </main>
       </>
