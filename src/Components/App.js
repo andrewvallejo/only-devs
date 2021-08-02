@@ -57,7 +57,7 @@ export default class App extends Component {
       <>
         <header className='nav-bar'>
           <NavLink to='/'>
-            <img className='logo' src='https://i.imgur.com/imPxyaU.png' alt='only-devs logo' id='onlyDevsLogo'></img>
+            <img className='logo' src='https://i.imgur.com/i6f9tQA.png' alt='only-devs logo' id='onlyDevsLogo'></img>
           </NavLink>
         </header>
         <main>
