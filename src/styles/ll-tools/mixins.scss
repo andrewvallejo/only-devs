@@ -91,7 +91,7 @@
   }
 }
 @mixin desktop($property) {
-  @media only screen and (min-width: 1100px) {
+  @media only screen and (min-width: 1200px) {
     @content;
     transition: 100ms;
     @if $property==grid{
