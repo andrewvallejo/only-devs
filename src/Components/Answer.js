@@ -20,7 +20,8 @@ export const Answer = ({singleAnswer, rate}) => {
 
       setCount(count + 1)
       rate(upvote) 
-      setIsDisabled(true);   
+      setIsDisabled(true); 
+      console.log(isDisabled, "INSIDE Increment COUNT");
   }
 
   const removeCount = (e) => {
@@ -29,6 +30,7 @@ export const Answer = ({singleAnswer, rate}) => {
       setCount(count - 1)
       rate(downvote)
       setIsDisabled(true);
+      console.log(isDisabled, "INSIDE REMOVE COUNT");
   }
 
       return (
