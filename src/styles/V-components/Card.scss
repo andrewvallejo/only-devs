@@ -8,6 +8,7 @@
     text-align: center;
     margin: 1rem;
     transition: 300ms;
+    font-family: $font-family-secondary;
     &:hover {
         transition: 300ms;
         transform: scale(1.02);
