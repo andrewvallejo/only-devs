@@ -40,24 +40,25 @@ export const Answer = ({singleAnswer, rate}) => {
                   <button
                         className={isDisabled ? 'disabled-vote' : ''}
                         disabled={isDisabled}
+                        onClick={(e) => addCount(e)}
                   >
                     <FontAwesomeIcon
                         //className={isDisabled ? 'disabled-vote' : ''} 
-                        onClick={(e) => addCount(e)}
+                        
                         icon={faChevronCircleUp}
-                        disable={isDisabled}   
+                        //disable={isDisabled}   
                     />
                   </button>
                           <h3>{count}</h3>
                     <button
                         className={isDisabled ? 'disabled-vote' : ''}
                         disabled={isDisabled}
+                        onClick={(e) => removeCount(e)}
                     >
                         <FontAwesomeIcon 
                             //className={isDisabled ? 'disabled-vote' : ''}
-                            onClick={(e) => removeCount(e)}
                             icon={faChevronCircleDown}
-                            disable={isDisabled}           
+                            //disable={isDisabled}           
                         />
                     </button>
               </header>
