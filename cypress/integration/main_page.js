@@ -76,9 +76,5 @@ describe ('Main Page', () => {
           cy.get('[href="/question-details/34"]')
           .contains('MVC')
     })
-
-
-
-
-
+    
 })
