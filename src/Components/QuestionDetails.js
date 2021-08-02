@@ -40,9 +40,9 @@ export class QuestionDetails extends Component {
                 <h2 className="question">{this.displayQuestion()}</h2>
                 </header>
                 <div className="answers-container">
-                    {!this.state.answers.length && <h3 className='no-answers'>This question hasn't been answered yet.</h3>}
-                    {this.state.error && <h3>{this.state.error}</h3>}
+                    {this.state.error && <h3 className='no-answers'>{this.state.error}</h3>}
                     {(!this.state.error && this.state.isLoading) && <h3> Loading... answers</h3>}
+                    {!this.state.answers.length && !this.state.error && <h3 className='no-answers'>This question hasn't been answered yet.</h3>}
                     <Answers answers={this.state.answers} rateAnswer={this.props.rateAnswer}/>
                 </div>
             </section>
