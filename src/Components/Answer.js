@@ -14,14 +14,12 @@ export const Answer = ({singleAnswer, rate}) => {
 
   let [count, setCount] = useState(rating)
 
-
   const addCount = (e) => {
       e.preventDefault()
 
       setCount(count + 1)
       rate(upvote) 
-      setIsDisabled(true); 
-      console.log(isDisabled, "INSIDE Increment COUNT");
+      setIsDisabled(true);
   }
 
   const removeCount = (e) => {
@@ -30,7 +28,6 @@ export const Answer = ({singleAnswer, rate}) => {
       setCount(count - 1)
       rate(downvote)
       setIsDisabled(true);
-      console.log(isDisabled, "INSIDE REMOVE COUNT");
   }
 
       return (
@@ -38,37 +35,32 @@ export const Answer = ({singleAnswer, rate}) => {
               <header className='answer-header'>
                   <p className="time">Submission date: {date}</p>
                   <button
-                        className={isDisabled ? 'disabled-vote' : ''}
-                        disabled={isDisabled}
-                        onClick={(e) => addCount(e)}
+                    className={isDisabled ? 'disabled-vote' : ''}
+                    disabled={isDisabled}
+                    onClick={(e) => addCount(e)}
                   >
                     <FontAwesomeIcon
-                        //className={isDisabled ? 'disabled-vote' : ''} 
-                        
                         icon={faChevronCircleUp}
-                        //disable={isDisabled}   
                     />
                   </button>
-                          <h3>{count} Recs</h3>
-                    <button
-                        className={isDisabled ? 'disabled-vote' : ''}
-                        disabled={isDisabled}
-                        onClick={(e) => removeCount(e)}
-                    >
-                        <FontAwesomeIcon 
-                            //className={isDisabled ? 'disabled-vote' : ''}
-                            icon={faChevronCircleDown}
-                            //disable={isDisabled}           
-                        />
-                    </button>
+                  <h3>{count} Recs</h3>
+                  <button
+                    className={isDisabled ? 'disabled-vote' : ''}
+                    disabled={isDisabled}
+                    onClick={(e) => removeCount(e)}
+                  >
+                    <FontAwesomeIcon 
+                        icon={faChevronCircleDown}
+                    />
+                </button>
               </header>
               <p 
                 className='voter-msg'> 
-                    {isDisabled ? 'Recommendation recorded.': ''} 
-                    <hr/>
+                {isDisabled ? 'Recommendation recorded.': ''} 
+                <hr/>
               </p>
               <p 
-              className="answer-block">
+                className="answer-block">
                 {answer}  
               </p>
           </article>
