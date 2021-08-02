@@ -63,11 +63,16 @@
 
 /* === Media Queries === */
 @mixin mobile($property) {
-  @media only screen and (min-width: 375px) {
+  @media only screen and (min-width: 250px) {
     @content;
     transition: 100ms;
     @if $property==grid{
       @include grid(mobile) 
+    }
+    @else if $property==logo{
+      height: 5rem;
+      width: 5rem;
+      transition: 1s;
     }
   }
 }
@@ -78,6 +83,11 @@
     @if $property==grid{
       @include grid(tablet) 
     }
+    @else if $property==logo{
+      height: 7rem;
+      width: 7rem;
+      transition: 1s;
+    }
   }
 }
 @mixin desktop($property) {
@@ -86,6 +96,10 @@
     transition: 100ms;
     @if $property==grid{
       @include grid(desktop) 
+    }
+    @else if $property==logo{
+      height: 8rem;
+      width: 9rem;
     }
   }
 }
@@ -106,3 +120,5 @@
   font-size: clamp($value);
   } 
 }
+
+
