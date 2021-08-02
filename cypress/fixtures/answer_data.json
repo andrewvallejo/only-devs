@@ -1,0 +1,19 @@
+{
+    "answers": [
+       {
+            "id": 81,
+            "question_id": 2,
+            "answer": "Props are immutable, state is mutable.",
+            "rating": 1,
+            "answer_time": "2021-08-02T20:02:55.761Z"
+        },
+        {
+            "id": 83,
+            "question_id": 2,
+            "answer": "Props are properties passed from parent to child.",
+            "rating": 5,
+            "answer_time": "2021-08-03T20:02:55.761Z"
+        }
+
+    ]
+}
