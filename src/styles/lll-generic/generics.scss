@@ -15,7 +15,7 @@ a, nav_link, Link {
 body {
   width: 100vw;
   height: 100vh;
-  font-family: $font-family-defaults;
+  font-family: $font-family-primary;
 }
 
 button {
@@ -27,6 +27,7 @@ button {
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
+  // font-family: $font-family-secondary;
   font-size: $font-size-defaults;
   font-weight: $font-weight-defaults;
   font-style: $font-style-defaults;
