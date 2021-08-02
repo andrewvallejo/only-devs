@@ -10,34 +10,40 @@ describe ('Prompt Question Page', () => {
         cy.visit('http://localhost:3000/')
     })
     
-    it('should be able to visit the app and display the site', () => {
-        cy.contains('OnlyDevs')
-        cy.contains('View All Questions')
+    it('should be able to visit the app and display the logo and shuffle button', () => {
+        cy.get('#onlyDevsLogo').should("have.attr", "src")
         cy.get('.question-form')
-        cy.contains('Submit Answer')
+        cy.get('.shuffle-btn')
+        cy.contains('Shuffle Question')
     })
 
     it('should be able to navigate to all questions view', () => {
-        cy.get('.view-all-btn')
+        cy.get("#31  > .view-details-btn")
         .click()
-        .url().should('include', '/all-questions')
-        cy.contains('Describe event bubbling.')
+        .url().should('include', '/question-details/31')
+        cy.contains('Inside What life cycle methods should you do fetch calls in React?')
     })
 
     it('Should be able to be able to navigate back and forward in browser', () => {
-        cy.visit('http://localhost:3000/all-questions')
+        cy.visit('http://localhost:3000/questions-details/31')
           .go('back')
           .url().should('eq','http://localhost:3000/')
           .go('forward')
-          .url().should('eq','http://localhost:3000/all-questions')
-      })
+          .url().should('eq','http://localhost:3000/questions-details/31')
+    })
 
+    it('Should not show a submit button when form is blank', () => {
+        cy.get('.submit-btn').should('not.be.visible')
+    })
 
+    it('Should check that when data is put into the form, the value is reflected in that form input', () => {
+        cy.get('textarea').type('Hello, Coders!').should('have.value', 'Hello, Coders!')
+    })
 
-
-
-
-
+    it('Should show a submit button when text is typed into the form', () => {
+        cy.get('textarea').type('Cool stuff').should('have.value', 'Cool stuff')
+        cy.get('.submit-btn').should('be.visible')
+    })
 
 
 
