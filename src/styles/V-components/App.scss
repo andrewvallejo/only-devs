@@ -1,12 +1,13 @@
 .logo {
-    height: 8rem;
-    width: 9rem;
+    @include mediaQueries(logo);
+    transition: 1s;
     margin: 0 0 0 .5rem;
 }
 
 .nav-bar {
     height: 8rem;
-    margin: .5rem 0 .5rem;
+    margin-bottom: .5rem;
     display: flex;
     justify-content: flex-start;
+    align-items: flex-start;
 }
