@@ -1,4 +1,4 @@
-describe ('Prompt Question Page', () => {
+describe ('Main Page', () => {
 
     const questionsReq = 'https://localhost:3001/api/questions'
 
@@ -10,14 +10,14 @@ describe ('Prompt Question Page', () => {
         cy.visit('http://localhost:3000/')
     })
     
-    it('should be able to visit the app and display the logo and shuffle button', () => {
+    it('Should be able to visit the app and display the logo and shuffle button', () => {
         cy.get('#onlyDevsLogo').should("have.attr", "src")
         cy.get('.question-form')
         cy.get('.shuffle-btn')
         cy.contains('Shuffle Question')
     })
 
-    it('should be able to navigate to all questions view', () => {
+    it('Should be able to navigate to all questions view', () => {
         cy.get("#31  > .view-details-btn")
         .click()
         .url().should('include', '/question-details/31')
@@ -43,6 +43,38 @@ describe ('Prompt Question Page', () => {
     it('Should show a submit button when text is typed into the form', () => {
         cy.get('textarea').type('Cool stuff').should('have.value', 'Cool stuff')
         cy.get('.submit-btn').should('be.visible')
+    })
+
+    it('Should remove the submit button when text is removed and the form is blank again', () => {
+        cy.get('textarea').type('Cool stuff').should('have.value', 'Cool stuff').clear()
+        cy.get('.submit-btn').should('not.be.visible')  
+    })
+
+    it('Should display the correct number of characters left when text is type into the form', () => {
+        cy.get('textarea').type('Hi!').should('have.value', 'Hi!')
+        cy.get('.char-counter').contains('297/300')
+    })
+
+    it('Should display a gold background on the go to answers button after submitting an answer', () => {
+        cy.get('textarea').type('Hi!').should('have.value', 'Hi!')
+        cy.get('.submit-btn').click()
+        cy.get('.go-to-answers').should('have.css', 'background', 'rgb(255, 215, 0) none repeat scroll 0% 0% / auto padding-box border-box')
+    })
+
+    it('Should be able to type in the search field', () => {
+        cy
+          .get('input[type="text"]')
+          .type('Hoisting')
+          .should('have.value', 'Hoisting')
+      })
+  
+    it('Should be able to display only the question card(s) that match search criteria', () => {
+        cy
+          .get('input[type="text"]')
+          .type('app')
+          .get('.cards-container')
+          cy.get('[href="/question-details/34"]')
+          .contains('MVC')
     })
 
 
