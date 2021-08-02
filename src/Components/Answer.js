@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleUp, faChevronCircleDown  } from '@fortawesome/free-solid-svg-icons';
 
 export const Answer = ({singleAnswer, rate}) => {
+
+  const [isDisabled, setIsDisabled] = useState(false);
+
   const {id, question_id, answer , rating, answer_time} = singleAnswer
   const date = parseDate(answer_time)
   const upvote = [question_id, id, 'upvote']
@@ -12,30 +15,39 @@ export const Answer = ({singleAnswer, rate}) => {
   let [count, setCount] = useState(rating)
 
 
-  const addCount = () => {
+  const addCount = (e) => {
+      e.preventDefault()
+
       setCount(count + 1)
       rate(upvote) 
-      console.log(rating)   
+      setIsDisabled(true);   
   }
 
-  const removeCount = () => {
+  const removeCount = (e) => {
+      e.preventDefault()
+
       setCount(count - 1)
       rate(downvote)
+      setIsDisabled(true);
   }
-
-
 
       return (
           <article className='answer' key={id} id={id}>
               <header className='answer-header'>
                   <p className="time">Submission date: {date}</p>
-                  <FontAwesomeIcon 
-                  onClick={() => (addCount())} icon={faChevronCircleUp}   
+                  <FontAwesomeIcon
+                    className={isDisabled ? 'disabled-vote' : ''} 
+                    onClick={(e) => addCount(e)}
+                    icon={faChevronCircleUp}
+                    disable={isDisabled}   
                   />
                           <h3>{count}</h3>
                   <FontAwesomeIcon 
-                      onClick={() => (removeCount())} icon={faChevronCircleDown}           
-                      />
+                      className={isDisabled ? 'disabled-vote' : ''}
+                      onClick={(e) => removeCount(e)}
+                      icon={faChevronCircleDown}
+                      disable={isDisabled}           
+                  />
               </header>
               <p className="answer-block">{answer}</p>
           </article>
