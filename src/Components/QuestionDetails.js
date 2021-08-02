@@ -11,6 +11,7 @@ export class QuestionDetails extends Component {
     constructor (props) {
         super(props) 
         this.state = {
+            isLoading: true,
             answers: [],
             error: ''
         }
@@ -23,8 +24,8 @@ export class QuestionDetails extends Component {
 
      componentDidMount = () => {
              fetchAnswers(this.props.id)
-             .then(data => this.setState({answers: data}))
-             .catch(error => this.setState({error: 'Oops server is down! Please try again.'}))
+             .then(data => this.setState({answers: data, isLoading:false}))
+             .catch(error => this.setState({error: 'Oops, unable to fetch your answers! Please try again later.'}))
          }
 
     render() {
@@ -39,7 +40,9 @@ export class QuestionDetails extends Component {
                 <h2 className="question">{this.displayQuestion()}</h2>
                 </header>
                 <div className="answers-container">
-                {!this.state.answers.length && <h3 className='no-answers'>This question hasn't been answered yet.</h3>}
+                    {this.state.error && <h3 className='no-answers'>{this.state.error}</h3>}
+                    {(!this.state.error && this.state.isLoading) && <h3> Loading... answers</h3>}
+                    {!this.state.answers.length && <h3 className='no-answers'>This question hasn't been answered yet.</h3>}
                      <AnswerBoard answers={this.state.answers} rateAnswer={this.props.rateAnswer}/>
                 </div>
             </section>
