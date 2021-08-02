@@ -49,7 +49,7 @@ export const Answer = ({singleAnswer, rate}) => {
                         //disable={isDisabled}   
                     />
                   </button>
-                          <h3>{count}</h3>
+                          <h3>{count} Recs</h3>
                     <button
                         className={isDisabled ? 'disabled-vote' : ''}
                         disabled={isDisabled}
@@ -62,7 +62,15 @@ export const Answer = ({singleAnswer, rate}) => {
                         />
                     </button>
               </header>
-              <p className="answer-block">{answer}</p>
+              <p 
+                className='voter-msg'> 
+                    {isDisabled ? 'Recommendation recorded.': ''} 
+                    <hr/>
+              </p>
+              <p 
+              className="answer-block">
+                {answer}  
+              </p>
           </article>
       )     
 }
