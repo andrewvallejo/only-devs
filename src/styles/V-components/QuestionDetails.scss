@@ -1,9 +1,10 @@
 .details-container {
-  padding: 0 5rem;
+  padding: 0 3rem;
   margin-top: 1rem;
   overflow: hidden;
   height: 100%;
   border-radius: 5px;
+
   .question-header {
     @include flex(row, center);
     @include opacity($color-secondary, -0.5);
@@ -11,7 +12,7 @@
     border-radius: 5px;
     padding-left: 1rem;
     box-shadow: 3px 3px 10px  $color-secondary;
-    height: 5rem;
+    height: 7.5rem;
     h2  {
       color: $color-light;
       margin: 1rem;
@@ -44,9 +45,11 @@
         box-shadow: 0 0 15px  $color-quaternary;
       }
     }
-  }
+
 
 .no-answers {
-  place-self: center;
-  font-size: 2rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
 }
