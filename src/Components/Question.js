@@ -59,13 +59,7 @@ export const Question = ({ randomQuestion, postAnswer, postError }) => {
                     if (event.target.value.length === 0) {
                         setDisabled(true);
                     }
-                    if (event.target.value.toLowerCase().includes('party boiii')) {
-                        setIsRainbow(true)
-                    }
-                    if (!event.target.value.toLowerCase().includes('party boiii')) {
-                        setIsRainbow(false)
-                    }
-                    //event.target.value.toLowerCase().includes('party boiii') ? setIsRainbow(true) : setIsRainbow(false);
+                    event.target.value.toLowerCase().includes('party boiii') ? setIsRainbow(true) : setIsRainbow(false);
                 }}
             ></textarea>
             <div className='char-counter'>
