@@ -37,19 +37,29 @@ export const Answer = ({singleAnswer, rate}) => {
           <article className='answer' key={id} id={id}>
               <header className='answer-header'>
                   <p className="time">Submission date: {date}</p>
-                  <FontAwesomeIcon
-                    className={isDisabled ? 'disabled-vote' : ''} 
-                    onClick={(e) => addCount(e)}
-                    icon={faChevronCircleUp}
-                    disable={isDisabled}   
-                  />
+                  <button
+                        className={isDisabled ? 'disabled-vote' : ''}
+                        disabled={isDisabled}
+                  >
+                    <FontAwesomeIcon
+                        //className={isDisabled ? 'disabled-vote' : ''} 
+                        onClick={(e) => addCount(e)}
+                        icon={faChevronCircleUp}
+                        disable={isDisabled}   
+                    />
+                  </button>
                           <h3>{count}</h3>
-                  <FontAwesomeIcon 
-                      className={isDisabled ? 'disabled-vote' : ''}
-                      onClick={(e) => removeCount(e)}
-                      icon={faChevronCircleDown}
-                      disable={isDisabled}           
-                  />
+                    <button
+                        className={isDisabled ? 'disabled-vote' : ''}
+                        disabled={isDisabled}
+                    >
+                        <FontAwesomeIcon 
+                            //className={isDisabled ? 'disabled-vote' : ''}
+                            onClick={(e) => removeCount(e)}
+                            icon={faChevronCircleDown}
+                            disable={isDisabled}           
+                        />
+                    </button>
               </header>
               <p className="answer-block">{answer}</p>
           </article>
