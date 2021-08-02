@@ -130,9 +130,16 @@
 }
 
 .gold-btn {
-  background: gold;
+  transition: 1s;
+  background: black;
+  box-shadow: -1px 1px 11px 3px #f9df6a;
   transform: scale(1.1);
-  color: $color-dark;
+  color: #f9df6a;
+  border: none;
+    &:hover{
+    box-shadow: -1px 1px 11px 2px $color-dark;
+    transform: scale(1.14);
+  }
 }
 
 .char-counter {
