@@ -25,7 +25,7 @@
     min-height: 5rem;
     height: 10rem;
     text-align: center;
-
+    resize: none;
 }
 
 .rainbow { 
@@ -99,14 +99,14 @@
 }
 
 .shuffle-btn {
-  width: 75px;
-  height: 59px;
+  width: 54px;
+  height: 35px;
   display: flex;
   place-self: flex-end;
 
   .shuffle-icon {
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 
