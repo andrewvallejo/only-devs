@@ -55,9 +55,11 @@ export default class App extends Component {
   render() {  
     return (
       <>
-        <NavLink to='/'>
-          <img className='logo' src='https://i.imgur.com/imPxyaU.png' alt='only-devs logo' id='onlyDevsLogo'></img>
-        </NavLink>
+        <header className='nav-bar'>
+          <NavLink to='/'>
+            <img className='logo' src='https://i.imgur.com/imPxyaU.png' alt='only-devs logo' id='onlyDevsLogo'></img>
+          </NavLink>
+        </header>
         <main>
           <Switch>
             {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
