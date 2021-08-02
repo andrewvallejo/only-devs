@@ -1,4 +1,4 @@
-import { Answers } from './Answers';
+import { AnswerBoard } from './AnswerBoard';
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { fetchAnswers } from '../Utilities/apiCalls';
@@ -40,7 +40,7 @@ export class QuestionDetails extends Component {
                 </header>
                 <div className="answers-container">
                 {!this.state.answers.length && <h3 className='no-answers'>This question hasn't been answered yet.</h3>}
-                     <Answers answers={this.state.answers} rateAnswer={this.props.rateAnswer}/>
+                     <AnswerBoard answers={this.state.answers} rateAnswer={this.props.rateAnswer}/>
                 </div>
             </section>
         )
