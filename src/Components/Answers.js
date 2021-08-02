@@ -1,5 +1,7 @@
 import React from 'react';
 import { parseDate } from  '../Utilities/util';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronCircleUp, faChevronCircleDown  } from '@fortawesome/free-solid-svg-icons'
 import PropTypes from 'prop-types';
   
  export const Answers = ({answers, rateAnswer}) => {
@@ -13,7 +15,9 @@ import PropTypes from 'prop-types';
             <article className='answer' key={id} id={id}>
                 <header className='answer-header'>
                     <p className="time">Submission date: {date}</p>
-                    <button className='like-btn' onClick={() => (rateAnswer(upvote))}>{rating} likes</button>
+<FontAwesomeIcon onClick={() => (rateAnswer(upvote))} icon={faChevronCircleUp} />
+                <h3>{rating}</h3>
+<FontAwesomeIcon onClick={() => (rateAnswer(downvote))} icon={faChevronCircleDown} />
                 </header>
                 <p className="answer-block">{answer}</p>
             </article>

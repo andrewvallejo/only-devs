@@ -10,6 +10,7 @@ export const Question = ({ randomQuestion, postAnswer, postError }) => {
     const [answer, setAnswer] = useState('')
     const [isDisabled, setDisabled] = useState(true);
     const [isAnswered, setIsAnswered] = useState(false);
+    const [isRainbow, setIsRainbow] = useState(false);
     const maxLength = 300;
     const [charsLeft, setCharsLeft] = useState(maxLength);
 
@@ -40,7 +41,8 @@ export const Question = ({ randomQuestion, postAnswer, postError }) => {
                 <h2>{randomQuestion.question}</h2>
             </header>
             <textarea
-                className='answer-input' 
+                //className='answer-input' 
+                className={isRainbow ? 'answer-input rainbow' : 'answer-input'}
                 id={randomQuestion.id}
                 name='answer'
                 placeholder='Write your answer here.'
@@ -57,6 +59,7 @@ export const Question = ({ randomQuestion, postAnswer, postError }) => {
                     if (event.target.value.length === 0) {
                         setDisabled(true);
                     }
+                    event.target.value.toLowerCase().includes('party boiii') ? setIsRainbow(true) : setIsRainbow(false);
                 }}
             ></textarea>
             <div className='char-counter'>
