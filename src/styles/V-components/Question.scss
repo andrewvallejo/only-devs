@@ -127,20 +127,18 @@
   &:disabled {
     cursor: auto;
     opacity: 0;
+    transition: 900ms;
+    transform: scale(.5)
   }
 }
 
 .gold-btn {
   transition: 1s;
-  background: black;
-  box-shadow: -1px 1px 11px 3px #f9df6a;
   transform: scale(1.1);
-  color: #f9df6a;
-  border: none;
+  border: 1.5px solid $color-secondary;
     &:hover{
-    box-shadow: -1px 1px 11px 2px $color-dark;
-    border: none;
-  }
+      border: 1.5px solid $color-secondary;
+    }
 }
 
 .char-counter {
