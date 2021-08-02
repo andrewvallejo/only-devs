@@ -95,7 +95,8 @@
  }
 
 .question-header {
-  @include flex(row, center)
+  @include flex(row, center);
+  margin-bottom: 0.1rem;
 }
 
 .shuffle-btn {
@@ -103,6 +104,7 @@
   height: 35px;
   display: flex;
   place-self: flex-end;
+  margin: 0 0 .5rem 0;
 
   .shuffle-icon {
     width: 1.5rem;
@@ -118,7 +120,7 @@
   margin: 10px 0px 10px 0px;
   transition: 1s;
   &:hover {
-    background: green;
+    background: $color-secondary;
   }
   &:disabled {
     cursor: auto;
@@ -129,6 +131,7 @@
 .gold-btn {
   background: gold;
   transform: scale(1.1);
+  color: $color-dark;
 }
 
 .char-counter {
