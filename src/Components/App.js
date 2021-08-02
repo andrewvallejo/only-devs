@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, NavLink, Link } from 'react-router-dom';
-// import { Header } from './Header';
+import { Logo } from './Header.js';
 import { Question} from './Question';
 import { QuestionBoard } from './QuestionBoard';
 import { QuestionDetails } from './QuestionDetails';
@@ -55,11 +55,7 @@ export default class App extends Component {
   render() {  
     return (
       <>
-        <header className='nav-bar'>
-          <NavLink to='/'>
-            <img className='logo' src='https://i.imgur.com/i6f9tQA.png' alt='only-devs logo' id='onlyDevsLogo'></img>
-          </NavLink>
-        </header>
+        <Header />
         <main>
           <Switch>
             {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
