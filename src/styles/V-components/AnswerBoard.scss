@@ -1,6 +1,6 @@
 .answer {
   @include opacity($color-tertierary, -0.5);
-  width: clamp(25rem, 25vw, 30rem);
+  width: clamp(16rem, 25vw, 30rem);
   height: clamp(12rem, 25vh, 30rem);
   margin: 1rem 0;
   box-shadow: 3px 3px 10px grey;
