@@ -1,7 +1,7 @@
 .question-card {
     height: 80%;
     width: 20rem;
-    @include opacity($color-secondary, -0.5);
+    @include opacity($color-dark, -0.7);
     box-shadow: 3px 3px 10px  $color-secondary;
     border-radius: 10px;
     padding: .5rem;
