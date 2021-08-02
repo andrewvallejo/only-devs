@@ -16,9 +16,9 @@
 
 .cards-container {
     @include mediaQueries(grid);
-    background: $color-primary;
+    // background: $color-primary;
     width: 100%;
-    padding: 0 5rem;
+    padding: 0;
     overflow-y: scroll;
     gap: 1rem;
     margin-top: 1rem;
