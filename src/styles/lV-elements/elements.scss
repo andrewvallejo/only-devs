@@ -32,6 +32,7 @@ button {
   border-radius: 3px;
   padding: 0.1rem 0.5rem;
   color: $color-secondary;
+  font-family: $font-family-secondary;
   &:hover {
     @include opacity($color-secondary, -0.2);
     transition: 500ms;
