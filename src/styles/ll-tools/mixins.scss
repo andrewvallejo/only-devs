@@ -75,6 +75,9 @@
       width: 8rem;
       margin-bottom: 0 .5rem 1rem 0;
     }
+    @else if $property==vote-flex {
+      @include flex(column, space-between)
+    }
   }
 }
 @mixin tablet($property) { 
@@ -89,6 +92,9 @@
       height: 10rem;
       width: 10rem;
     }
+    @else if $property==vote-flex {
+      @include flex(row, space-between)
+    }
   }
 }
 @mixin desktop($property) {
@@ -98,14 +104,17 @@
     @if $property==grid{
       @include grid(desktop) 
     }
-    @else if $property==logo{
+    @else if $property==logo {
       transition: 1s;
       height: 18rem;
       width: 18rem;
     }
+    @else if $property==vote-flex {
+      @include flex(row, space-between);
+      margin: auto
+    }
   }
 }
-
 /* === Helpers === */
 @mixin mediaQueries($property) {
   @include mobile($property);
