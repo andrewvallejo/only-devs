@@ -25,7 +25,7 @@ describe('Error Handling', () => {
         cy
           .intercept('https://onlydevs-api.herokuapp.com/questions/54', {statusCode: 404})
           .visit('http://localhost:3000/question-details/54')
-          .get('.answers-container')
+          .get('.answers-board')
           .contains('Oops, unable to fetch your answers! Please try again later.')
       });
 });
