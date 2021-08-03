@@ -35,7 +35,6 @@
 }
 .arrow-container {
   @include mediaQueries(vote-flex);
-  border: red solid 1px;
   .vote-arrow {
     
     border-radius: 50%;
@@ -51,13 +50,11 @@
   }
  
 
-  .voter-msg {
-    opacity: 0;
-    animation: 5s fade-out-delay;
-  }
-
   .disabled-vote {
-    &:disabled {
-      @include opacity ($color-quaternary, -0.5)
+    color: $color-grey;  
+    border: 1px solid $color-grey;
+    cursor: not-allowed;
+    &:hover {
+      background: grey;
     }
   }
