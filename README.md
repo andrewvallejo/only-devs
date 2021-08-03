@@ -62,7 +62,7 @@ npm start
 
 ---
 
-![Screen Recording 2021-08-02 at 9 56 39 PM](https://user-images.githubusercontent.com/17935770/127956019-89ef06ff-0591-47d6-ab1a-5adae0a3fd1c.gif)
+<img align="center" src="https://user-images.githubusercontent.com/17935770/127956019-89ef06ff-0591-47d6-ab1a-5adae0a3fd1c.gif">
 
 ## Roadmap
 
