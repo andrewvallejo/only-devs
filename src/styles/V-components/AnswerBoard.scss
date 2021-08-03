@@ -7,6 +7,8 @@
   padding: 1rem; 
   overflow-y: scroll;
   font-family: $font-family-secondary;
+  animation: 2s fade-in;
+  
   .answer-header {
     @include flex(row, around);
     align-self: flex-start;
@@ -21,6 +23,7 @@
     }
   }
   .answer-block{
+    animation: 3.5s fade-in;
     overflow-y: scroll;
     margin-bottom: auto;
     line-height: 1.7;
