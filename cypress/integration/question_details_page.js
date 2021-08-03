@@ -44,6 +44,4 @@ it('Should be able to search for question by keyword', () => {
     .and('match', /serif/)
 })
 
-
-
 });
