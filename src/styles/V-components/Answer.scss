@@ -6,7 +6,6 @@
   box-shadow: 3px 3px 10px $color-grey;
   padding: 1rem; 
   overflow-y: scroll;
-  
   font-family: $font-family-secondary;
   animation: 2s fade-in;
   
@@ -31,11 +30,34 @@
   }
 }
 
-.disabled-vote {
-  opacity: 0.6;
-  cursor: not-allowed;
-  &:hover {
-    background-color: rgb(206, 103, 103);
-    color: white;
-  }
+.rating-container {
+  @include flex(row, center);
 }
+.arrow-container {
+  @include mediaQueries(vote-flex);
+  border: red solid 1px;
+  .vote-arrow {
+    
+    border-radius: 50%;
+    &.up-arrow:hover {
+      background: $color-primary;
+      border-color: $color-quaternary;
+     }
+    }
+  }
+  .rating-number {
+    align-self: center;
+    margin: .3rem;
+  }
+ 
+
+  .voter-msg {
+    opacity: 0;
+    animation: 5s fade-out-delay;
+  }
+
+  .disabled-vote {
+    &:disabled {
+      @include opacity ($color-quaternary, -0.5)
+    }
+  }
