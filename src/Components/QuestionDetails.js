@@ -42,7 +42,7 @@ export class QuestionDetails extends Component {
                 <div className="answers-container">
                     {this.state.error && <h3 className='no-answers'>{this.state.error}</h3>}
                     {(!this.state.error && this.state.isLoading) && <h3> Loading... answers</h3>}
-                    {!this.state.answers.length && <h3 className='no-answers'>This question hasn't been answered yet.</h3>}
+                    {(!this.state.answers.length && !this.state.error) && <h3 className='no-answers'>This question has not been answered yet.</h3>}
                      <AnswerBoard answers={this.state.answers} rateAnswer={this.props.rateAnswer}/>
                 </div>
             </section>
