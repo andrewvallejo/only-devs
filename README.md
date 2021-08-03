@@ -13,7 +13,7 @@
          src="https://user-images.githubusercontent.com/17935770/127760380-c144cb99-68bc-492c-8637-421a39d737fd.png">   
     <br>
     It doesn't matter if you are trying to break into the tech industry or a seasoned engineered-
-    anybody who is trying to get a new job will need to freshen up on their interview skill. 
+    anybody who is trying to get a new job will need to freshen up on their interview skills. 
     OnlyDevs provides a way for developers to challenge their knowledge,
     while also being able to study with the contributions of others.  
   </summary>
