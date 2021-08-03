@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { parseDate } from  '../Utilities/util';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleUp, faChevronCircleDown  } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 export const Answer = ({singleAnswer, rate}) => {
 
@@ -66,4 +67,9 @@ export const Answer = ({singleAnswer, rate}) => {
               </p>
           </article>
       )     
+}
+
+Answer.propTypes = {
+  singleAnswer: PropTypes.object,
+  rate: PropTypes.func
 }
