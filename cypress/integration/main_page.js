@@ -1,13 +1,14 @@
 describe ('Main Page', () => {
 
-    const questionsReq = 'https://localhost:3001/api/questions'
+    // const questionsReq = 'https://onlydevs-api.herokuapp.com/questions/'
 
     beforeEach(() => {
-        cy.intercept('GET', questionsReq, {
-            statusCode: 200,
+        cy.intercept('GET', 'https://onlydevs-api.herokuapp.com/questions/', {
+            statusCode: 201,
             fixture: 'question_data'
         })
         cy.visit('http://localhost:3000/')
+        cy.wait(500)
     })
     
     it('Should be able to visit the app and display the logo and shuffle button', () => {
