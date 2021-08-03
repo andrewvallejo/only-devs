@@ -109,6 +109,6 @@ View the deployed app [here](https://onlydevs.herokuapp.com/)!
 ---
 **Learning goals:** My major goals were to be able to make a fullstack website by also learning backend with PostgreSQL and connecting the API made with Express to Heroku. 
 
-**Challenges:** The backend already seemed daunting as I imagine in my head it being the parallel and opposite universe to front end. Although after learning the syntax and receiving help from backend developers, I manage to create some tables. The hard part was trying to understand SQL, it's logic, and understanding the new UI. Like the others, Hiroku proved to be the most challenging aspect as it felt completely unknown at the time how connect all of the pieces . Although like edison, I know of a thousand ways how to not deploy a heroku backend.
+**Challenges:** The backend already seemed daunting as I imagine in my head it being the parallel and opposite universe to front end. Although after learning the syntax and receiving help from backend developers, I manage to create some tables. The hard part was trying to understand SQL, it's logic, and learning a new CLI. Like the others, Hiroku proved to be the most challenging aspect as it felt completely unknown at the time how connect all of the pieces . Although, like Thomas Edison, I know of a thousand ways how to not deploy a Heroku backend.
 
 <br>
