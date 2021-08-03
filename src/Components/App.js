@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Route, Switch, NavLink, Link } from 'react-router-dom';
-import { Logo } from './Header.js';
+import { Route, Switch, Link } from 'react-router-dom';
+import { Header } from './Header.js';
 import { Question} from './Question';
 import { QuestionBoard } from './QuestionBoard';
 import { QuestionDetails } from './QuestionDetails';
