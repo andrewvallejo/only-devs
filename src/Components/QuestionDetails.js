@@ -39,7 +39,7 @@ export class QuestionDetails extends Component {
                     </NavLink>
                 <h2 className="question">{this.displayQuestion()}</h2>
                 </header>
-                <div className="answers-container">
+                <div className="answers-board">
                     {this.state.error && <h3 className='no-answers'>{this.state.error}</h3>}
                     {(!this.state.error && this.state.isLoading) && <h3> Loading... answers</h3>}
                     {(!this.state.answers.length && !this.state.error) && <h3 className='no-answers'>This question has not been answered yet.</h3>}
