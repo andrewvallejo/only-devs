@@ -10,14 +10,8 @@
     font-family: $font-family-secondary;
 }
 
-// .questions-container {
-//     height: 70%;
-//     width: 100vw;
-// }
-
 .cards-container {
     @include mediaQueries(grid);
-    // background: $color-primary;
     width: 100%;
     padding: 0;
     overflow-y: scroll;
