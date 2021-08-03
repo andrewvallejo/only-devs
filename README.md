@@ -23,18 +23,7 @@
 </details>
 <br>
 
-## <p align="center">  Badges </p>
-
-<div align="center">  
-<img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square" alt="React Badge">
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square" alt="JavaScript Badge">
-<img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat-square" alt="CSS3 Badge">
-<img src="https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff&style=flat-square" alt="Sass Badge"> 
-<img src="https://img.shields.io/badge/Express-000?logo=express&logoColor=fff&style=flat-square" alt="Express Badge">
-<img src="https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=flat-square" alt="Cypress Badge"> 
-<img src="https://img.shields.io/badge/Heroku-430098?logo=heroku&logoColor=fff&style=flat-square" alt="Heroku Badge"> 
-<img src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=fff&style=flat-square" alt="PostgreSQL Badge"> 
-</div> 
+View the [deployed app!](https://onlydevs.herokuapp.com/)
 
 ## Features
 
@@ -56,8 +45,6 @@ npm install
 npm start
 ```
 
-View the deployed app [here](https://onlydevs.herokuapp.com/)!
-
 ## Preview
 
 ![homepage](https://user-images.githubusercontent.com/17935770/127957715-a129ad3f-df7d-4b89-a591-2d74a13ea1bc.png)
@@ -75,6 +62,18 @@ View the deployed app [here](https://onlydevs.herokuapp.com/)!
 > - Sort answers by rating, date added, and authors
 > - Ability to favorite questions and answers
 
+## <p align="center"> Tech Stack </p>
+
+<div align="center">  
+<img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square" alt="React Badge">
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square" alt="JavaScript Badge">
+<img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat-square" alt="CSS3 Badge">
+<img src="https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff&style=flat-square" alt="Sass Badge"> 
+<img src="https://img.shields.io/badge/Express-000?logo=express&logoColor=fff&style=flat-square" alt="Express Badge">
+<img src="https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=flat-square" alt="Cypress Badge"> 
+<img src="https://img.shields.io/badge/Heroku-430098?logo=heroku&logoColor=fff&style=flat-square" alt="Heroku Badge"> 
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=fff&style=flat-square" alt="PostgreSQL Badge"> 
+</div> 
 
 ## Our Stories
 
