@@ -70,9 +70,10 @@
       @include grid(mobile) 
     }
     @else if $property==logo{
-      height: 5rem;
-      width: 5rem;
       transition: 1s;
+      height: 8rem;
+      width: 8rem;
+      margin-bottom: 0 .5rem 1rem 0;
     }
   }
 }
@@ -84,22 +85,23 @@
       @include grid(tablet) 
     }
     @else if $property==logo{
-      height: 7rem;
-      width: 7rem;
       transition: 1s;
+      height: 10rem;
+      width: 10rem;
     }
   }
 }
 @mixin desktop($property) {
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 1024px) {
     @content;
     transition: 100ms;
     @if $property==grid{
       @include grid(desktop) 
     }
     @else if $property==logo{
-      height: 8rem;
-      width: 9rem;
+      transition: 1s;
+      height: 18rem;
+      width: 18rem;
     }
   }
 }
