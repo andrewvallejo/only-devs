@@ -12,6 +12,7 @@ header {
 
 main {
   @include flex(column, center);
+  animation: 3s fade-in; 
   height: 80vh;
   margin: 0 1rem;
 }
