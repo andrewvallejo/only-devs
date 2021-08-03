@@ -34,6 +34,10 @@ export const Answer = ({singleAnswer, rate}) => {
           <article className='answer' key={id} id={id}>
               <header className='answer-header'>
                   <p className="time">Submission date: {date}</p>
+                  
+
+                <div className="rating-container">
+                  <div className="arrow-container">
                   <button
                     className={isDisabled ? 'disabled-vote' : ''}
                     disabled={isDisabled}
@@ -43,7 +47,7 @@ export const Answer = ({singleAnswer, rate}) => {
                         icon={faChevronCircleUp}
                     />
                   </button>
-                  <h3>{count} Recs</h3>
+                  <h3 className='rating-number'>{count}</h3>
                   <button
                     className={isDisabled ? 'disabled-vote' : ''}
                     disabled={isDisabled}
@@ -53,12 +57,15 @@ export const Answer = ({singleAnswer, rate}) => {
                         icon={faChevronCircleDown}
                     />
                 </button>
-              </header>
-              <p 
+                </div>
+                <p 
                 className='voter-msg'> 
-                {isDisabled ? 'Recommendation recorded.': ''} 
+                {isDisabled ? 'Voted!': ''} 
                 <hr/>
               </p>
+              </div>
+              </header>
+           
               <p 
                 className="answer-block">
                 {answer}  
