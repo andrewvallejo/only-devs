@@ -62,11 +62,12 @@ npm start
 
 <img align="center" src="https://user-images.githubusercontent.com/17935770/127956019-89ef06ff-0591-47d6-ab1a-5adae0a3fd1c.gif">
 
-## Roadmap
+## Future Additions 
 
-> - Authors as users with their profiles that contains their answers and ratings. 
-> - Add question set for backend interview questions
-> - Authors can add questions
+> - User login feature 
+> - User profile that contains their answers and ratings 
+> - Add a set of backend interview questions and backend/frontend modes 
+> - Allow users to add questions
 > - Sort answers by rating, date added, and authors
 > - Ability to favorite questions and answers
 
