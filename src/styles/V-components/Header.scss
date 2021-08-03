@@ -1,23 +1,10 @@
-.main-header {
-  position: relative;
-  background: $color-secondary;
-  padding-bottom: .3rem;
-  width: 100%;
-  height: 20vh;
-  .view-all-btn, .random-btn {
-    @include button;
+.main-header{
+  @include flex(row, center);
+  .logo {
+    @include mediaQueries(logo);
+    transition: 1s;
+    margin: 0 0 0 .5rem;
+    animation: 3s fade-in-delay ease-in;
   }
-}
 
-h1 {
-  margin-left: 20px;
-}
-
-.view-all-btn {
-  margin-right: 2rem;
-  height: 45px;
-}
-
-.random-btn {
-  margin-right: 2rem;
 }
