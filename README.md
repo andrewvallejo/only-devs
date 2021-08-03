@@ -38,11 +38,13 @@
 
 ## Features
 
+ - Ability to view **50**+ web development interview question cards and view a detailed page with answers forum 
+ - Complete backend that is connected through the [only-devs-api](https://github.com/andrewvallejo/only-devs-api)
+ - Ability to share answers to questions with the world
+ - Live search bar to search question by keyword 
+ - Ability to rate an answer and see the current rating 
  - Random interview question which may be answered or shuffled
- - Ability to view 50+ interview question cards and view a detailed page with answers forum 
- - User may upvote or downvote answers 
  - Completely dynamic and fluid media queries
- - 100% test coverage with Cypress
 
 ## Installation & Start
 Clone the project and install dependencies
@@ -53,6 +55,8 @@ cd only-devs
 npm install 
 npm start
 ```
+
+View the deployed app [here](https://onlydevs.herokuapp.com/)!
 
 ## Preview
 
