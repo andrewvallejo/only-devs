@@ -23,10 +23,9 @@ lV - Elements - Semanitic Bare Elements
 /* ==========================================================================
 V -  Components -  Specific UI components
 ========================================================================== */
-@import "./V-components/AnswerBoard.scss";
-@import "./V-components/App.scss";
+@import "./V-components/Answer.scss";
 @import "./V-components/Card.scss";
 @import "./V-components/Header.scss";
 @import "./V-components/Question.scss";
 @import "./V-components/QuestionBoard.scss";
-@import "./V-components/QuestionDetails.scss"
+@import "./V-components/QuestionDetails.scss";
