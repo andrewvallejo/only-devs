@@ -38,13 +38,11 @@
 
 ## Features
 
- - Full screen of available movies to select from 
- - Each movie has information displayed upon being selected
- - User may favorite and unfavorite their movies
+ - Random interview question which may be answered or shuffled
+ - Ability to view 50+ interview question cards and view a detailed page with answers forum 
+ - User may upvote or downvote answers 
  - Completely dynamic and fluid media queries
- - Passed Waves & Lighthouse accessability with a 100%
  - 100% test coverage with Cypress
- - Express API server that holds user's favorites
 
 ## Installation & Start
 Clone the project and install dependencies
@@ -81,10 +79,9 @@ npm start
 
 ---
 
-**Learning goals:**  My biggest learning goal was to be able to successfully build a backend while also gaining more experience with React. I also wanted to get to learn how to use Hooks as well getting better with cypress testing.
-Become more comfortable with Cypress testing.
+**Learning goals:**  My biggest learning goal was to be able to successfully build a backend while also gaining more experience with React. I also wanted to learn Hooks in React and become more comfortable with Cypress testing.
 
-**Challenges:** My challenges were learning a new language (SQL) in order to build the database on PostgreSQL and deploying the backend to Heroku.
+**Challenges:** This project was the first project that we've implemented a new 'stretch' technology, outside of the Turing frontend curriculum.  I had always been intimidated by the backend, as my true love and passion lies in UI and front end Javascript. So it was a mental challenge to step outside my comfort zone into the land of the backend.  There was definitely a learning curve with a new language (SQL) in order to build the database on PostgreSQL and deploy the backend to Heroku. Overall, I'm so glad I ventured into this side of development and I'm proud of this app!  
 
 <br>
 
@@ -95,7 +92,7 @@ Become more comfortable with Cypress testing.
 
 **Learning goals**. Heroku, Express, and Cypress
 
-**Challenges:** In this project, we faced many challenges, the largest being deploying to Heroku. It wasn't difficult to teach ourselves how to make a postgreSQL database or an express api! But it, was very difficult to understand how to configure pool, which was an external library to speak between the postgres database and the express api we custom built. Configuration can be a nightmare, but i can also be a dream when you learn to ask for support from your teammates, cohortmates, and online developer community. I'm truly blessed to have learned this process of co-teaching and co-learning with my teammates to implement a new technology and app that can be used for studying by our cohortmates! 
+**Challenges:** We faced a few challenges in this project.  One of the largest was the learning curve with building a PostgreSQL database and deploying the backend to Heroku. It was also very difficult to understand how to configure pool, which was an external library to speak between the Postgres database and the express api we custom built. Configuration can be a nightmare, but it can also be a dream when you learn to ask for support from your teammates, cohortmates, and online developer community. I'm truly blessed to have learned this process of co-teaching and co-learning with my teammates to implement a new technology and app that can be used for studying by our cohortmates! 
 
 <br>
 
