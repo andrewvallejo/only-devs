@@ -3,10 +3,8 @@
   width: 70%;
   margin-bottom: 1.2rem;
   margin-top: 5rem;
-
    a {
      place-self: flex-end;
-    // margin-bottom: 1rem;
    }
 }
 
@@ -32,10 +30,6 @@
 }
 
 .rainbow { 
-   /* Font options */
-   /* Adding a background color to change in the first place
-    was the trick all along!
-    */
    background-color: white;
    color: goldenrod;
    font-family: 'Arial', sans-serif;
