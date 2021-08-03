@@ -34,9 +34,6 @@ export const Answer = ({singleAnswer, rate}) => {
           <article className='answer' key={id} id={id}>
               <header className='answer-header'>
                   <p className="time">Submission date: {date}</p>
-                  
-
-                <div className="rating-container">
                   <div className="arrow-container">
                   <button
                     className={isDisabled ? 'disabled-vote' : ''}
@@ -58,14 +55,11 @@ export const Answer = ({singleAnswer, rate}) => {
                     />
                 </button>
                 </div>
-                <p 
-                className='voter-msg'> 
-                {isDisabled ? 'Voted!': ''} 
+              </header>
+              <p> 
+                {isDisabled ? 'Recommendation recorded.': ''} 
                 <hr/>
               </p>
-              </div>
-              </header>
-           
               <p 
                 className="answer-block">
                 {answer}  
