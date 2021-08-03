@@ -32,13 +32,13 @@ button {
   border: $color-secondary 1.5px solid;
   border-radius: 3px;
   padding: 0.1rem 0.5rem;
-  color: $color-secondary;
   font-family: $font-family-secondary;
+  color: $color-secondary;
   &:hover {
     @include opacity($color-secondary, -0.2);
     transition: 500ms;
-    text-shadow: 0 0 1.5px $color-light;
     border: $color-light 1.5px solid;
+    text-shadow: 0 0 1.5px $color-light;
     color: $color-primary;
   }
 }
