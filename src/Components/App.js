@@ -20,22 +20,14 @@ const initialState = {
 export const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  let randomizeQuestion;
-
-  randomizeQuestion = () => {
-    const randomQuestion = state.questions[Math.floor(Math.random() * state.questions.length)]
-    dispatch({ randomQuestion });
-  };
-
   useEffect(() => {
     fetchQuestions()
-      .then(data => {
-        dispatch({ questions: data })
-        randomizeQuestion()
-        
+      .then((data) => {
+        const question = data[Math.floor(Math.random() * data.length)]        
+        dispatch({ state, action: {type: 'SETQUESTION', value: question} })
       })
       .catch(error => dispatch({ error: 'Oops server is down! Please try again later.' }))
-  }, [randomizeQuestion])
+  }, [state])
 
   const postAnswer = (newAnswer) => {
     uploadAnswer(newAnswer)
@@ -91,8 +83,8 @@ export const App = () => {
         </main>
       </Switch>
     </DevContext.Provider>
-  );
-}
+  )
+};
 
 App.propTypes = {
   randomQuestion: PropTypes.object,
