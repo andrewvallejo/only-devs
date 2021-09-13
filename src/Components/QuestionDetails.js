@@ -1,7 +1,7 @@
 import { AnswerBoard } from './AnswerBoard';
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { fetchAnswers } from '../Utilities/apiCalls';
+import { fetchAnswers } from '../utility/apiCalls';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
