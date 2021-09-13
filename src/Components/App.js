@@ -1,98 +1,97 @@
-import React, { Component } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import { Header } from './Header.js';
-import { Question} from './Question';
+import { Question } from './Question';
 import { QuestionBoard } from './QuestionBoard';
 import { QuestionDetails } from './QuestionDetails';
-import { fetchQuestions, uploadAnswer, postAnswerRating } from '../Utilities/apiCalls';
+import { fetchQuestions, uploadAnswer, postAnswerRating } from '../utility/apiCalls';
 import PropTypes from 'prop-types';
+import { DevContext } from '../utility/DevContext.js';
+import { reducer } from '../utility/reducer.js';
 
-export default class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      randomQuestion: {},
-      questions: [],
-      error: '',
-      postError: '',
-    }
-  }
 
-  componentDidMount = () => {
-    fetchQuestions()
-      .then(data => {
-        this.setState({ questions: data })
-        this.randomizeQuestion()
-        })
-      .catch(error => this.setState({error: 'Oops server is down! Please try again later.'}))
-  }
+const initialState = {
+  randomQuestion: {},
+  questions: [],
+  error: '',
+  postError: '',
+}
+
+export const App = () => {
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  let randomizeQuestion;
 
   randomizeQuestion = () => {
-    const randomQuestion = this.state.questions[Math.floor(Math.random() * this.state.questions.length)];  
-    this.setState({randomQuestion}); 
-  }
+    const randomQuestion = state.questions[Math.floor(Math.random() * state.questions.length)]
+    dispatch({ randomQuestion });
+  };
 
-  postAnswer(newAnswer) {
+  useEffect(() => {
+    fetchQuestions()
+      .then(data => {
+        dispatch({ questions: data })
+        randomizeQuestion()
+        
+      })
+      .catch(error => dispatch({ error: 'Oops server is down! Please try again later.' }))
+  }, [randomizeQuestion])
+
+  const postAnswer = (newAnswer) => {
     uploadAnswer(newAnswer)
-    .then(response => {
-      if(!response) {
-        this.setState({error: 'Oops,  our server is down! Your wasn\'t posted. Please try again later.'})
-        throw Error('Error fetching answers');
-      } 
-      return response.json()
-    })
-    .catch(error => console.error(error));
+      .then(response => {
+        if (!response) {
+          dispatch({ error: 'Oops,  our server is down! Your wasn\'t posted. Please try again later.' })
+          throw Error('Error fetching answers')
+        }
+        return response.json()
+      })
+      .catch(error => console.error(error))
   }
 
-  rateAnswer(answer) {
+  const rateAnswer = (answer) => {
     postAnswerRating(answer)
-    .then(response => {
-      console.log(response)
-    });
+      .then(response => {
+        console.log(response)
+      })
   }
 
-
-  render() {  
-    return (
-      <>
+  return (
+    <DevContext.Provider value={(state, dispatch)}>
+      <Switch>
         <Header />
         <main>
-          <Switch>
-            {this.state.error && <h3 className='errorLoading'>{this.state.error}</h3>}
-            {(!this.state.questions.length && !this.state.error) && <h3>Loading...</h3>}
-            < Route exact path = '/' render={() => 
-              <>
-              <Question 
-              randomQuestion={this.state.randomQuestion} 
-              postAnswer={this.postAnswer} 
-
-              />
-              <QuestionBoard 
-                questions={this.state.questions}
-                vote={this.rateAnswer}
-              /> 
-              </>
-            } />
-            <Route exact path = '/question-details/:id' render={({ match }) => {
-              const questionID = parseInt(match.params.id);
-              return <QuestionDetails 
+          {state.error && <h3 className='errorLoading'>{state.error}</h3>}
+          {(!state.questions.length && !state.error) && <h3>Loading...</h3>}
+          <Route exact path='/' render={() =>
+            <>
+              <Question
+                randomQuestion={state.randomQuestion}
+                postAnswer={postAnswer} />
+              <QuestionBoard
+                questions={state.questions}
+                vote={rateAnswer} />
+            </>
+          } />
+          <Route exact path='/question-details/:id' render={({ match }) => {
+            const questionID = parseInt(match.params.id);
+            return (
+              <QuestionDetails
                 key={questionID}
                 id={questionID}
-                questions={this.state.questions}
-                rateAnswer={this.rateAnswer}
-                />
-            }} />
-            <Route>
-              <Link to='/'>
-                <h3>Sorry we can't find that page, click here to go home!</h3>
-              </Link>
-            </Route>
-
-          </Switch>
+                questions={state.questions}
+                rateAnswer={rateAnswer} />
+            )
+          }} />
+          <Route>
+            <Link to='/'>
+              <h3>Sorry we can't find that page, click here to go home!</h3>
+            </Link>
+          </Route>
         </main>
-      </>
-    )
-  }
+      </Switch>
+    </DevContext.Provider>
+  );
 }
 
 App.propTypes = {
