@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { parseDate } from  '../Utilities/util';
+import { parseDate } from  '../utility/util';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleUp, faChevronCircleDown  } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
