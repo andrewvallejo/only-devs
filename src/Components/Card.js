@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types'
 
 export const Card = ({ question, id }) => {
     return (
@@ -11,9 +10,4 @@ export const Card = ({ question, id }) => {
             </article>
         </NavLink>
     )
-}
-
-Card.propTypes = {
-    question: PropTypes.object,
-    id: PropTypes.number,
 }
