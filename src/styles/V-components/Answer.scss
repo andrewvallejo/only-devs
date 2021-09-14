@@ -1,5 +1,5 @@
 .answer {
-  @include opacity($color-tertierary, -0.5);
+  @include opacity($color-tertiary, -0.5);
   width: clamp(16rem, 25vw, 30rem);
   height: clamp(12rem, 25vh, 30rem);
   margin: 1rem 0;
@@ -7,7 +7,6 @@
   padding: 1rem; 
   overflow-y: scroll;
   font-family: $font-family-secondary;
-  animation: 2s fade-in;
   
   .answer-header {
     @include flex(row, around);
@@ -23,7 +22,6 @@
     }
   }
   .answer-block{
-    animation: 3.5s fade-in;
     overflow-y: scroll;
     margin-bottom: auto;
     line-height: 1.7;
