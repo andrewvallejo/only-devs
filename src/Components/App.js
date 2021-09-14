@@ -8,7 +8,6 @@ import { fetchQuestions, uploadAnswer, postAnswerRating } from '../utility/apiCa
 import { DevContext } from '../utility/DevContext.js';
 import { reducer } from '../utility/reducer.js';
 
-
 const initialState = {
   question: [],
   questions: [],
@@ -48,20 +47,18 @@ export const App = () => {
 
   const rateAnswer = (answer) => {
     postAnswerRating(answer)
-      .then(response => {
-        console.log(response)
-      })
+      .then(response => { console.log(response) })
   }
 
   return (
     <DevContext.Provider value={{ state, dispatch }}>
       <Switch>
         <Route exact path='/'>
-        <Header />
-        <main>
-            <QuestionBoard vote={rateAnswer} questions={state.questions} />
+          <Header />
+          <main>
             <Question question={state.question} postAnswer={postAnswer} />
-        </main>
+            <QuestionBoard vote={rateAnswer} questions={state.questions} />
+          </main>
         </Route>
       </Switch>
     </DevContext.Provider>

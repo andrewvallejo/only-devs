@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRandom } from '@fortawesome/free-solid-svg-icons'
 
 export const Question = ({ question, postAnswer, postError }) => {
+    const maxLength = 300;
     const [answer, setAnswer] = useState('')
     const [isDisabled, setDisabled] = useState(true);
     const [isAnswered, setIsAnswered] = useState(false);
     const [isRainbow, setIsRainbow] = useState(false);
-    const maxLength = 300;
     const [charsLeft, setCharsLeft] = useState(maxLength);
 
     const submitAnswer = (event) => {
@@ -25,7 +25,7 @@ export const Question = ({ question, postAnswer, postError }) => {
 
     useEffect(() => {
         setCharsLeft(maxLength - answer.length);
-    }, [answer]);
+    }, [answer])
 
     return (
         <form className='question-form'>
@@ -46,33 +46,25 @@ export const Question = ({ question, postAnswer, postError }) => {
                 maxLength={maxLength}
                 onChange={event => {
                     setAnswer(event.target.value);
-                    if (event.target.value.length) {
-                        setDisabled(false);
-                    }
-                    if (event.target.value.length === 0) {
-                        setDisabled(true);
-                    }
+                    if (event.target.value.length) setDisabled(false)
+                    if (event.target.value.length === 0) setDisabled(true)
                     event.target.value.toLowerCase().includes('party boiii') ? setIsRainbow(true) : setIsRainbow(false);
-                }}
-            ></textarea>
+                }}>
+            </textarea>
             <div className='char-counter'>
                 {charsLeft}/{maxLength}
             </div>
-
             {postError && <h3>{postError}</h3>}
-
             <button
                 className='submit-btn'
                 disabled={isDisabled}
                 onClick={(event) => submitAnswer(event)}>
                 SUBMIT
             </button>
-
-
             <button
                 className={isAnswered ? 'go-to-answers gold-btn' : 'go-to-answers'}>
                 GO TO ANSWERS
             </button>
         </form>
-    )
+    );
 }
