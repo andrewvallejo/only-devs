@@ -5,19 +5,18 @@ import { faChevronCircleUp, faChevronCircleDown } from '@fortawesome/free-solid-
 
 
 export const Answer = ({ singleAnswer, rate }) => {
-
-  const [isDisabled, setIsDisabled] = useState(false);
-
   const { id, question_id, answer, rating, answer_time } = singleAnswer
+
+  const [isDisabled, setIsDisabled] = useState(false)
+  const [count, setCount] = useState(rating)
+
   const date = parseDate(answer_time)
   const upvote = [question_id, id, 'upvote']
   const downvote = [question_id, id, 'downvote']
 
-  let [count, setCount] = useState(rating)
 
   const addCount = (e) => {
     e.preventDefault()
-
     setCount(count + 1)
     rate(upvote)
     setIsDisabled(true);
@@ -25,7 +24,6 @@ export const Answer = ({ singleAnswer, rate }) => {
 
   const removeCount = (e) => {
     e.preventDefault()
-
     setCount(count - 1)
     rate(downvote)
     setIsDisabled(true);
@@ -39,21 +37,15 @@ export const Answer = ({ singleAnswer, rate }) => {
           <button
             className={isDisabled ? 'disabled-vote' : ''}
             disabled={isDisabled}
-            onClick={(e) => addCount(e)}
-          >
-            <FontAwesomeIcon
-              icon={faChevronCircleUp}
-            />
+            onClick={(e) => addCount(e)}>
+            <FontAwesomeIcon icon={faChevronCircleUp} />
           </button>
           <h3 className='rating-number'>{count}</h3>
           <button
             className={isDisabled ? 'disabled-vote' : ''}
             disabled={isDisabled}
-            onClick={(e) => removeCount(e)}
-          >
-            <FontAwesomeIcon
-              icon={faChevronCircleDown}
-            />
+            onClick={(e) => removeCount(e)}>
+            <FontAwesomeIcon icon={faChevronCircleDown} />
           </button>
         </div>
       </header>
@@ -61,8 +53,7 @@ export const Answer = ({ singleAnswer, rate }) => {
         {isDisabled ? 'Recommendation recorded.' : ''}
         <hr />
       </p>
-      <p
-        className="answer-block">
+      <p className="answer-block">
         {answer}
       </p>
     </article>
