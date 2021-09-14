@@ -1,33 +1,34 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useReducer } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Header } from './Header.js';
 import { Question } from './Question';
 import { QuestionBoard } from './QuestionBoard';
-import { QuestionDetails } from './QuestionDetails';
 import { fetchQuestions, uploadAnswer, postAnswerRating } from '../utility/apiCalls';
-import PropTypes from 'prop-types';
 import { DevContext } from '../utility/DevContext.js';
 import { reducer } from '../utility/reducer.js';
 
 
 const initialState = {
-  randomQuestion: {},
+  question: [],
   questions: [],
   error: '',
   postError: '',
+  isLoaded: false
 }
 
 export const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
-    fetchQuestions()
-      .then((data) => {
-        const question = data[Math.floor(Math.random() * data.length)]        
-        dispatch({ state, action: {type: 'SETQUESTION', value: question} })
-      })
-      .catch(error => dispatch({ error: 'Oops server is down! Please try again later.' }))
-  }, [state])
+    (async () => {
+      !state.questions.length &&
+        await fetchQuestions().then(data => {
+          dispatch({ state, action: { type: 'SETQUESTIONS', value: data } })
+          dispatch({ state, action: { type: 'SETQUESTION', value: randomize(data) } })
+        })
+    })()
+  }, [])
 
   const postAnswer = (newAnswer) => {
     uploadAnswer(newAnswer)
@@ -41,6 +42,10 @@ export const App = () => {
       .catch(error => console.error(error))
   }
 
+  const randomize = (items) => {
+    return items[Math.floor(Math.random() * items.length)]
+  }
+
   const rateAnswer = (answer) => {
     postAnswerRating(answer)
       .then(response => {
@@ -49,45 +54,24 @@ export const App = () => {
   }
 
   return (
-    <DevContext.Provider value={(state, dispatch)}>
+    <DevContext.Provider value={{ state, dispatch }}>
       <Switch>
+        <Route exact path='/'>
         <Header />
         <main>
-          {state.error && <h3 className='errorLoading'>{state.error}</h3>}
-          {(!state.questions.length && !state.error) && <h3>Loading...</h3>}
-          <Route exact path='/' render={() =>
-            <>
-              <Question
-                randomQuestion={state.randomQuestion}
-                postAnswer={postAnswer} />
-              <QuestionBoard
-                questions={state.questions}
-                vote={rateAnswer} />
-            </>
-          } />
-          <Route exact path='/question-details/:id' render={({ match }) => {
-            const questionID = parseInt(match.params.id);
-            return (
-              <QuestionDetails
-                key={questionID}
-                id={questionID}
-                questions={state.questions}
-                rateAnswer={rateAnswer} />
-            )
-          }} />
-          <Route>
-            <Link to='/'>
-              <h3>Sorry we can't find that page, click here to go home!</h3>
-            </Link>
-          </Route>
+            <QuestionBoard vote={rateAnswer} questions={state.questions} />
+            <Question question={state.question} postAnswer={postAnswer} />
         </main>
+        </Route>
       </Switch>
     </DevContext.Provider>
   )
 };
 
-App.propTypes = {
-  randomQuestion: PropTypes.object,
-  questions: PropTypes.array,
-  error: PropTypes.string
-}
+          // <Route exact path='/question-details/:id'>
+          //   <QuestionDetails
+          //       key={questionID}
+          //       id={questionID}
+          //       questions={state.questions}
+          //       rateAnswer={rateAnswer} /> 
+          // </Route>
