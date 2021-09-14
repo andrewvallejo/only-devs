@@ -1,12 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRandom } from '@fortawesome/free-solid-svg-icons'
-import PropTypes from 'prop-types';
 
-
-export const Question = ({ randomQuestion, postAnswer, postError }) => {
+export const Question = ({ question, postAnswer, postError }) => {
     const [answer, setAnswer] = useState('')
     const [isDisabled, setDisabled] = useState(true);
     const [isAnswered, setIsAnswered] = useState(false);
@@ -17,45 +14,41 @@ export const Question = ({ randomQuestion, postAnswer, postError }) => {
     const submitAnswer = (event) => {
         event.preventDefault()
         const newAnswer = {
-                question_id: randomQuestion.id,
+            question_id: question.id,
             answer: answer
         }
         postAnswer(newAnswer);
         setAnswer('')
         setDisabled(true);
-        setIsAnswered(true); 
-       }
+        setIsAnswered(true);
+    }
 
     useEffect(() => {
-    setCharsLeft(maxLength - answer.length);
+        setCharsLeft(maxLength - answer.length);
     }, [answer]);
-
-    const route = `/question-details/${randomQuestion.id}`;
 
     return (
         <form className='question-form'>
-                <button className='shuffle-btn'>
-                    <FontAwesomeIcon className='shuffle-icon' icon={faRandom} alt='shuffle question' /> 
-                </button>
+            <button className='shuffle-btn'>
+                <FontAwesomeIcon className='shuffle-icon' icon={faRandom} alt='shuffle question' />
+            </button>
             <header className="question-header">
-                <h2>{randomQuestion.question}</h2>
+                <h2>{question.question}</h2>
             </header>
             <textarea
-                //className='answer-input' 
                 className={isRainbow ? 'answer-input rainbow' : 'answer-input'}
-                id={randomQuestion.id}
+                id={question.id}
                 name='answer'
                 placeholder='Write your answer here.'
-                // rows={3}
                 onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
                 value={answer}
                 autoComplete='off'
-                maxLength= {maxLength}
+                maxLength={maxLength}
                 onChange={event => {
-                        setAnswer(event.target.value);
-                    if (event.target.value.length){
+                    setAnswer(event.target.value);
+                    if (event.target.value.length) {
                         setDisabled(false);
-                    } 
+                    }
                     if (event.target.value.length === 0) {
                         setDisabled(true);
                     }
@@ -68,29 +61,18 @@ export const Question = ({ randomQuestion, postAnswer, postError }) => {
 
             {postError && <h3>{postError}</h3>}
 
-            <button 
+            <button
                 className='submit-btn'
                 disabled={isDisabled}
                 onClick={(event) => submitAnswer(event)}>
-                    SUBMIT 
+                SUBMIT
             </button>
 
-            <Link to={route}>
-                <button 
-                    className={isAnswered ? 'go-to-answers gold-btn' : 'go-to-answers'}>
-                    GO TO ANSWERS
-                </button>
-            </Link>
+
+            <button
+                className={isAnswered ? 'go-to-answers gold-btn' : 'go-to-answers'}>
+                GO TO ANSWERS
+            </button>
         </form>
     )
 }
-
-Question.propTypes = {
-    answer: PropTypes.string,
-    isDisabled: PropTypes.func,
-    isAnswered: PropTypes.func,
-    charsLeft: PropTypes.func,
-    randomQuestion: PropTypes.object,
-    postAnswer: PropTypes.func
-  };
-
