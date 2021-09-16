@@ -3,7 +3,7 @@ import { Card } from './Card';
 
 export const QuestionBoard = ({ questions }) => {
    
-  const questionCard = questions.map(question => <Card id={question.id} key={question.id} question={question.question} />)
+  const questionCard = questions.map(question => <Card key={question.id} id={question.id} item={question.question} />)
   
   return (
       <>
