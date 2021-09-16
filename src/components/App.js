@@ -40,28 +40,3 @@ export const App = () => {
     </DevContext.Provider>
   )
 };
-
-// <Route exact path='/question-details/:id'>
-//   <QuestionDetails
-//       key={questionID}
-//       id={questionID}
-//       questions={state.questions}
-//       rateAnswer={rateAnswer} /> 
-// </Route>
-
-// const postAnswer = (newAnswer) => {
-//   uploadAnswer(newAnswer)
-//     .then(response => {
-//       if (!response) {
-//         dispatch({ error: 'Oops,  our server is down! Your wasn\'t posted. Please try again later.' })
-//         throw Error('Error fetching answers')
-//       }
-//       return response.json()
-//     })
-//     .catch(error => console.error(error))
-// }
-
-// const rateAnswer = (answer) => {
-//   postAnswerRating(answer)
-//     .then(response => { console.log(response) })
-// }
