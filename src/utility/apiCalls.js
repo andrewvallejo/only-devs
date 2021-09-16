@@ -1,14 +1,39 @@
 import axios from "axios";
 
-export const fetchQuestions = async () => {
+const url = 'https://onlydevs-api.herokuapp.com';
+
+const generateApiUrl = (request) => {
+  let id;
+  switch (request) {
+    case 'questions':
+      return `${url}/questions`
+    case 'answers': 
+      return `${url}/questions/${id}`
+    case 'robots': 
+      return `${url}/robots`
+    case 'votes': 
+      return `${url}/votes`
+    default: 
+      break;
+  }
+};
+
+export const getQuestions = async () => {
   const config = {
     method: 'get',
-    url: 'https://onlydevs-api.herokuapp.com/questions'
+    url: generateApiUrl('questions')
   }
   return await sendRequest(config)
 }
 
-export const fetchAnswers = (id) => {
+const sendRequest = async(config) => {
+  return await axios(config)
+    .then(response => response.data)
+    .catch(error => console.error('Server Error: ' + error))
+}
+
+export const getAnswers = (id) => {
+
   return fetch(`https://onlydevs-api.herokuapp.com/questions/${id}`)
     .then(response => {
       if (!response.ok) {
@@ -17,6 +42,15 @@ export const fetchAnswers = (id) => {
       return response.json()
     })
 }
+
+// export const getAnswers = async(id) => {
+//   const config = {
+//     method: 'get',
+//     url: generateApiUrl('answers')
+//   }
+//   return await sendRequest(config)
+
+// }
 
 export const uploadAnswer = (data) => {
   return fetch('https://onlydevs-api.herokuapp.com/questions/answer', {
@@ -49,8 +83,3 @@ export const postAnswerRating = (data) => {
     .catch(err => console.error(err));
 }
 
-const sendRequest = async(config) => {
-  return await axios(config)
-    .then(response => response.data)
-    .catch(error => console.error('Server Error: ' + error))
-}
