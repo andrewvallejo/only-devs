@@ -13,8 +13,9 @@ export const Card = ({ id, item }) => {
         <article className='card question-card'>
             <h3>{item}</h3>
             <button className="view-details-btn"
-                onClick={(event) => handleClick(event)}
-            >View Details</button>
+                onClick={(event) => handleClick(event)}>
+                View Details
+            </button>
         </article>
     )
 }
