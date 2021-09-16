@@ -6,7 +6,7 @@ import { Header } from "../components/Header";
 
 export const HomePage = () => {
   const { state } = useContext(DevContext);
-  console.log();
+
   return (
     <>
       <Header />
