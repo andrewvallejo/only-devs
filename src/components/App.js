@@ -3,6 +3,7 @@ import React, { useEffect, useReducer } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { HomePage } from '../pages/HomePage';
 import { QuestionPage } from '../pages/QuestionPage';
+import { Header } from '../components/Header'
 import { fetchQuestions } from '../utility/apiCalls';
 import { DevContext } from '../utility/DevContext';
 import { reducer } from '../utility/reducer';
@@ -31,6 +32,7 @@ export const App = () => {
 
   return (
     <DevContext.Provider value={{ state, dispatch }}>
+      <Header />
       <main>
         <Switch>
           <Route exact path='/' component={HomePage} />
