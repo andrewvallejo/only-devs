@@ -3,12 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRandom } from '@fortawesome/free-solid-svg-icons'
 
-export const Question = ({ question, postAnswer, postError }) => {
+export const QuestionForm = ({ question, postAnswer, postError }) => {
     const maxLength = 300;
     const [answer, setAnswer] = useState('')
     const [isDisabled, setDisabled] = useState(true);
     const [isAnswered, setIsAnswered] = useState(false);
-    const [isRainbow, setIsRainbow] = useState(false);
     const [charsLeft, setCharsLeft] = useState(maxLength);
 
     const submitAnswer = (event) => {
@@ -36,7 +35,7 @@ export const Question = ({ question, postAnswer, postError }) => {
                 <h2>{question.question}</h2>
             </header>
             <textarea
-                className={isRainbow ? 'answer-input rainbow' : 'answer-input'}
+                className='answer-input'
                 id={question.id}
                 name='answer'
                 placeholder='Write your answer here.'
@@ -48,7 +47,6 @@ export const Question = ({ question, postAnswer, postError }) => {
                     setAnswer(event.target.value);
                     if (event.target.value.length) setDisabled(false)
                     if (event.target.value.length === 0) setDisabled(true)
-                    event.target.value.toLowerCase().includes('party boiii') ? setIsRainbow(true) : setIsRainbow(false);
                 }}>
             </textarea>
             <div className='char-counter'>
