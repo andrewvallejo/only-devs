@@ -3,8 +3,7 @@ import React, { useEffect, useReducer } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { HomePage } from '../pages/HomePage';
 import { QuestionPage } from '../pages/QuestionPage';
-import { Header } from '../components/Header'
-import { fetchQuestions } from '../utility/apiCalls';
+import { getQuestions } from '../utility/apiCalls';
 import { DevContext } from '../utility/DevContext';
 import { reducer } from '../utility/reducer';
 import { randomize } from '../utility/util';
@@ -22,7 +21,7 @@ export const App = () => {
 
   useEffect(() => {
     (async () => !state.questions.length &&
-      await fetchQuestions().then(data => {
+      await getQuestions().then(data => {
         dispatch({ state, action: { type: 'SETQUESTIONS', value: data } })
         dispatch({ state, action: { type: 'SETQUESTION', value: randomize(data) } })
       })
