@@ -5,11 +5,11 @@ import { fetchAnswers } from '../utility/apiCalls';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 
-export const QuestionDetails = ({ rateAnswer, questions }) => {
+export const QuestionDetails = ({  questions }) => {
     const [answers, setAnswers] = useState([])
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(false)
-
+    console.log(`QuestionDetails: ${questions}`)
     useEffect(() => {
         fetchAnswers(this.props.id)
             .then(data => {
@@ -20,6 +20,7 @@ export const QuestionDetails = ({ rateAnswer, questions }) => {
     }, [])
 
     const displayQuestion = () => {
+
         const displayedQuestion = questions.find(question => question.id === this.props.id)
         return displayedQuestion.question
     }
@@ -38,7 +39,7 @@ export const QuestionDetails = ({ rateAnswer, questions }) => {
                 {error && <h3 className='no-answers'>{error}</h3>}
                 {(error && isLoading) && <h3> Loading... answers</h3>}
                 {(answers.length && error) && <h3 className='no-answers'>This question has not been answered yet.</h3>}
-                <AnswerBoard answers={answers} rateAnswer={rateAnswer} />
+                {/* <AnswerBoard answers={answers}  /> */}
             </div>
         </section>
     )
