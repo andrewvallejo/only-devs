@@ -5,3 +5,7 @@ export const parseDate = (time) => {
   date = b[1] + '/' + b[2] + '/' + b[0];
   return date
 }
+
+export const randomize = (items) => {
+  return items[Math.floor(Math.random() * items.length)]
+}
