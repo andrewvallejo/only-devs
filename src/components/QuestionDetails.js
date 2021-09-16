@@ -1,7 +1,7 @@
 import { AnswerBoard } from './AnswerBoard';
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { fetchAnswers } from '../utility/apiCalls';
+import { getAnswers } from '../utility/apiCalls';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 
@@ -11,7 +11,7 @@ export const QuestionDetails = ({  questions }) => {
     const [isLoading, setIsLoading] = useState(false)
     console.log(`QuestionDetails: ${questions}`)
     useEffect(() => {
-        fetchAnswers(this.props.id)
+        getAnswers(this.props.id)
             .then(data => {
                 setAnswers(data)
                 setIsLoading(true)
