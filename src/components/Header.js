@@ -1,9 +1,10 @@
 import React from 'react';
 
 export const Header = () => {
+  const image = 'https://i.imgur.com/i6f9tQA.png';
   return (
     <header className='main-header'>
-      <img className='logo' src='https://i.imgur.com/i6f9tQA.png' alt='onlyDevs logo' id='onlyDevsLogo' />
+      <img className='logo' src={image} alt='onlyDevs logo' />
     </header>
   )
-}
+};
