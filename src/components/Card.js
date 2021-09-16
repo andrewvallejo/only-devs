@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Card = ({ question, id }) => {
+export const Card = ({ item }) => {
     return (
-        <article className='question-card' id={id}>
-            <h3>{question}</h3>
+        <article className='question-card'>
+            <h3>{item}</h3>
             <button className="view-details-btn">View Details</button>
         </article>
     )

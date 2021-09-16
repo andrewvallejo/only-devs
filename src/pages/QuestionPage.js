@@ -7,10 +7,10 @@ export const QuestionPage = () => {
 
   return (
     <>
-      <QuestionDetails
+      {/* <QuestionDetails
         key={state.question.id}
         id={state.question.id}
-        questions={state.questions} />
+        questions={state.questions} /> */}
     </>
   )
 };
