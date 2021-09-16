@@ -2,8 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRandom } from '@fortawesome/free-solid-svg-icons'
+import { postAnswer } from '../utility/apiCalls';
 
-export const QuestionForm = ({ question, postAnswer, postError }) => {
+export const QuestionForm = ({ question }) => {
     const maxLength = 300;
     const [answer, setAnswer] = useState('')
     const [isDisabled, setDisabled] = useState(true);
@@ -12,14 +13,21 @@ export const QuestionForm = ({ question, postAnswer, postError }) => {
 
     const submitAnswer = (event) => {
         event.preventDefault()
-        const newAnswer = {
-            question_id: question.id,
-            answer: answer
-        }
-        postAnswer(newAnswer);
-        setAnswer('')
+        postAnswer({newAnswer: {question_id: question.id, answer: answer}})
+        clear()
+    }
+
+
+    const clear = () => {
+        setAnswer('');
         setDisabled(true);
         setIsAnswered(true);
+    }
+
+
+    const onChange = (event) => {
+        setAnswer(event.target.value)
+        event.target.value.length ? setDisabled(false) : setDisabled(true)
     }
 
     useEffect(() => {
@@ -39,29 +47,23 @@ export const QuestionForm = ({ question, postAnswer, postError }) => {
                 id={question.id}
                 name='answer'
                 placeholder='Write your answer here.'
-                onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+                onKeyPress={(event) => { event.key === 'Enter' && event.preventDefault(); }}
                 value={answer}
                 autoComplete='off'
                 maxLength={maxLength}
-                onChange={event => {
-                    setAnswer(event.target.value);
-                    if (event.target.value.length) setDisabled(false)
-                    if (event.target.value.length === 0) setDisabled(true)
-                }}>
+                onChange={event => onChange(event)}>
             </textarea>
             <div className='char-counter'>
                 {charsLeft}/{maxLength}
             </div>
-            {postError && <h3>{postError}</h3>}
             <button
                 className='submit-btn'
                 disabled={isDisabled}
                 onClick={(event) => submitAnswer(event)}>
-                SUBMIT
+                submit
             </button>
-            <button
-                className={isAnswered ? 'go-to-answers gold-btn' : 'go-to-answers'}>
-                GO TO ANSWERS
+            <button className={`go-to-answers ${isAnswered ? ' gold-btn' : ''}`}>
+                go to answers
             </button>
         </form>
     );
