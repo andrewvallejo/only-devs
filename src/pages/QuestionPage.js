@@ -1,17 +1,16 @@
 import React, { useContext } from 'react';
-import { Question } from '../components/Question';
-import { QuestionBoard } from '../components/QuestionBoard';
 import { DevContext } from '../utility/DevContext';
+import { QuestionDetails } from '../components/QuestionDetails'
 
 export const QuestionPage = () => {
-	const {state} = useContext(DevContext)
-	console.log()
-	return (
+  const { state } = useContext(DevContext);
 
-			<>
-
-			<Question  question={state.question} />
-			<QuestionBoard questions={state.questions} />
-			</>
-    )
-}
+  return (
+    <>
+      <QuestionDetails
+        key={state.question.id}
+        id={state.question.id}
+        questions={state.questions} />
+    </>
+  )
+};
