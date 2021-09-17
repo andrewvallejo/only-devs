@@ -3,11 +3,11 @@ import { QuestionDetails } from '../components/QuestionDetails'
 import { DevContext } from '../utility/DevContext';
 
 export const QuestionPage = () => {
-  const { state: { selectedQuestion, answers} } = useContext(DevContext);
+  const { state, dispatch } = useContext(DevContext);
 
   return (
     <>
-      <QuestionDetails question={selectedQuestion} answers={answers} />
+      <QuestionDetails state={state} dispatch={dispatch} />
     </>
   )
 };
