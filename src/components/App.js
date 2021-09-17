@@ -9,7 +9,9 @@ import { reducer } from '../utility/reducer';
 import { randomize } from '../utility/util';
 
 const initialState = {
-  question: [],
+  randomQuestion: [],
+  selectedQuestion: [],
+  answers: [],
   questions: [],
   error: '',
   postError: '',
@@ -23,7 +25,7 @@ export const App = () => {
     (async () => !state.questions.length &&
       await getQuestions().then(data => {
         dispatch({ state, action: { type: 'SETQUESTIONS', value: data } })
-        dispatch({ state, action: { type: 'SETQUESTION', value: randomize(data) } })
+        dispatch({ state, action: { type: 'SETRANDOMQUESTION', value: randomize(data) } })
       })
     )()
   }, [])
@@ -34,7 +36,7 @@ export const App = () => {
       <main>
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route exact path='/question/:id' component={QuestionPage} />
+          <Route exact path='/questions/:id' component={QuestionPage} />
         </Switch>
       </main>
     </DevContext.Provider>
