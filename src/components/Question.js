@@ -4,9 +4,9 @@ import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router';
 import { Answer } from './Answer';
 
-export const QuestionDetails = ({ state, dispatch }) => {
+export const Question = ({ state, dispatch }) => {
   const history = useHistory()
-  const answers = state.answers.map(answer => <Answer singleAnswer={answer} />)
+  const answers = state.answers.map(answer => <Answer key={answer.id} singleAnswer={answer} context={(state, dispatch)} />)
 
   return (
     <section className='details-container'>
