@@ -1,46 +1,23 @@
 import { AnswerBoard } from './AnswerBoard';
-import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { getAnswers } from '../utility/apiCalls';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
+import { getAnswers } from '../utility/apiCalls';
 
-export const QuestionDetails = ({  questions }) => {
-    const [answers, setAnswers] = useState([])
-    const [error, setError] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
-    console.log(`QuestionDetails: ${questions}`)
-    useEffect(() => {
-        getAnswers(this.props.id)
-            .then(data => {
-                setAnswers(data)
-                setIsLoading(true)
-            })
-            .catch(error => setError({ error: 'Oops, unable to fetch your answers! Please try again later.' }))
-    }, [])
+export const QuestionDetails = ({ question }) => {
 
-    const displayQuestion = () => {
-
-        const displayedQuestion = questions.find(question => question.id === this.props.id)
-        return displayedQuestion.question
-    }
-
-    return (
-        <section className='details-container'>
-            <header className="question-header">
-                <NavLink to='/'>
-                    <button className='return-btn'>
-                        <FontAwesomeIcon className='arrow-icon' icon={faAngleDoubleLeft} />
-                    </button>
-                </NavLink>
-                <h2 className="question">{displayQuestion()}</h2>
-            </header>
-            <div className="answers-board">
-                {error && <h3 className='no-answers'>{error}</h3>}
-                {(error && isLoading) && <h3> Loading... answers</h3>}
-                {(answers.length && error) && <h3 className='no-answers'>This question has not been answered yet.</h3>}
-                {/* <AnswerBoard answers={answers}  /> */}
-            </div>
-        </section>
-    )
+  return (
+    <section className='details-container'>
+      <header className="question-header">
+        <button className='return-btn'>
+          <FontAwesomeIcon className='arrow-icon' icon={faAngleDoubleLeft} />
+        </button>
+        <h2 className="question">{question.question}</h2>
+      </header>
+      <div className="answers-board">
+        {/* <AnswerBoard answers={answers} /> */}
+      </div>
+    </section>
+  )
 }
