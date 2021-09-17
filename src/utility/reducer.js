@@ -7,16 +7,17 @@ export const reducer = (state, { action }) => {
 				randomQuestion: value
 			}
 		case 'SETQUESTION':
+			localStorage.setItem('question', value.id)
 			return {
 				...state,
 				selectedQuestion: value
 			}
-			case 'SETQUESTIONS':
-				return {
-					...state,
-					questions: value
+		case 'SETQUESTIONS':
+			return {
+				...state,
+				questions: value
 			}
-		case 'SETANSWERS': 
+		case 'SETANSWERS':
 			return {
 				...state,
 				answers: value
