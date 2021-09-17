@@ -1,16 +1,13 @@
 import React, { useContext } from 'react';
-import { DevContext } from '../utility/DevContext';
 import { QuestionDetails } from '../components/QuestionDetails'
+import { DevContext } from '../utility/DevContext';
 
 export const QuestionPage = () => {
-  const { state } = useContext(DevContext);
+  const { state: { selectedQuestion, answers} } = useContext(DevContext);
 
   return (
     <>
-      {/* <QuestionDetails
-        key={state.question.id}
-        id={state.question.id}
-        questions={state.questions} /> */}
+      <QuestionDetails question={selectedQuestion} answers={answers} />
     </>
   )
 };
