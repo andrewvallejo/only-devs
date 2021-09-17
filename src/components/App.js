@@ -7,6 +7,7 @@ import { getQuestions } from '../utility/apiCalls';
 import { DevContext } from '../utility/DevContext';
 import { reducer } from '../utility/reducer';
 import { randomize } from '../utility/util';
+import { Header } from './Header';
 
 const initialState = {
   randomQuestion: [],
@@ -33,6 +34,7 @@ export const App = () => {
 
   return (
     <DevContext.Provider value={{ state, dispatch }}>
+      <Header />
       <main>
         <Switch>
           <Route exact path='/' component={HomePage} />
