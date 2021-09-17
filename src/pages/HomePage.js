@@ -10,7 +10,7 @@ export const HomePage = () => {
   return (
     <>
       <Header />
-      <QuestionForm question={state.question} />
+      <QuestionForm question={state.randomQuestion} />
       <QuestionBoard questions={state.questions} />
     </>
   )
