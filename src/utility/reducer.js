@@ -11,10 +11,15 @@ export const reducer = (state, { action }) => {
 				...state,
 				selectedQuestion: value
 			}
-		case 'SETQUESTIONS':
+			case 'SETQUESTIONS':
+				return {
+					...state,
+					questions: value
+			}
+		case 'SETANSWERS': 
 			return {
 				...state,
-				questions: value
+				answers: value
 			}
 		default:
 			return state
