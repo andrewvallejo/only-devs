@@ -11,8 +11,6 @@ const generateURL = (request) => {
       return `${url}/questions`;
     case 'question':
       return `${url}/questions/${id}`;
-    case 'answer':
-      return `${url}/questions/answer`;
     case 'vote':
       return `${url}/answers/${id}`
     default: break;
@@ -41,22 +39,12 @@ export const getQuestions = async () => {
   return await sendRequest(config)
 };
 
-// export const getQuestion = async (id) => {
-//   const config = {
-//     method: 'get',
-//     url: requestUrl('question', id),
-//     data: data
-//   }
-//   console.log(config)
-//   return await sendRequest(config)
-// };
-
 export const getAnswers = async (id) => {
-  console.log(id)
   const config = {
     method: 'get',
-    url: requestUrl('answer', id)
+    url: requestUrl('question', id)
   }
+  console.log(config)
   return await sendRequest(config);
 };
 
