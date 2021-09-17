@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { QuestionDetails } from '../components/QuestionDetails'
+import { Question } from '../components/Question'
 import { DevContext } from '../utility/DevContext';
 
 export const QuestionPage = () => {
@@ -7,7 +7,7 @@ export const QuestionPage = () => {
 
   return (
     <>
-      <QuestionDetails state={state} dispatch={dispatch} />
+      <Question state={state} dispatch={dispatch} />
     </>
   )
 };
