@@ -1,0 +1,28 @@
+/* ==========================================================================
+  Base - Flexbox
+========================================================================== */
+
+@mixin flex($direction, $alignment, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  @if $alignment == center {
+    align-items: center;
+    justify-content: center;
+  } @else if $alignment == evenly {
+    align-items: center;
+    justify-content: space-evenly;
+  } @else if $alignment == between {
+    align-items: center;
+    justify-content: space-between;
+  } @else if $alignment == around {
+    align-items: center;
+    justify-content: space-around;
+  } @else if $alignment == start {
+    align-items: center;
+    justify-content: flex-start;
+  } @else if $alignment == end {
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
