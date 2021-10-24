@@ -1,0 +1,21 @@
+/* ==========================================================================
+Abstracts - Typography
+========================================================================== */
+
+/* === Font Import === */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap");
+
+/* === Defaults === */
+$ff-primary: "Raleway", sans-serif;
+$ff-secondary: "Open Sans", sans-serif;
+$fs-defaults: 1rem;
+$ff-defaults: normal;
+$fw-defaults: normal;
+$ff-defaults: normal;
+
+/* === Font Size === */
+$fs-heading: 4rem, 5vw, 7rem;
+$fs-subheading: 1rem, 2vw, 2.5rem;
+$fs-paragraph: 1rem, 1vw, 2.5rem;
+$fs-button: 1rem, 1.2vw, 2rem;
+$fs-icon: 1.5rem, 3vw, 3rem;
