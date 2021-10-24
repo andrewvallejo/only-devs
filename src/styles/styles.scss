@@ -1,19 +1,19 @@
 /* ==========================================================================
 l - Abstracts | Global Variables 
 ========================================================================== */
-@import "./abstracts/colors.scss";
-@import "./abstracts/keyframes.scss";
-@import "./abstracts/misc.scss";
-@import "./abstracts/typography.scss";
+@import './abstracts/colors.scss';
+@import './abstracts/keyframes.scss';
+@import './abstracts/misc.scss';
+@import './abstracts/typography.scss';
 
 /* ==========================================================================
 ll - Base | Mixins 
 ========================================================================== */
-@import "./base/flexbox.scss";
-@import "./base/grid.scss";
-@import "./base/mediaqueries.scss";
-@import "./base/misc.scss";
-@import "./base/typography.scss";
+@import './base/flexbox.scss';
+@import './base/grid.scss';
+@import './base/mediaqueries.scss';
+@import './base/misc.scss';
+@import './base/typography.scss';
 
 
 /* ==========================================================================
@@ -27,9 +27,5 @@ lll - Elements | Defaults & Semantic Elements
 lV - Pages | Pages
 ========================================================================== */
 
-@import "./pages/QuestionBoard.scss";
-@import "./pages/Answer.scss";
-@import "./pages/Card.scss";
-@import "./pages/Header.scss";
-@import "./pages/Question.scss";
-@import "./pages/QuestionForm.scss";
+@import './pages/HomePage.scss';
+@import './pages/QuestionPAges.scss'
