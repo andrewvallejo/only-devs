@@ -1,0 +1,193 @@
+/* ==========================================================================
+Pages - QuestionPage
+========================================================================== */
+
+.details-container {
+  overflow-x: hidden;
+  margin-top: 1rem;
+  overflow: hidden;
+  height: 100%;
+  border-radius: 5px;
+  padding: 0.5rem;
+  .question-header {
+    @include flex(row, center);
+    @include opacity($color-secondary, -0.5);
+    margin-top: 1rem;
+    border-radius: 5px;
+    padding-left: 1rem;
+    box-shadow: 3px 3px 10px $color-grey;
+    height: 7.5rem;
+    h2 {
+      color: $color-light;
+      margin: 1rem;
+    }
+  }
+
+  .return-btn {
+    @include subheading;
+    background-size: 1%;
+    border-radius: 50%;
+    align-self: flex-start;
+    border: $color-secondary 3px solid;
+    width: 3rem;
+    height: 3rem;
+    color: $color-light;
+    padding-left: 0.2rem;
+    &:hover {
+      color: $color-secondary;
+      background: $color-primary;
+      border-color: $color-quaternary;
+      box-shadow: 0 0 15px $color-quaternary;
+    }
+    .no-answers {
+      margin-top: 1rem;
+      text-align: center;
+    }
+  }
+
+  .answers-board {
+    @include mediaQueries(grid);
+    height: 100%;
+    overflow-y: scroll;
+    border-radius: 0 0 5px 5px;
+    padding: 0 3rem;
+  }
+}
+
+.answer {
+  @include opacity($color-tertiary, -0.5);
+  width: clamp(16rem, 25vw, 30rem);
+  height: clamp(12rem, 25vh, 30rem);
+  margin: 1rem 0;
+  box-shadow: 3px 3px 10px $color-grey;
+  padding: 1rem;
+  overflow-y: scroll;
+  font-family: $ff-secondary;
+
+  .answer-header {
+    @include flex(row, around);
+    align-self: flex-start;
+    width: 100%;
+    margin-bottom: 1rem;
+    .like-btn {
+      padding: 0.3rem 1rem;
+      &:hover {
+        background: inherit;
+        box-shadow: 0 0 5px $color-quaternary;
+      }
+    }
+  }
+  .answer-block {
+    overflow-y: scroll;
+    margin-bottom: auto;
+    line-height: 1.7;
+  }
+}
+
+.rating-container {
+  @include flex(row, center);
+}
+.arrow-container {
+  @include mediaQueries(vote-flex);
+  .vote-arrow {
+    border-radius: 50%;
+    &.up-arrow:hover {
+      background: $color-primary;
+      border-color: $color-quaternary;
+    }
+  }
+}
+.rating-number {
+  align-self: center;
+  margin: 0.3rem;
+}
+
+.disabled-vote {
+  color: $color-grey;
+  border: 1px solid $color-grey;
+  cursor: not-allowed;
+  &:hover {
+    background: grey;
+  }
+}
+
+.question-form {
+  min-width: 3rem;
+  width: 70%;
+  margin-bottom: 1.2rem;
+  margin-top: 5rem;
+  a {
+    place-self: flex-end;
+  }
+}
+
+.question {
+  margin: 1rem;
+}
+
+.submitAnswer {
+  @include button;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  margin-left: auto;
+}
+
+.answer-input {
+  width: 100%;
+  min-height: 5rem;
+  height: 10rem;
+  text-align: center;
+  resize: none;
+  padding: 1rem;
+  font-family: $ff-secondary;
+}
+
+.question-header {
+  @include flex(row, center);
+  margin-bottom: 0.1rem;
+}
+
+.shuffle-btn {
+  width: 54px;
+  height: 35px;
+  display: flex;
+  place-self: flex-end;
+  margin: 0 0 0.5rem 0;
+
+  .shuffle-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.submit-btn {
+  opacity: 1;
+  width: 70px;
+  height: 30px;
+  place-self: flex-end;
+  margin: 10px 0px 10px 0px;
+  transition: 1s;
+  &:hover {
+    background: $color-secondary;
+  }
+  &:disabled {
+    cursor: auto;
+    opacity: 0;
+    transition: 900ms;
+    transform: scale(0.5);
+  }
+}
+
+.gold-btn {
+  transition: 1s;
+  transform: scale(1.1);
+  border: 1.5px solid $color-secondary;
+  &:hover {
+    border: 1.5px solid $color-secondary;
+  }
+}
+
+.char-counter {
+  display: flex;
+  justify-content: flex-end;
+}
