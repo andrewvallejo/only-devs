@@ -1,31 +1,35 @@
 /* ==========================================================================
-l - Settings - Global Variables
+l - Abstracts | Global Variables 
 ========================================================================== */
-@import "./l-settings/colors.scss";
-@import "./l-settings/typography.scss";
+@import "./abstracts/colors.scss";
+@import "./abstracts/keyframes.scss";
+@import "./abstracts/misc.scss";
+@import "./abstracts/typography.scss";
 
 /* ==========================================================================
-ll - Tools - Mixins
+ll - Base | Mixins 
 ========================================================================== */
-@import "./ll-tools/keyframes.scss";
-@import "./ll-tools/mixins.scss";
+@import "./base/flexbox.scss";
+@import "./base/grid.scss";
+@import "./base/mediaqueries.scss";
+@import "./base/misc.scss";
+@import "./base/typography.scss";
+
 
 /* ==========================================================================
-lll - Generic - Resets & Normalize Styles
+lll - Elements | Defaults & Semantic Elements 
 ========================================================================== */
-@import './lll-generic/generics.scss';
+@import './elements/defaults.scss';
+@import './elements/landmarks.scss';
+@import './elements/typography.scss';
 
 /* ==========================================================================
-lV - Elements - Semantic Bare Elements 
+lV - Pages | Pages
 ========================================================================== */
-@import './lV-elements/elements.scss';
 
-/* ==========================================================================
-V -  Components -  Specific UI components
-========================================================================== */
-@import "./V-components/Answer.scss";
-@import "./V-components/Card.scss";
-@import "./V-components/Header.scss";
-@import "./V-components/Question.scss";
-@import "./V-components/QuestionForm.scss";
-@import "./V-components/QuestionBoard.scss";
+@import "./pages/QuestionBoard.scss";
+@import "./pages/Answer.scss";
+@import "./pages/Card.scss";
+@import "./pages/Header.scss";
+@import "./pages/Question.scss";
+@import "./pages/QuestionForm.scss";
