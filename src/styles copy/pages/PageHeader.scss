@@ -1,0 +1,114 @@
+/* ==========================================================================
+  Pages - PageHeader | Components - MastHead & NavigationBar
+========================================================================== */
+
+.masthead {
+	@include flex(row, space-between, center);
+	position: relative;
+	width: 100%;
+	.center {
+		flex: auto;
+		min-width: fit-content;
+		max-height: fit-content;
+	}
+	:is(.left, .right) {
+		@include flex(column, center, center);
+		min-width: 5rem;
+		flex: 1;
+	}
+	.left {
+		border: $border-i;
+		text-align: center;
+		max-width: 12rem;
+		height: auto;
+		min-height: 5rem;
+	}
+	.right {
+		margin-bottom: 0.5rem;
+		width: clamp(10rem, 8vw, 25rem);
+	}
+}
+
+.masthead {
+	.slogan {
+		@include flex(column, center, center, wrap);
+		@include mediaQueries("navbar-today");
+		display: flex;
+	}
+	.title {
+		text-align: center;
+	}
+	.edition {
+		@include mediaQueries("navbar-today");
+		width: 100%;
+		min-width: 10rem;
+		.edition-title {
+			@include fonts(tiny);
+			min-width: max-content;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 0.03rem;
+		}
+		.information {
+			text-align: center;
+		}
+	}
+}
+
+.navbar {
+	@include flex(row, space-around);
+	border-top: $border-i;
+	border-bottom: $border-i;
+	max-height: 3rem;
+	padding-block: 0.25rem;
+	.filter-list {
+		border: unset;
+		text-decoration: none;
+		background: unset;
+		cursor: pointer;
+	}
+
+	.today {
+		@include mediaQueries("navbar-today");
+		flex: 1;
+		margin-inline: 1rem;
+		min-width: fit-content;
+	}
+	.nav-links {
+		@include flex(row, start);
+		flex: 1;
+		.link {
+			@include fonts(link);
+		}
+		:first-child {
+			margin-right: 5%;
+		}
+	}
+
+	.search-bar {
+		@include flex(row, end);
+		position: relative;
+		flex: 1;
+		border: $border-i;
+		border-radius: 2px;
+		max-width: 20rem;
+		max-height: 2rem;
+		:is(search-input, input, input:focus) {
+			position: absolute;
+			inset: 0;
+			margin: auto 0.25rem;
+			border: none;
+			outline: none;
+			max-width: clamp(5rem, 20vw, 20rem);
+			max-height: 1.5rem;
+			background: none;
+			cursor: grab;
+		}
+		.search-button {
+			transform: scale(0.7);
+			padding: 0.5rem 0.75rem;
+			cursor: not-allowed;
+		}
+	}
+}
+z

@@ -1,0 +1,45 @@
+/* ==========================================================================
+  Pages - HomePage | Components - Article
+========================================================================== */
+
+.newspaper {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+
+	grid-template-rows: minmax(5rem, auto);
+	margin-top: 1rem;
+	grid-auto-flow: dense;
+
+gap: .25rem;
+	border-radius: 2px;
+	padding-bottom: 15vh;
+}
+
+.article {
+	@include flex(column, center);
+	text-align: center;
+	box-shadow: 0 0 2px $black;
+
+	.read-button {
+		font-weight: $fw-bold;
+	}
+	.image { 
+		width: clamp(10rem, 80vw, 20rem);
+		opacity: .8;
+		filter: grayscale(1);
+	}
+}
+
+.longways {
+	grid-row: span 4 / auto;
+	grid-column: span 4 / auto;}
+
+.sideways {
+	grid-row: span 1 / auto;
+	grid-column: span 2 / auto;
+}
+
+.square {
+	grid-row: span 4 / auto;
+	grid-column: span 4 / auto;
+}

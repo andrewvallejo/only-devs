@@ -1,0 +1,38 @@
+/* ==========================================================================
+  Base - Media Queries
+========================================================================== */
+
+@mixin mediaQueries($property) {
+  @include mobile($property);
+  @include tablet($property);
+  @include desktop($property);
+}
+
+@mixin mobile($property) {
+  @media only screen and (min-width: 320px) {
+    @content;
+    transition: 100ms;
+    @if $property == navbar-today {
+      display: none;
+    }
+  }
+}
+@mixin tablet($property) {
+  @media only screen and (min-width: 768px) {
+    @content;
+    transition: 100ms;
+    @if $property == navbar-today {
+      display: flex;
+    }
+  }
+}
+
+@mixin desktop($property) {
+  @media only screen and (min-width: 1024px) {
+    @content;
+    transition: 100ms;
+    @if $property == navbar-today {
+      display: flex;
+    }
+  }
+}

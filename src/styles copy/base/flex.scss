@@ -1,0 +1,28 @@
+/* ==========================================================================
+  Base - Flex
+========================================================================== */
+
+@mixin flex($direction, $justify, $alignment: center, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  @if $justify == center {
+    align-items: $alignment;
+    justify-content: center;
+  } @else if $justify == space-evenly {
+    align-items: $alignment;
+    justify-content: space-evenly;
+  } @else if $justify == space-between {
+    align-items: $alignment;
+    justify-content: space-between;
+  } @else if $justify == space-around {
+    align-items: $alignment;
+    justify-content: space-around;
+  } @else if $justify == start {
+    align-items: $alignment;
+    justify-content: flex-start;
+  } @else if $justify == end {
+    align-items: $alignment;
+    justify-content: flex-end;
+  }
+}
