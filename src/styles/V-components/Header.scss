@@ -1,8 +1,0 @@
-.main-header{
-  @include flex(row, center);
-  .logo {
-    @include mediaQueries(logo);
-    transition: 1s;
-    margin: 0 0 .5rem .5rem;
-  }
-}
