@@ -1,0 +1,19 @@
+/* ==========================================================================
+  Base - Media Queries
+========================================================================== */
+
+@mixin heading {
+  @include scaling($fs-heading, font);
+}
+
+@mixin subheading {
+  @include scaling($fs-subheading, font);
+}
+
+@mixin paragraph {
+  @include scaling($fs-paragraph, font);
+}
+
+@mixin button {
+  @include scaling($fs-button, font);
+}
