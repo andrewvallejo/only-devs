@@ -2,27 +2,27 @@
   Base - Flexbox
 ========================================================================== */
 
-@mixin flex($direction, $alignment, $wrap: nowrap) {
+@mixin flex($direction, $justify, $alignment: center, $wrap: nowrap) {
   display: flex;
   flex-direction: $direction;
   flex-wrap: $wrap;
-  @if $alignment == center {
-    align-items: center;
+  @if $justify == center {
+    align-items: $alignment;
     justify-content: center;
-  } @else if $alignment == evenly {
-    align-items: center;
+  } @else if $justify == space-evenly {
+    align-items: $alignment;
     justify-content: space-evenly;
-  } @else if $alignment == between {
-    align-items: center;
+  } @else if $justify == space-between {
+    align-items: $alignment;
     justify-content: space-between;
-  } @else if $alignment == around {
-    align-items: center;
+  } @else if $justify == space-around {
+    align-items: $alignment;
     justify-content: space-around;
-  } @else if $alignment == start {
-    align-items: center;
+  } @else if $justify == start {
+    align-items: $alignment;
     justify-content: flex-start;
-  } @else if $alignment == end {
-    align-items: center;
+  } @else if $justify == end {
+    align-items: $alignment;
     justify-content: flex-end;
   }
 }
