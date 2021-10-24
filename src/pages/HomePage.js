@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { QuestionForm } from "../components/QuestionForm";
-import { QuestionBoard } from "../components/QuestionBoard";
-import { DevContext } from "../utility/DevContext";
+import React, { useContext } from 'react';
+import { QuestionForm } from '../components/QuestionForm';
+import { QuestionBoard } from '../components/QuestionBoard';
+import { DevContext } from '../utility/DevContext';
 
 export const HomePage = () => {
   const { state, dispatch } = useContext(DevContext);

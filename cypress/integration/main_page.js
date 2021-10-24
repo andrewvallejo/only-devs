@@ -12,14 +12,14 @@ describe ('Main Page', () => {
     })
     
     it('Should be able to visit the app and display the logo, char count, and shuffle button that works', () => {
-        cy.get('#onlyDevsLogo').should("have.attr", "src")
+        cy.get('#onlyDevsLogo').should('have.attr', 'src')
         cy.get('.question-form').contains('300/300')
         cy.get('.shuffle-btn').click()
         cy.url().should('include', 'http://localhost:3000/?answer=');
     })
 
     it('Should be able to navigate to all questions view', () => {
-        cy.get("#31  > .view-details-btn")
+        cy.get('#31  > .view-details-btn')
         .click()
         .url().should('include', '/question-details/31')
         cy.contains('Inside What life cycle methods should you do fetch calls in React?')
@@ -64,17 +64,17 @@ describe ('Main Page', () => {
 
     it('Should be able to type in the search field', () => {
         cy
-          .get('input[type="text"]')
+          .get('input[type='text']')
           .type('Hoisting')
           .should('have.value', 'Hoisting')
       })
   
     it('Should be able to display only the question card(s) that match search criteria', () => {
         cy
-          .get('input[type="text"]')
+          .get('input[type='text']')
           .type('app')
           .get('.cards-container')
-          cy.get('[href="/question-details/34"]')
+          cy.get('[href='/question-details/34']')
           .contains('MVC')
     })
     

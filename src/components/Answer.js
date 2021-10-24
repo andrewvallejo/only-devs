@@ -8,7 +8,7 @@ export const Answer = ({ singleAnswer }) => {
   return (
     <article className='answer' key={id} id={id}>
       <header className='answer-header'>
-        <p className="time">Submission date: {date}</p>
+        <p className='time'>Submission date: {date}</p>
       </header>
       {answer}
     </article>
