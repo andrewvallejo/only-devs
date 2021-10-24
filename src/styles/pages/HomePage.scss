@@ -1,8 +1,8 @@
-@use '../abstracts';
-
 /* ==========================================================================
-Pages - HomePage
+Pages - HomePage | Components - main header, search bar, question form 
 ========================================================================== */
+
+/* === main header === */
 
 .main-header {
   @include flex(row, center);
@@ -12,6 +12,8 @@ Pages - HomePage
     margin: 0 0 0.5rem 0.5rem;
   }
 }
+
+/* === search bar === */
 
 .search-bar {
   width: 60%;
@@ -35,6 +37,8 @@ Pages - HomePage
   margin-top: 1rem;
   min-height: 50%;
 }
+
+/* === question form === */
 
 .question-form {
   min-width: 3rem;
@@ -116,6 +120,8 @@ Pages - HomePage
   display: flex;
   justify-content: flex-end;
 }
+
+/* === question card === */
 
 .question-card {
   height: 80%;

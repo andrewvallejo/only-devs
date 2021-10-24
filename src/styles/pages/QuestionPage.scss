@@ -1,6 +1,8 @@
 /* ==========================================================================
-Pages - QuestionPage
+Pages - QuestionPage | Components - details, answers, rating container
 ========================================================================== */
+
+/* === details === */
 
 .details-container {
   overflow-x: hidden;
@@ -54,6 +56,8 @@ Pages - QuestionPage
   }
 }
 
+/* === answers === */
+
 .answer {
   @include opacity($color-tertiary, -0.5);
   width: clamp(16rem, 25vw, 30rem);
@@ -84,6 +88,8 @@ Pages - QuestionPage
   }
 }
 
+/* === rating container === */
+
 .rating-container {
   @include flex(row, center);
 }
@@ -111,83 +117,3 @@ Pages - QuestionPage
   }
 }
 
-.question-form {
-  min-width: 3rem;
-  width: 70%;
-  margin-bottom: 1.2rem;
-  margin-top: 5rem;
-  a {
-    place-self: flex-end;
-  }
-}
-
-.question {
-  margin: 1rem;
-}
-
-.submitAnswer {
-  @include button;
-  padding: 0.5rem;
-  margin-top: 1rem;
-  margin-left: auto;
-}
-
-.answer-input {
-  width: 100%;
-  min-height: 5rem;
-  height: 10rem;
-  text-align: center;
-  resize: none;
-  padding: 1rem;
-  font-family: $ff-secondary;
-}
-
-.question-header {
-  @include flex(row, center);
-  margin-bottom: 0.1rem;
-}
-
-.shuffle-btn {
-  width: 54px;
-  height: 35px;
-  display: flex;
-  place-self: flex-end;
-  margin: 0 0 0.5rem 0;
-
-  .shuffle-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-}
-
-.submit-btn {
-  opacity: 1;
-  width: 70px;
-  height: 30px;
-  place-self: flex-end;
-  margin: 10px 0px 10px 0px;
-  transition: 1s;
-  &:hover {
-    background: $color-secondary;
-  }
-  &:disabled {
-    cursor: auto;
-    opacity: 0;
-    transition: 900ms;
-    transform: scale(0.5);
-  }
-}
-
-.gold-btn {
-  transition: 1s;
-  transform: scale(1.1);
-  border: 1.5px solid $color-secondary;
-  &:hover {
-    border: 1.5px solid $color-secondary;
-  }
-}
-
-.char-counter {
-  display: flex;
-  justify-content: flex-end;
-}
