@@ -1,0 +1,58 @@
+.answer {
+  @include opacity($color-tertiary, -0.5);
+  width: clamp(16rem, 25vw, 30rem);
+  height: clamp(12rem, 25vh, 30rem);
+  margin: 1rem 0;
+  box-shadow: 3px 3px 10px $color-grey;
+  padding: 1rem; 
+  overflow-y: scroll;
+  font-family: $ff-secondary;
+  
+  .answer-header {
+    @include flex(row, around);
+    align-self: flex-start;
+    width: 100%;
+    margin-bottom: 1rem;
+    .like-btn {
+      padding: .3rem 1rem;
+      &:hover {
+        background: inherit;
+        box-shadow: 0 0 5px  $color-quaternary;
+      }
+    }
+  }
+  .answer-block{
+    overflow-y: scroll;
+    margin-bottom: auto;
+    line-height: 1.7;
+  }
+}
+
+.rating-container {
+  @include flex(row, center);
+}
+.arrow-container {
+  @include mediaQueries(vote-flex);
+  .vote-arrow {
+    
+    border-radius: 50%;
+    &.up-arrow:hover {
+      background: $color-primary;
+      border-color: $color-quaternary;
+     }
+    }
+  }
+  .rating-number {
+    align-self: center;
+    margin: .3rem;
+  }
+ 
+
+  .disabled-vote {
+    color: $color-grey;  
+    border: 1px solid $color-grey;
+    cursor: not-allowed;
+    &:hover {
+      background: grey;
+    }
+  }
