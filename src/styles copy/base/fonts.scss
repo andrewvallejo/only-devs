@@ -1,0 +1,25 @@
+/* ==========================================================================
+  Base - Grid
+========================================================================== */
+
+@mixin fonts($font-type, $weight: $fw-regular) {
+  @if $font-type==large {
+    font-size: $fs-large;
+    font-weight: $weight;
+  } @else if $font-type==medium {
+    font-size: $fs-medium;
+    font-weight: $weight;
+  } @else if $font-type==small {
+    font-size: $fs-small;
+    font-weight: $weight;
+  } @else if $font-type==tiny {
+    font-size: $fs-tiny;
+    font-weight: $weight;
+  } @else if $font-type==link {
+    font-size: $fs-link;
+    font-weight: $weight;
+  } @else if $font-type==semi {
+    font-size: $fs-semi;
+    font-weight: $weight;
+  }
+}
