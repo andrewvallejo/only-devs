@@ -1,41 +1,70 @@
-/* ==========================================================================
-  Elements - Defaults
-========================================================================== */
-
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-a,
-Link {
-  text-decoration: none;
-  &:focus,
-  &:hover,
-  &:visited,
-  &:link,
-  &:active {
-    text-decoration: none;
-  }
+:is(body, h1, h2, h3, h4, p, figure, blockquote, dl, dd) {
+  margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"],
+li {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  font-family: $ff-primary;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 button {
-  border: 0;
-  padding: 0;
   background: none;
+  border: none;
   cursor: pointer;
-  text-transform: none;
 }
 
-:is(h1, h2, h3, h4, h5, h6) {
-  font-size: $fs-defaults;
-  font-weight: $fw-defaults;
-  font-style: $ff-defaults;
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+  color: unset;
 }
