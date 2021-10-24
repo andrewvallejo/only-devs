@@ -10,10 +10,10 @@ body {
   background: $white;
   overflow: hidden;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
-    background-image: url("../../assets/images/paper-texture.jpg");
+    background-image: url('../../assets/images/paper-texture.jpg');
     inset: 0;
     opacity: 0.3;
   }
@@ -30,7 +30,7 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   text-indent: 1px;
-  text-overflow: "";
+  text-overflow: '';
   &:focus {
     outline: none;
   }

@@ -37,7 +37,7 @@ export const QuestionForm = ({ question }) => {
       <button className='shuffle-btn'>
         <FontAwesomeIcon className='shuffle-icon' icon={faRandom} alt='shuffle question' />
       </button>
-      <header className="question-header">
+      <header className='question-header'>
         <h2>{question.question}</h2>
       </header>
       <textarea className='answer-input'

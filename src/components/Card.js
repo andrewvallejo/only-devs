@@ -17,7 +17,7 @@ export const Card = ({ state, dispatch, question }) => {
   return (
     <article className='card question-card'>
       <h3>{question.question}</h3>
-      <button className="view-details-btn"
+      <button className='view-details-btn'
         onClick={handleClick}>
         View Details
       </button>

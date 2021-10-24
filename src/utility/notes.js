@@ -29,8 +29,8 @@
 {/* <button className='return-btn'>
                 <FontAwesomeIcon className='arrow-icon' icon={faAngleDoubleLeft} />
             </button> */}
-{/* <h2 className="question">{displayQuestion()}</h2> */ }
-{/* <div className="answers-board">
+{/* <h2 className='question'>{displayQuestion()}</h2> */ }
+{/* <div className='answers-board'>
                 {error && <h3 className='no-answers'>{error}</h3>}
                 {(error && isLoading) && <h3> Loading... answers</h3>}
                 {(answers.length && error) && <h3 className='no-answers'>This question has not been answered yet.</h3>}
@@ -60,7 +60,7 @@
 
 // 		const [searchTerm, setSearchTerm] = useState('')
 //     <input className='search-bar'
-//     type="text"
-//     placeholder="Search Questions By Keyword..."
+//     type='text'
+//     placeholder='Search Questions By Keyword...'
 //     onChange={(e) => setSearchTerm(e.target.value)}
 // />

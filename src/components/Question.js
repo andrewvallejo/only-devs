@@ -10,13 +10,13 @@ export const Question = ({ state, dispatch }) => {
 
   return (
     <section className='details-container'>
-      <header className="question-header">
+      <header className='question-header'>
         <button className='return-btn' onClick={() => history.goBack()}>
           <FontAwesomeIcon className='arrow-icon' icon={faAngleDoubleLeft} />
         </button>
-        <h2 className="question">{state.selectedQuestion.question}</h2>
+        <h2 className='question'>{state.selectedQuestion.question}</h2>
       </header>
-      <aside className="answers-board">
+      <aside className='answers-board'>
         {answers}
       </aside>
     </section>

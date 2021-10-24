@@ -3,11 +3,11 @@ Abstracts - Typography
 ========================================================================== */
 
 /* === Font Import === */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap');
 
 /* === Defaults === */
-$ff-primary: "Raleway", sans-serif;
-$ff-secondary: "Open Sans", sans-serif;
+$ff-primary: 'Raleway', sans-serif;
+$ff-secondary: 'Open Sans', sans-serif;
 $fs-defaults: 1rem;
 $ff-defaults: normal;
 $fw-defaults: normal;

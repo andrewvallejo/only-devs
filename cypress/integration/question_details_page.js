@@ -23,7 +23,7 @@ describe('Questions Details page', () => {
 
     it('Should be able to search for question by keyword', () => {
         cy
-            .get('input[type="text"]')
+            .get('input[type='text']')
             .type('Props')
             .should('have.css', 'font-family')
             .and('match', /serif/)
