@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 export const PublicNav = () => {
   return (
-    <nav ClassName='navigation public-nav'>
+    <nav className='navigation public-nav'>
       <ul className='navigation-links'>
         <li>
           <NavLink to='/connect'>Connect</NavLink>
