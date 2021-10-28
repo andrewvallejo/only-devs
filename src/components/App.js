@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useReducer } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Header } from './Header';
+import { NavBar } from './Navigation/NavBar';
 import { HomePage } from '../pages/HomePage';
 import { QuestionPage } from '../pages/QuestionPage';
 import { getQuestions } from '../utility/apiCalls';
@@ -32,7 +32,7 @@ export const App = () => {
 
   return (
     <DevContext.Provider value={{ state, dispatch }}>
-      <Header />
+      <NavBar />
       <main>
         <Switch>
           <Route exact path='/' component={HomePage} />
