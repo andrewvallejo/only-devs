@@ -1,13 +1,14 @@
 import React from 'react';
-import { PublicNav } from './PublicNav';
+import { PreNav } from './PreNav';
+import { SearchBar } from './SearchBar';
 
 export const NavBar = () => {
   return (
     <header className='NavBar'>
-      <nav ClassName='nav-container'>
-
-        {/* < PublicNav />  */}
-       </nav>
+      <nav className='nav-container'>
+        <SearchBar />
+        <PreNav />
+      </nav>
     </header>
-  )
+  );
 };
