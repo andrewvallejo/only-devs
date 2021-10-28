@@ -1,7 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRandom } from '@fortawesome/free-solid-svg-icons'
 import { postAnswer } from '../utility/apiCalls';
 
 export const QuestionForm = ({ question }) => {
@@ -35,7 +33,7 @@ export const QuestionForm = ({ question }) => {
   return (
     <form className='question-form'>
       <button className='shuffle-btn'>
-        <FontAwesomeIcon className='shuffle-icon' icon={faRandom} alt='shuffle question' />
+          <p>shuffle</p>
       </button>
       <header className='question-header'>
         <h2>{question.question}</h2>
