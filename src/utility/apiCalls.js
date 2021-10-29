@@ -1,10 +1,7 @@
 import axios from 'axios';
 
-
-
-const url = 'https://onlydevs-api.herokuapp.com';
-
 const generateURL = (request) => {
+  const url = 'https://onlydevs-api.herokuapp.com';
   const { endpoint, id } = request
   switch (endpoint) {
     case 'questions':
