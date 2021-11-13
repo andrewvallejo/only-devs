@@ -1,0 +1,67 @@
+.search-bar {
+  @include flex(row, center);
+  position: relative;
+  .question-list {
+    @include flex(column, flex-start);
+    position: absolute;
+    inset: 3rem 0;
+    max-height: 15rem;
+    height: fit-content;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: white;
+    // padding-inline: .5rem;
+    & .search-query {
+      margin-left: 1rem;
+      color: black;
+      padding-block: 0.25rem;
+      cursor: pointer;
+      border-left: 2px solid transparent;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 110%;
+        height: 2rem; 
+        opacity: 1;
+      }
+      &:hover::before {
+        z-index: 0;
+        color: white;
+         background: red;
+        padding-right: 1rem;
+         transition:  background 250ms linear;
+         
+       }
+    }
+  }
+
+  & label {
+    @include hidden(deep);
+  }
+  & input {
+    border-radius: 2px;
+    border: unset;
+    padding: 1rem;
+    min-width: 30rem;
+    transition: box-shadow 250ms;
+    &:focus {
+      outline: unset;
+      box-shadow: 0 0 5px 5px $color-secondary inset;
+    }
+  }
+  .search-icon {
+    cursor: text;
+  }
+  .close-icon:hover {
+    color: lightblue;
+  }
+
+  & ion-icon {
+    position: absolute;
+    inset-block-end: 0rem;
+    inset-inline-end: 1rem;
+    font-size: 3.5rem;
+  }
+}
+

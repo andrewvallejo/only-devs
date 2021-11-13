@@ -9,6 +9,7 @@ l - Abstracts | Global Variables
 /* ==========================================================================
 ll - Base | Mixins 
 ========================================================================== */
+@import './base/a11ylist';
 @import './base/flexbox';
 @import './base/grid';
 @import './base/hidden';
@@ -25,9 +26,13 @@ lll - Elements | Defaults & Semantic Elements
 @import './elements/typography';
 
 /* ==========================================================================
-lV - Pages | Pages
+lV - Layout | Component specific
 ========================================================================== */
+@import './layout/SearchBar';
 
-@import './pages/Header';
+/* ==========================================================================
+V - Pages | Main stylesheets 
+========================================================================== */
+@import './pages/NavBar';
 @import './pages/HomePage';
 @import './pages/QuestionPage';

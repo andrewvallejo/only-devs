@@ -1,0 +1,10 @@
+
+.nav-bar {
+ display: grid;
+ place-items: center;
+}
+
+.nav-container {
+  @include flex(row, space-around);
+}
+
