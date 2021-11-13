@@ -4,34 +4,32 @@
   .question-list {
     @include flex(column, flex-start);
     position: absolute;
-    inset: 3rem 0;
-    max-height: 15rem;
-    height: fit-content;
     overflow-x: hidden;
     overflow-y: auto;
+    inset: 3rem 0;
+    height: fit-content;
+    max-height: 15rem;
     background-color: white;
-    // padding-inline: .5rem;
     & .search-query {
       margin-left: 1rem;
-      color: black;
-      padding-block: 0.25rem;
-      cursor: pointer;
       border-left: 2px solid transparent;
+      padding-block: 0.25rem;
+      color: black;
+      cursor: pointer;
       &::before {
         content: '';
         position: absolute;
         left: 0;
+        opacity: 1;
         width: 110%;
         height: 2rem; 
-        opacity: 1;
       }
       &:hover::before {
-        z-index: 0;
-        color: white;
-         background: red;
+        opacity: .5;
         padding-right: 1rem;
-         transition:  background 250ms linear;
-         
+        background: teal;
+        pointer-events: none;
+        transition:  background 250ms linear; 
        }
     }
   }
@@ -40,10 +38,10 @@
     @include hidden(deep);
   }
   & input {
-    border-radius: 2px;
     border: unset;
-    padding: 1rem;
+    border-radius: 2px;
     min-width: 30rem;
+    padding: 1rem;
     transition: box-shadow 250ms;
     &:focus {
       outline: unset;
