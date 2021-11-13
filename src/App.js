@@ -1,14 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useReducer } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { NavBar } from './pages/NavBar';
+import React, { useReducer } from 'react';
+import { Route, Routes } from 'react-router-dom';
+
 import { HomePage } from './pages/HomePage';
 import { QuestionPage } from './pages/QuestionPage';
-import { getQuestions } from './utility/apiCalls';
 import { DevContext } from './utility/DevContext';
 import { reducer } from './utility/reducer';
-import { randomize } from './utility/util';
-
 
 const initialState = {
   questions: [],
@@ -17,29 +13,17 @@ const initialState = {
   answers: [],
   error: '',
   isLoaded: false
-}
+};
 
 export const App = () => {
-  const [state, dispatch] = useReducer(reducer, initialState)
-
-  useEffect(() => {
-    (async () => !state.questions.length &&
-      await getQuestions().then(data => {
-        dispatch({ state, action: { type: 'SETQUESTIONS', value: data } })
-        dispatch({ state, action: { type: 'SETRANDOMQUESTION', value: randomize(data) } })
-      })
-    )()
-  }, [])
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <DevContext.Provider value={{ state, dispatch }}>
-      <main>
-      <NavBar/>
-        <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route exact path='/questions/:id' component={QuestionPage} />
-        </Switch>
-      </main>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/questions/*' element={<QuestionPage />} />
+      </Routes>
     </DevContext.Provider>
-  )
+  );
 };
