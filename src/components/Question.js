@@ -1,15 +1,15 @@
 import React from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Answer } from './Answer';
 
 export const Question = ({ state, dispatch }) => {
-  const history = useHistory()
-  const answers = state.answers.map(answer => <Answer key={answer.id} singleAnswer={answer} context={(state, dispatch)} />)
+  const navigate = useNavigate();
+  const answers = state.answers.map(answer => <Answer key={answer.id} singleAnswer={answer} context={(state, dispatch)} />);
 
   return (
     <section className='details-container'>
       <header className='question-header'>
-        <button className='return-btn' onClick={() => history.goBack()}>
+        <button className='return-btn' onClick={() => navigate.goBack()}>
         </button>
         <h2 className='question'>{state.selectedQuestion.question}</h2>
       </header>
@@ -17,5 +17,5 @@ export const Question = ({ state, dispatch }) => {
         {answers}
       </aside>
     </section>
-  )
-}
+  );
+};
