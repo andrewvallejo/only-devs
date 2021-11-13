@@ -4,12 +4,12 @@ import React, { useContext } from 'react';
 import { DevContext } from '../utility/DevContext';
 
 export const NavBar = () => {
-  const { state } = useContext(DevContext);
+  const { state, dispatch } = useContext(DevContext);
 
   return (
-    <header className='NavBar'>
+    <header className='nav-bar'>
       <nav className='nav-container'>
-        <SearchBar questions={state.questions} />
+        <SearchBar questions={state.questions} dispatch={dispatch} />
         <PreNav />
       </nav>
     </header>
