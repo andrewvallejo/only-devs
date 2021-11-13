@@ -14,12 +14,18 @@ li {
   list-style: none;
 }
 
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
 html:focus-within {
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
+  scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
@@ -32,6 +38,10 @@ img,
 picture {
   max-width: 100%;
   display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
 }
 
 input,
@@ -65,6 +75,4 @@ button {
 a {
   outline: none;
   text-decoration: none;
-  padding: 2px 1px 0;
-  color: unset;
-}
+  color: unset;}

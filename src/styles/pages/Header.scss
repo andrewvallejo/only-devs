@@ -1,3 +1,10 @@
 .aria-hidden {
   @include hidden();
 }
+.navigation {
+  @include flex(row, center);
+}
+.search-bar {
+  @include flex(row, center);
+
+}

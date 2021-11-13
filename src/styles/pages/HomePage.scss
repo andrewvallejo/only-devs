@@ -14,19 +14,6 @@ Pages - HomePage | Components - main header, search bar, question form
 }
 
 /* === search bar === */
-
-.search-bar {
-  width: 60%;
-  padding: 0.3rem;
-  margin-top: 1.5rem;
-  place-self: center;
-  top: 10%;
-  right: 1rem;
-  border-radius: 7px;
-  text-align: center;
-  font-family: $ff-secondary;
-}
-
 .cards-container {
   @include mediaQueries(grid);
   width: 100%;
@@ -39,7 +26,6 @@ Pages - HomePage | Components - main header, search bar, question form
 }
 
 /* === question form === */
-
 .question-form {
   min-width: 3rem;
   width: 70%;

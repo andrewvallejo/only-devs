@@ -3,16 +3,6 @@
 ========================================================================== */
 
 body {
-  width: 100vw;
-  height: 100vh;
-}
-
-
-html {
-  background: $color-primary;
-}
-
-body {
   background-color: $color-primary;
 }
 
@@ -26,46 +16,9 @@ main {
 
 article {
   @include flex(column, around);
-  border-radius: 10px;
-}
-
-form {
-  @include flex(column, space);
 }
 
 button {
-  @include flex(column, center);
-  transition: 500ms;
-  border: $color-secondary 1.5px solid;
-  border-radius: 3px;
-  padding: 0.1rem 0.5rem;
-  font-family: $ff-secondary;
-  color: $color-secondary;
-  &:hover {
-    @include opacity($color-secondary, -0.2);
-    transition: 500ms;
-    border: $color-light 1.5px solid;
-    text-shadow: 0 0 1.5px $color-light;
-    color: $color-primary;
-  }
+  border: unset;
 }
 
-h1 {
-  @include heading;
-}
-
-h2 {
-  @include subheading;
-}
-
-h3 {
-  @include paragraph;
-}
-
-p {
-  @include paragraph;
-}
-
-a {
-  color: $color-dark;
-}
