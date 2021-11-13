@@ -1,16 +1,26 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-export const SearchBar = ({ questions }) => {
+export const SearchBar = ({ questions, dispatch }) => {
   const [query, setQuery] = useState('');
 
-  const questionList = questions.filter(({ question }) =>
+  const entries = questions.filter(({ question }) =>
     (!question || question.toLowerCase().includes(query.toLowerCase())) && question)
-    .map(({ question }, i) => <p key={i}>{question}</p>);
+    .map(({ question, id }) => (
+      <li className='search-query' key={id}>
+        <Link to={`/questions/${id}`}>{question}</Link>
+      </li>
+    ));
+
+  const clearInput = (event) => {
+    event.preventDefault();
+    setQuery('');
+  };
 
   return (
-    <form >
-      <label htmlFor='search-bar'>
-        <span className='aria-hidden'>Search Interview Questions</span>
+    <form className='search-bar'>
+      <label htmlFor='searchBar'>
+        <span>Search Interview Questions</span>
       </label>
       <input
         id='searchBar'
@@ -18,8 +28,15 @@ export const SearchBar = ({ questions }) => {
         value={query}
         placeholder='Search Interview Questions'
         onChange={(e) => setQuery((e.target.value))} />
-      {query && questionList}
-      <button type='submit'>Search</button>
+      {query &&
+        <ul name='questions' className='question-list'>
+          {entries}
+        </ul>}
+      <button className={query ? 'close-icon' : 'search-icon'} onClick={clearInput}>
+        {query ?
+          <ion-icon name="close-circle-outline" /> :
+          <ion-icon name="search-circle-outline" />}
+      </button>
     </form >
   );
-}
+};
