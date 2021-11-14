@@ -1,14 +1,14 @@
 import React, { useContext, useEffect } from 'react';
 
-import { QuestionBoard } from '../components/QuestionBoard';
-import { QuestionForm } from '../components/QuestionForm';
+import { SideBar } from '../components/layout/SideBar';
 import { getQuestions } from '../utility/apiCalls';
 import { DevContext } from '../utility/DevContext';
 import { randomize } from '../utility/util';
-import { NavBar } from './NavBar';
+import { Header } from '../components/layout/Header';
 
 export const HomePage = () => {
-  const { state, dispatch } = useContext(DevContext);
+  const context = useContext(DevContext);
+  const { state, dispatch } = context
 
   useEffect(() => {
     (async () => !state.questions.length &&
@@ -20,11 +20,11 @@ export const HomePage = () => {
   }, [dispatch, state]);
 
   return (
-    <main>
-      <NavBar />
-      <QuestionForm question={state.randomQuestion} />
-      <QuestionBoard state={state} dispatch={dispatch} />
-    </main>
+    <body>
+      <Header />
+      <main className='home-page'>
+      <SideBar context={context} />
+      </main>
+    </body>
   );
 };
- 
