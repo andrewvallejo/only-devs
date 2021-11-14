@@ -1,13 +1,11 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { postAnswer } from '../utility/apiCalls';
 
 export const QuestionForm = ({ question }) => {
-  const maxLength = 300;
   const [answer, setAnswer] = useState('')
   const [isDisabled, setDisabled] = useState(true);
   const [isAnswered, setIsAnswered] = useState(false);
-  const [charsLeft, setCharsLeft] = useState(maxLength);
 
   const submitAnswer = (event) => {
     event.preventDefault()
@@ -26,10 +24,6 @@ export const QuestionForm = ({ question }) => {
     event.target.value.length ? setDisabled(false) : setDisabled(true)
   }
 
-  useEffect(() => {
-    setCharsLeft(maxLength - answer.length);
-  }, [answer])
-
   return (
     <form className='question-form'>
       <button className='shuffle-btn'>
@@ -43,14 +37,10 @@ export const QuestionForm = ({ question }) => {
         name='answer'
         value={answer}
         placeholder='Write your answer here.'
-        maxLength={maxLength}
         autoComplete='off'
         onKeyPress={(event) => event.key === 'Enter' && event.preventDefault()}
         onChange={event => onChange(event)}>
       </textarea>
-      <div className='char-counter'>
-        {charsLeft}/{maxLength}
-      </div>
       <button className='submit-btn'
         disabled={isDisabled}
         onClick={(event) => submitAnswer(event)}>
