@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router';
 import { getAnswers } from '../utility/apiCalls';
 
 
-export const Card = ({ state, dispatch, question }) => {
+export const QuestionCard = ({ context, question }) => {
+  const { state, dispatch } = context
   const navigate = useNavigate()
 
   const handleClick = () => {
@@ -15,7 +16,7 @@ export const Card = ({ state, dispatch, question }) => {
   }
 
   return (
-    <article className='card question-card'>
+    <article className='question-card'>
       <h3>{question.question}</h3>
       <button className='view-details-btn'
         onClick={handleClick}>
