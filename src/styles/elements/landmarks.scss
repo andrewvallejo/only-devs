@@ -4,14 +4,16 @@
 
 body {
   background-color: $color-primary;
+  @include flex(column, space-around);
+  overflow: hidden;
 }
 
 header {
-  @include flex(row, between);
+  @include flex(row, space-around);
 }
 
 main {
-  @include flex(column, center);
+  @include flex(row, space-around);
 }
 
 article {

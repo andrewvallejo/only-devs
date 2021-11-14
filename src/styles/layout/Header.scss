@@ -1,0 +1,98 @@
+/* ==========================================================================
+Layout - Header | Components -  Header, SearchBar, NavBar  
+========================================================================== */
+
+.main-header {
+  @include flex(row, center);
+  .logo {
+    @include mediaQueries(logo);
+    transition: 1s;
+    margin: 0 0 0.5rem 0.5rem;
+  }
+}
+
+.aria-hidden {
+  @include hidden(deep);
+}
+.navigation {
+  @include flex(row, center);
+}
+.search-bar {
+  @include flex(row, center);
+
+}
+
+.nav-bar {
+  display: grid;
+  place-items: center;
+ }
+ 
+ .nav-container {
+   @include flex(row, space-around);
+ }
+
+.search-bar {
+  @include flex(row, center);
+  position: relative;
+  .question-list {
+    @include flex(column, flex-start);
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: auto;
+    inset: 3rem 0;
+    height: fit-content;
+    max-height: 15rem;
+    background-color: white;
+    & .search-query {
+      margin-left: 1rem;
+      border-left: 2px solid transparent;
+      padding-block: 0.25rem;
+      color: black;
+      cursor: pointer;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        opacity: 1;
+        width: 110%;
+        height: 2rem; 
+      }
+      &:hover::before {
+        opacity: .5;
+        padding-right: 1rem;
+        background: teal;
+        pointer-events: none;
+        transition:  background 250ms linear; 
+       }
+    }
+  }
+
+  & label {
+    @include hidden(deep);
+  }
+  & input {
+    border: unset;
+    border-radius: 2px;
+    min-width: 30rem;
+    padding: 1rem;
+    transition: box-shadow 250ms;
+    &:focus {
+      outline: unset;
+      box-shadow: 0 0 5px 5px $color-secondary inset;
+    }
+  }
+  .search-icon {
+    cursor: text;
+  }
+  .close-icon:hover {
+    color: lightblue;
+  }
+
+  & ion-icon {
+    position: absolute;
+    inset-block-end: 0rem;
+    inset-inline-end: 1rem;
+    font-size: 3.5rem;
+  }
+}
+

@@ -28,11 +28,11 @@ lll - Elements | Defaults & Semantic Elements
 /* ==========================================================================
 lV - Layout | Component specific
 ========================================================================== */
-@import './layout/SearchBar';
+@import './layout/Header';
+@import './layout/SideBar';
 
 /* ==========================================================================
 V - Pages | Main stylesheets 
 ========================================================================== */
-@import './pages/NavBar';
 @import './pages/HomePage';
 @import './pages/QuestionPage';
