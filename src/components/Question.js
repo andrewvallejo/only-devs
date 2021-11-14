@@ -9,7 +9,7 @@ export const Question = ({ state, dispatch }) => {
   return (
     <section className='details-container'>
       <header className='question-header'>
-        <button className='return-btn' onClick={() => navigate.goBack()}>
+        <button className='return-btn' onClick={() => navigate(-1)}>
         </button>
         <h2 className='question'>{state.selectedQuestion.question}</h2>
       </header>
