@@ -3,7 +3,11 @@ Pages - HomePage | Components - main header, search bar, question form
 ========================================================================== */
 
 .home-page {
-
+  @include flex (row, flex-start);
+  width: 100%;
+  .some-content {
+    width: 100%;
+  }
   /* ===== Scrollbar ===== */
   * {
     scrollbar-width: thin;
