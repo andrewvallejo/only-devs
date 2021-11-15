@@ -96,7 +96,7 @@ npm start
 
 **Learning goals**. Heroku, Express, and Cypress
 
-**Challenges:** We faced a few challenges in this project.  One of the largest was the learning curve with building a PostgreSQL database and deploying the backend to Heroku. It was also very difficult to understand how to configure pool, which was an external library to speak between the Postgres database and the express api we custom built. Configuration can be a nightmare, but it can also be a dream when you learn to ask for support from your teammates, cohortmates, and online developer community. I'm truly blessed to have learned this process of co-teaching and co-learning with my teammates to implement a new technology and app that can be used for studying by our cohortmates! 
+**Challenges:** We faced a few challenges in this project.  One of the largest was the learning curve with building a PostgreSQL database and deploying the backend to Heroku. It was also very difficult to understand how to configure pool, which was an external library to speak between the Postgres database and the express api we custom built. Configuration can be a nightmare, but it can also be a dream when you learn to ask for support from your teammates, cohort mates, and online developer community. I'm truly blessed to have learned this process of co-teaching and co-learning with my teammates to implement a new technology and app that can be used for studying by our cohort mates! 
 
 <br>
 
@@ -108,6 +108,6 @@ npm start
 ---
 **Learning goals:** My major goals were to be able to make a fullstack website by also learning backend with PostgreSQL and connecting the API made with Express to Heroku. 
 
-**Challenges:** The backend already seemed daunting as I imagine in my head it being the parallel and opposite universe to front end. Although after learning the syntax and receiving help from backend developers, I manage to create some tables. The hard part was trying to understand SQL, it's logic, and learning a new CLI. Like the others, Hiroku proved to be the most challenging aspect as it felt completely unknown at the time how connect all of the pieces . Although, like Thomas Edison, I know of a thousand ways how to not deploy a Heroku backend.
+**Challenges:** The backend already seemed daunting as I imagine in my head it being the parallel and opposite universe to front end. Although after learning the syntax and receiving help from backend developers, I manage to create some tables. The hard part was trying to understand SQL, it's logic, and learning a new CLI. Like the others, Heroku proved to be the most challenging aspect as it felt completely unknown at the time how connect all of the pieces . Although, like Thomas Edison, I know of a thousand ways how to not deploy a Heroku backend.
 
 <br>
