@@ -3,36 +3,39 @@ Pages - QuestionPage | Components - details, answers, rating container
 ========================================================================== */
 
 /* === details === */
-.main-area {
-  @include flex(column, center);
+.question-page {
+  @include flex (row, flex-start);
   width: 100%;
-  padding-inline: 2rem;
-  .answers-board {
+  .main-area {
     @include flex(column, center);
-    overflow: auto;
-  }
-  .answer {
-    overflow-y: scroll;
-  }
-} 
-
-.details-container {
-  @include flex(column, center);
-  .question-header {
-    @include flex(row, center);
     width: 100%;
-    border-bottom: 1px solid pink;
-  }
-  .return-btn {
-    border-radius: 100vw;
-    border: $color-secondary 3px solid;
-    width: 3rem;
-    aspect-ratio: 1;
-    &:hover {
-      border-color: $color-quaternary;
+    .answers-board {
+      @include flex(column, center);
+      overflow: auto;
     }
+    .answer {
+      overflow-y: scroll;
+    }
+  } 
+  
+  .details-container {
+    @include flex(column, center);
+    .question-header {
+      @include flex(row, center);
+      width: 100%;
+      border-bottom: 1px solid pink;
+    }
+    .return-btn {
+      border-radius: 100vw;
+      border: $color-secondary 3px solid;
+      width: 3rem;
+      aspect-ratio: 1;
+      &:hover {
+        border-color: $color-quaternary;
+      }
+    }
+    
   }
-
 
 }
 
