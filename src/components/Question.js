@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
+
 import { Answer } from './Answer';
 
 export const Question = ({ state, dispatch }) => {
@@ -9,7 +10,8 @@ export const Question = ({ state, dispatch }) => {
   return (
     <section className='details-container'>
       <header className='question-header'>
-        <button className='return-btn' onClick={() => navigate(-1)}>
+        <button className='return-btn' onClick={() => navigate('/')}>
+          <ion-icon name="caret-back-outline" />
         </button>
         <h2 className='question'>{state.selectedQuestion.question}</h2>
       </header>
