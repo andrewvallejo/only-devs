@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useState } from "react";
 
-import { QuestionCard as Card } from '../QuestionCard';
+import { QuestionCard } from "../components/QuestionCard";
 
 export const SideBar = ({ context }) => {
+  const [active, setActive] = useState(false);
 
-  const questionCard = context.state.questions.map(question => {
-    return <Card key={question.id} context={context} question={question} />;
+  const handleClick = (event) => {
+    event.preventDefault();
+    setActive(!active);
+  };
+
+  const questionList = context.state.questions.map((question) => {
+    return (
+      <li key={question.id} className={!active && "aria-hidden"}>
+        <QuestionCard context={context} question={question} />
+      </li>
+    );
   });
 
   return (
-    <section className='side-bar'>
-      {questionCard}
+    <section className="side-bar">
+      <button onClick={(e) => handleClick(e)}>
+        expand
+      </button>
+      <ul className="question-choices">{questionList}</ul>
+      
     </section>
   );
 };
