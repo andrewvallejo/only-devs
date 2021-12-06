@@ -1,22 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext } from 'react'
 
-import { Header } from '../components/layout/Header';
-import { SideBar } from '../components/layout/SideBar';
-import { DevContext } from '../utility/DevContext';
-
+import { Header } from '../layout/Header'
+import { SideBar } from '../layout/SideBar'
+import { DevContext } from '../utility/DevContext'
 
 export const HomePage = () => {
-  const context = useContext(DevContext);
-  
+  const context = useContext(DevContext)
+
   return (
     <>
       <Header />
-      <main className='home-page'>
-        <SideBar context={context} />
-        <div className='some-content'>
+      <SideBar context={context} />
+      <main className="home-page">
+        <div className="some-content">
           <p>some content</p>
         </div>
       </main>
     </>
-  );
-};
+  )
+}

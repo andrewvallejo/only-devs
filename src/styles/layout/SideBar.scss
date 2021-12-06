@@ -1,7 +1,7 @@
-
-  /* ===== SideBar, QuestionCard ===== */
+/* ===== SideBar, QuestionCard ===== */
 
 .side-bar {
+  border-right: 1px solid red;
   overflow: auto;
   padding-right: 1rem;
   height: 100vh;
@@ -18,7 +18,10 @@
     transition: 350ms;
     &:hover {
       transform: scale(1.01);
-      box-shadow:  5px 5px 15px -9px black;
+      box-shadow: 5px 5px 15px -9px black;
+    }
+    & .aria-hidden {
+      @include hidden(deep);
     }
   }
 }

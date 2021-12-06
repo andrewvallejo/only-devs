@@ -4,8 +4,6 @@
 
 body {
   background-color: $color-primary;
-  @include flex(column, space-around);
-  overflow: hidden;
 }
 
 header {
@@ -24,4 +22,3 @@ article {
 button {
   border: unset;
 }
-

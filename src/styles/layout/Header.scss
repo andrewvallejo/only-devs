@@ -3,7 +3,6 @@ Layout - Header | Components -  Header, SearchBar, NavBar
 ========================================================================== */
 
 .main-header {
-  @include flex(row, center);
   .logo {
     @include mediaQueries(logo);
     transition: 1s;
@@ -19,17 +18,17 @@ Layout - Header | Components -  Header, SearchBar, NavBar
 }
 .search-bar {
   @include flex(row, center);
-
 }
 
 .nav-bar {
   display: grid;
   place-items: center;
- }
- 
- .nav-container {
-   @include flex(row, space-around);
- }
+  border-bottom: 1px solid red;
+}
+
+.nav-container {
+  @include flex(row, space-around);
+}
 
 .search-bar {
   @include flex(row, center);
@@ -55,15 +54,15 @@ Layout - Header | Components -  Header, SearchBar, NavBar
         left: 0;
         opacity: 1;
         width: 110%;
-        height: 2rem; 
+        height: 2rem;
       }
       &:hover::before {
-        opacity: .5;
+        opacity: 0.5;
         padding-right: 1rem;
         background: teal;
         pointer-events: none;
-        transition:  background 250ms linear; 
-       }
+        transition: background 250ms linear;
+      }
     }
   }
 
@@ -95,4 +94,3 @@ Layout - Header | Components -  Header, SearchBar, NavBar
     font-size: 3.5rem;
   }
 }
-

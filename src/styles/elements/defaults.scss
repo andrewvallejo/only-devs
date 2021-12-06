@@ -8,8 +8,8 @@
   margin: 0;
 }
 
-ul[role="list"],
-ol[role="list"],
+ul[role='list'],
+ol[role='list'],
 li {
   list-style: none;
 }
@@ -75,4 +75,5 @@ button {
 a {
   outline: none;
   text-decoration: none;
-  color: unset;}
+  color: unset;
+}

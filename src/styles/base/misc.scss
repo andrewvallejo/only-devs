@@ -3,11 +3,11 @@ Base - Misc
 ========================================================================== */
 
 @mixin opacity($color, $value) {
-	background: adjust-color($color, $alpha: $value);
+  background: adjust-color($color, $alpha: $value);
 }
 
 @mixin scaling($value, $property) {
-	@if $property==font {
-		font-size: clamp($value);
-	}
+  @if $property==font {
+    font-size: clamp($value);
+  }
 }
