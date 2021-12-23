@@ -1,30 +1,21 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react'
 
-import { QuestionBoard } from '../components/QuestionBoard';
-import { QuestionForm } from '../components/QuestionForm';
-import { getQuestions } from '../utility/apiCalls';
-import { DevContext } from '../utility/DevContext';
-import { randomize } from '../utility/util';
-import { NavBar } from './NavBar';
+import { Header } from '../layout/Header'
+import { SideBar } from '../layout/SideBar'
+import { DevContext } from '../utility/DevContext'
 
 export const HomePage = () => {
-  const { state, dispatch } = useContext(DevContext);
-
-  useEffect(() => {
-    (async () => !state.questions.length &&
-      await getQuestions().then(data => {
-        dispatch({ state, action: { type: 'SETQUESTIONS', value: data } });
-        dispatch({ state, action: { type: 'SETRANDOMQUESTION', value: randomize(data) } });
-      })
-    )();
-  }, [dispatch, state]);
+  const context = useContext(DevContext)
 
   return (
-    <main>
-      <NavBar />
-      <QuestionForm question={state.randomQuestion} />
-      <QuestionBoard state={state} dispatch={dispatch} />
-    </main>
-  );
-};
- 
+    <>
+      <Header />
+      <SideBar context={context} />
+      <main className="home-page">
+        <div className="some-content">
+          <p>some content</p>
+        </div>
+      </main>
+    </>
+  )
+}

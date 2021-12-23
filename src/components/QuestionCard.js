@@ -16,11 +16,12 @@ export const QuestionCard = ({ context, question }) => {
   }
 
   return (
-    <article className="question-card">
+    <article
+      tabIndex="0"
+      className="question-card"
+      onClick={handleClick}
+      onKeyPress={handleClick}>
       <h3>{question.question}</h3>
-      <button className="view-details-btn" onClick={handleClick}>
-        View Details
-      </button>
     </article>
   )
 }

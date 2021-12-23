@@ -1,3 +1,35 @@
+/* ==========================================================================
+Layout - Header | Components -  Header, SearchBar, NavBar  
+========================================================================== */
+
+.main-header {
+  .logo {
+    @include mediaQueries(logo);
+    transition: 1s;
+    margin: 0 0 0.5rem 0.5rem;
+  }
+}
+
+.aria-hidden {
+  @include hidden(deep);
+}
+.navigation {
+  @include flex(row, center);
+}
+.search-bar {
+  @include flex(row, center);
+}
+
+.nav-bar {
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid red;
+}
+
+.nav-container {
+  @include flex(row, space-around);
+}
+
 .search-bar {
   @include flex(row, center);
   position: relative;
@@ -22,15 +54,15 @@
         left: 0;
         opacity: 1;
         width: 110%;
-        height: 2rem; 
+        height: 2rem;
       }
       &:hover::before {
-        opacity: .5;
+        opacity: 0.5;
         padding-right: 1rem;
         background: teal;
         pointer-events: none;
-        transition:  background 250ms linear; 
-       }
+        transition: background 250ms linear;
+      }
     }
   }
 
@@ -62,4 +94,3 @@
     font-size: 3.5rem;
   }
 }
-

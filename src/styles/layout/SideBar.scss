@@ -1,0 +1,27 @@
+/* ===== SideBar, QuestionCard ===== */
+
+.side-bar {
+  border-right: 1px solid red;
+  overflow: auto;
+  padding-right: 1rem;
+  height: 100vh;
+  max-width: 40rem;
+  padding-bottom: 7rem;
+  @include flex(column, flex-start);
+  .question-card {
+    text-align: start;
+    @include flex(column, space-around);
+    margin-inline-start: 1rem;
+    border-bottom: 1px solid pink;
+    padding-block: 1rem;
+    padding-inline: 0.5rem 2rem;
+    transition: 350ms;
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: 5px 5px 15px -9px black;
+    }
+    & .aria-hidden {
+      @include hidden(deep);
+    }
+  }
+}

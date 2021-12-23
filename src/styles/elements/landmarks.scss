@@ -7,11 +7,12 @@ body {
 }
 
 header {
-  @include flex(row, between);
+  @include flex(row, space-around);
 }
 
 main {
-  @include flex(column, center);
+  @include flex(row, space-around);
+  min-width: 100vw;
 }
 
 article {
@@ -21,4 +22,3 @@ article {
 button {
   border: unset;
 }
-
